@@ -1,36 +1,12 @@
 // src/app/productos/page.js
-import styles from './productos.module.css';
-// Ya no importamos DUMMY_PRODUCTOS directamente aquí
+// import styles from './productos.module.css'; // Si lo usas
+import { DUMMY_PRODUCTOS } from '@/data/products'; // Importamos directamente
 import ProductCard from '@/components/ProductCard';
+import Link from 'next/link'; // Asegúrate que Link está importado si ProductCard lo usa internamente o si lo necesitas
 
-// Función para obtener los productos desde nuestra API
-async function getProducts() {
-  // Usar la URL base del sitio si está disponible (en Netlify), sino localhost para desarrollo
-  const baseUrl = process.env.URL || 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/products`, {
-    cache: 'no-store'
-  });
-
-  if (!res.ok) {
-    console.error("Respuesta no OK de la API:", res.status, await res.text()); // Loguear más info
-    throw new Error(`Falló la carga de productos. Status: ${res.status}`);
-  }
-  try {
-    return await res.json();
-  } catch (e) {
-    console.error("Error parseando JSON de productos:", e);
-    throw new Error('Respuesta de productos no es JSON válido.');
-  }
-}
-
-export default async function ProductosPage() {
-  let productos = [];
-  try {
-    productos = await getProducts();
-  } catch (error) {
-    console.error("Error en ProductosPage:", error.message);
-    return <p>Error al cargar los productos: {error.message}</p>; // Mostrar error al usuario
-  }
+// Ya no necesitamos que esta página sea 'async' si no hacemos fetch
+export default function ProductosPage() {
+  const productos = DUMMY_PRODUCTOS; // Usamos los datos directamente
 
   return (
     <div>
