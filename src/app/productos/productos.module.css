@@ -1,0 +1,10 @@
+/* src/app/productos/productos.module.css */
+/* src/app/productos/productos.module.css */
+  .productList {
+    display: grid;
+    /* Crea columnas responsivas: se ajustarán entre 250px y 1fr (fracción del espacio) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 20px;
+  }
+  

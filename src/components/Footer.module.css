@@ -1,0 +1,10 @@
+/* src/components/Footer.module.css */
+.footer {
+    background-color: #34495e; /* Un gris azulado oscuro */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto; /* Esto ayuda a empujar el footer hacia abajo con flexbox */
+    font-size: 0.9rem;
+    border-top: 3px solid #3498db;
+  }

@@ -1,0 +1,58 @@
+/* src/components/ProductCard.module.css */
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%; /* Asegura que el link ocupe toda la altura de la tarjeta */
+  }
+  
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    overflow: hidden; /* Para que el border-radius afecte a la imagen */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegura que la tarjeta ocupe toda la altura del link */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+  
+  .imageContainer {
+    width: 100%;
+    /* Mantenemos una relación de aspecto para el contenedor de la imagen */
+    /* Por ejemplo, para una imagen 4:3, padding-top sería 75% */
+    /* O podemos dejar que next/image maneje las dimensiones */
+    position: relative; /* Para que Image con layout="responsive" funcione bien, o para object-fit */
+    height: 180px; /* O una altura fija si prefieres */
+  }
+  
+  /* next/image ya tiene estilos, pero podemos añadir más si es necesario */
+  /* .image { } */
+  
+  .cardContent {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para que este contenido crezca y empuje elementos como precio al final */
+  }
+  
+  .name {
+    font-size: 1.1rem; /* Ajustado */
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+    flex-grow: 1; /* La descripción toma el espacio disponible */
+    margin-bottom: 10px;
+  }
