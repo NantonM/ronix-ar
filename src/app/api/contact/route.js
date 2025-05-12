@@ -1,6 +1,8 @@
 // src/app/api/contact/route.js
 import { NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 export async function POST(request) {
   try {
     const data = await request.json(); // Obtenemos los datos enviados en el cuerpo de la petición

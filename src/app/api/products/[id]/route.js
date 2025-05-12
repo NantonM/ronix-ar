@@ -2,6 +2,8 @@
 import { NextResponse } from 'next/server';
 import { DUMMY_PRODUCTOS } from '@/data/products';
 
+export const runtime = 'edge';
+
 export async function GET(request, { params }) {
   // params.id contendrá el ID de la URL (ej. /api/products/1 -> params.id será "1")
   const productId = params.id;
