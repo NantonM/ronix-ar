@@ -94,6 +94,3 @@ export default async function ProductoDetailPage({ params }) {
     </div>
   );
 }
-// Asegúrate de tener los imports de Link e Image
-import Link from 'next/link';
-import Image from 'next/image';
