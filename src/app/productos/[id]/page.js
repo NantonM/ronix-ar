@@ -4,40 +4,60 @@ import Image from 'next/image';
 // Ya no importamos DUMMY_PRODUCTOS directamente aquí
 
 async function getProduct(id) {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const baseUrl = process.env.URL || 'http://localhost:3000';
+  const res = await fetch(`<span class="math-inline">\{baseUrl\}/api/products/</span>{id}`, {
     cache: 'no-store'
   });
 
   if (res.status === 404) {
-    return null; // Indicamos que el producto no fue encontrado
+    return null;
   }
 
   if (!res.ok) {
-    throw new Error('Falló la carga del producto');
+    console.error("Respuesta no OK de la API (producto individual):", res.status, await res.text());
+    throw new Error(`Falló la carga del producto. Status: ${res.status}`);
   }
-  return res.json();
+  try {
+    return await res.json();
+  } catch (e) {
+    console.error("Error parseando JSON del producto:", e);
+    throw new Error('Respuesta del producto no es JSON válido.');
+  }
 }
 
-export default async function ProductoDetailPage({ params }) { // Hacemos la página async
-  const producto = await getProduct(params.id); // Obtenemos el producto
-
-  if (!producto) {
+export default async function ProductoDetailPage({ params }) {
+  let producto;
+  try {
+    producto = await getProduct(params.id);
+  } catch (error) {
+    console.error("Error en ProductoDetailPage:", error.message);
     return (
-      <div className="container text-center py-5">
-        <h1 className="display-4">Producto no encontrado</h1>
-        <p className="lead">El producto que buscas no existe o no está disponible.</p>
-        <Link href="/productos" className="btn btn-primary btn-lg mt-3">
-          Volver a Productos
-        </Link>
-      </div>
+        <div className="container text-center py-5">
+            <h1 className="display-4">Error al cargar producto</h1>
+            <p className="lead">{error.message}</p>
+            <Link href="/productos" className="btn btn-primary btn-lg mt-3">
+            Volver a Productos
+            </Link>
+        </div>
     );
   }
 
+  if (!producto) { 
+    return (
+        <div className="container text-center py-5">
+            <h1 className="display-4">Producto no encontrado</h1>
+            <p className="lead">El producto que buscas no existe o no está disponible.</p>
+            <Link href="/productos" className="btn btn-primary btn-lg mt-3">
+            Volver a Productos
+            </Link>
+        </div>
+    );
+  }
   const detallesLista = producto.details ? producto.details.split(',').map(detail => detail.trim()) : [];
-
-  return (
-    // El JSX para mostrar el producto sigue igual que en el Paso 9
+  // El JSX de la página de detalle (imagen, nombre, descripción, etc.) va aquí, igual que antes
+  return ( 
     <div className="container mt-4 mb-5">
+      {/* ... (pega aquí el JSX de la vista de detalle del producto del Paso 9) ... */}
       <div className="row g-5">
         <div className="col-md-6">
           <div style={{ position: 'relative', width: '100%', paddingTop: '75%', backgroundColor: '#f8f9fa', borderRadius: '0.375rem' }}>
@@ -74,3 +94,6 @@ export default async function ProductoDetailPage({ params }) { // Hacemos la pá
     </div>
   );
 }
+// Asegúrate de tener los imports de Link e Image
+import Link from 'next/link';
+import Image from 'next/image';

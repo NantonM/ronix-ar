@@ -5,26 +5,35 @@ import ProductCard from '@/components/ProductCard';
 
 // Función para obtener los productos desde nuestra API
 async function getProducts() {
-  // NOTA: En Server Components, cuando haces fetch a tu propia API interna durante el desarrollo,
-  // es más seguro usar la URL absoluta. En producción, configurarías una variable de entorno
-  // para el BASE_URL. Otra opción sería importar la lógica de datos directamente,
-  // pero para este ejercicio, practicar el fetch a una API es útil.
-  const res = await fetch('http://localhost:3000/api/products', {
-    cache: 'no-store' // Para desarrollo, evitamos el caché y siempre obtenemos datos frescos
+  // Usar la URL base del sitio si está disponible (en Netlify), sino localhost para desarrollo
+  const baseUrl = process.env.URL || 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/products`, {
+    cache: 'no-store'
   });
 
   if (!res.ok) {
-    // Esto activará el Error Boundary más cercano (error.js)
-    throw new Error('Falló la carga de productos');
+    console.error("Respuesta no OK de la API:", res.status, await res.text()); // Loguear más info
+    throw new Error(`Falló la carga de productos. Status: ${res.status}`);
   }
-  return res.json();
+  try {
+    return await res.json();
+  } catch (e) {
+    console.error("Error parseando JSON de productos:", e);
+    throw new Error('Respuesta de productos no es JSON válido.');
+  }
 }
 
-export default async function ProductosPage() { // Hacemos la página async
-  const productos = await getProducts(); // Obtenemos los productos
+export default async function ProductosPage() {
+  let productos = [];
+  try {
+    productos = await getProducts();
+  } catch (error) {
+    console.error("Error en ProductosPage:", error.message);
+    return <p>Error al cargar los productos: {error.message}</p>; // Mostrar error al usuario
+  }
 
   return (
-    <div> {/* No es necesario className={styles.pageContainer} si el main en layout.js ya tiene padding */}
+    <div>
       <h1 className="mb-4">Nuestros Productos</h1>
       {productos && productos.length > 0 ? (
         <div className="row g-4">
