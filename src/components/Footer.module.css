@@ -58,28 +58,38 @@
   /* border: 1px dashed #ced4da; */
 }
 
-.socialLink {
-  /* Estilos para tus placeholders "WA", "IG" o para los iconos reales */
-  display: inline-block;
-  padding: 0.3rem 0.6rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  color: #495057;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
 .socialLink:hover {
   color: #fff;
 }
+.socialLink {
+  display: inline-flex; /* Cambiado a inline-flex */
+  justify-content: center; /* Centra el icono horizontalmente */
+  align-items: center;   /* Centra el icono verticalmente */
+  width: 40px;  /* Ancho fijo para el recuadro, ajusta según necesites */
+  height: 40px; /* Alto fijo para el recuadro, ajusta según necesites */
+  border: 1px solid #ced4da; /* O el color que estés usando de ronixargentina.com.ar */
+  border-radius: 6px;   /* O el borde que prefieras */
+  color: #495057;       /* Color inicial del icono */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  /* Quitamos el padding aquí si width/height y flexbox van a manejar el tamaño y centrado */
+}
+
+.socialLink svg { /* Esto apunta directamente al SVG dentro del FontAwesomeIcon */
+  font-size: 1.5rem; /* Ajusta el tamaño del icono SVG aquí. Ej: 20px, 1.2em */
+                     /* Si haces esto, puedes quitar el 'size="lg"' del JSX */
+}
+
+/* Mantén tus estilos de hover específicos si te gustan */
 .whatsappLink:hover {
-  background-color: #25D366; /* Color de WhatsApp */
+  background-color: #25D366;
   border-color: #25D366;
+  color: white;
 }
 .instagramLink:hover {
-  /* Gradiente de Instagram */
   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
   border-color: transparent;
+  color: white;
 }
 
 .copyrightSection {
