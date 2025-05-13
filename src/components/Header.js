@@ -90,7 +90,7 @@ export default function Header() {
                   Become Our Distributor
                 </a>
               </div>
-              <div className="ms-2"> {/* Div para el icono con margen a la izquierda */}
+              <div className="ms-4"> {/* Div para el icono con margen a la izquierda */}
                 <Image
                   src="/images/german-tech.webp"
                   alt="German Technology Icon"
