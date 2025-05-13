@@ -94,7 +94,7 @@ export default function Header() {
                 <Image
                   src="/images/german-tech.webp"
                   alt="German Technology Icon"
-                  width={24} // Ajusta el tamaño según necesites
+                  width={102} // Ajusta el tamaño según necesites
                   height={24} // Ajusta el tamaño según necesites
                 />
               </div>

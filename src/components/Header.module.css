@@ -58,9 +58,9 @@
 }
 
 .ctaButton .btn { /* Para ser más específico */
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 400;
-  padding: 8px 16px !important; /* Sobreescribir padding de btn-sm si es necesario */
+  padding: 0.75rem 1.5rem;  
   background-color: #1e1e1e !important;
   border-color: #1e1e1e !important;
   color: #fff !important;
