@@ -25,21 +25,6 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-        {/* Podemos usar clases de Bootstrap aquí también */}
-        <main style={{ flexGrow: 1 }} className="container py-4"> {/* py-4 es padding vertical de Bootstrap */}
-            {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
-  );
-}
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="es">
-      <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header />
         <main style={{ flexGrow: 1, paddingTop: '66px', /* padding horizontal ya en el container */ }}> {/* paddingTop para el header fijo */}
           {children}
         </main>
@@ -48,3 +33,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+
