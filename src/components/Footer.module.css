@@ -92,6 +92,14 @@
   color: white;
 }
 
+.contactIcon {
+  font-size: 0.875rem; /* Ejemplo: Equivale a 14px si tu fuente base es 16px. ¡Experimenta con este valor! */
+                      /* Puedes usar px, em, o rem. Ej: 12px, 0.8em, etc. */
+  margin-right: 0.5rem; /* Un pequeño espacio a la derecha del icono (similar a me-2 de Bootstrap) */
+  vertical-align: middle; /* Intenta diferentes valores si no se alinea bien con el texto:
+                             baseline, text-bottom, sub, etc. 'middle' suele funcionar. */
+}
+
 .copyrightSection {
   background-color: #e9ecef; /* EJEMPLO: Un gris un poco más oscuro para el copyright */
   color: #6c757d;
