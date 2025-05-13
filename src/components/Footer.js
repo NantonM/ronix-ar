@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image'; // Para el logo y el placeholder de la carta
 import styles from './Footer.module.css';
 // Para iconos, podrías usar react-fontawesome o SVGs directamente más adelante
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
-// import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,10 +22,11 @@ export default function Footer() {
                 <Image
                   src="/images/ronix-logo.svg" // Tu logo
                   alt="Ronix Logo"
-                  width={140} // Ajusta según tu logo
-                  height={35} // Ajusta según tu logo
+                  width={112} // Ajusta según tu logo
+                  height={42} // Ajusta según tu logo
                 />
               </Link>
+              <p className={styles.footerTextMuted}>[Ronix es una marca de herramientas alemana fundada en 2004 con el objetivo de producir herramientas de alta calidad en diferentes categorías.]</p>
               <div className={styles.videoPlaceholder}>
                 <p className={styles.footerTextMuted}>[Video Ronix Pequeño]</p>
                 {/* Podrías poner un thumbnail aquí con <Image /> y que al hacer clic abra un modal con el video */}
@@ -71,24 +72,27 @@ export default function Footer() {
                 CONTACTO
               </h6>
               <p className={styles.footerText}>
-                {/* <FontAwesomeIcon icon={faEnvelope} className="me-2" /> */}
+                { <FontAwesomeIcon icon={faEnvelope} className="me-2" />}
                 📧 <a href="mailto:ronix@ixnova.com.ar" className={styles.footerLinkNoBlock}>ronix@ixnova.com.ar</a>
               </p>
               <p className={styles.footerText}>
-                {/* <FontAwesomeIcon icon={faPhone} className="me-2" /> */}
+                { <FontAwesomeIcon icon={faPhone} className="me-2" /> }
                 📞 <a href="tel:+5491168261600" className={styles.footerLinkNoBlock}>+54 9 11 6826 1600</a>
               </p>
               <p className={styles.footerText}>
-                {/* <FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" /> */}
+                {<FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" />}
                 📍 Salvador Curutchet 1747 - Castelar - Buenos Aires - Argentina
               </p>
+              <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
+                REDES SOCIALES
+              </h6>
               <div className="mt-3">
                 <a href="tel:+5491168261600" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.whatsappLink} me-3`}>
-                  {/* <FontAwesomeIcon icon={faWhatsapp} size="lg" /> */}
+                  {<FontAwesomeIcon icon={faWhatsapp} size="lg" />}
                   WA
                 </a>
                 <a href="https://www.instagram.com/ronixtoolsargentina/" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.instagramLink}`}>
-                  {/* <FontAwesomeIcon icon={faInstagram} size="lg" /> */}
+                  {<FontAwesomeIcon icon={faInstagram} size="lg" />}
                   IG
                 </a>
               </div>
