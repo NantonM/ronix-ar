@@ -56,23 +56,23 @@ export default function Header() {
             <li className={`${styles.navItem} nav-item`}>
               {/* "Products" - Por ahora un span, luego un botón/div para el mega-menú */}
               <span className={`${styles.navLink} nav-link`} role="button" tabIndex={0}>
-                Products <span className={styles.iconPlaceholder}>▼</span>
+                Productos <span className={styles.iconPlaceholder}>▼</span>
               </span>
             </li>
             <li className="nav-item">
-              <Link href="/about-us" className={`${styles.navLink} nav-link`}>About Us</Link>
+              <Link href="/about-us" className={`${styles.navLink} nav-link`}>Nuestra Marca</Link>
             </li>
             <li className="nav-item">
-              <Link href="/contacto" className={`${styles.navLink} nav-link`}>Contact Us</Link>
+              <Link href="/contacto" className={`${styles.navLink} nav-link`}>Contacto</Link>
             </li>
             <li className={`${styles.navItem} nav-item`}>
               {/* "Locations" - Por ahora un span, luego un botón/div para el mega-menú */}
               <span className={`${styles.navLink} nav-link`} role="button" tabIndex={0}>
-                Locations <span className={styles.iconPlaceholder}>▼</span>
+                Puntos de Venta <span className={styles.iconPlaceholder}>▼</span>
               </span>
             </li>
             <li className="nav-item">
-              <Link href="/blog" className={`${styles.navLink} nav-link`}>Ronix Mag</Link>
+              <Link href="/blog" className={`${styles.navLink} nav-link`}>Blog</Link>
             </li>
           </ul>
 
@@ -87,7 +87,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Become Our Distributor
+                  Quiero ser Revendedor Ronix!
                 </a>
               </div>
               <div className="ms-3"> {/* Div para el icono con margen a la izquierda */}
@@ -102,7 +102,7 @@ export default function Header() {
 
             <div className={`ms-lg-3 ${styles.languageSelect}`}>
               <button className="btn btn-outline-secondary btn-sm">
-                EN <span className={styles.iconPlaceholder}>🌐</span>
+                AR <span className={styles.iconPlaceholder}>🌐</span>
               </button>
               {/* El dropdown de idiomas se implementará después */}
             </div>
