@@ -4,7 +4,6 @@ import { DUMMY_PRODUCTOS } from '@/data/products'; // Importamos nuestros datos 
 
 export const runtime = 'edge';
 
-
 export async function GET(request) {
   // En una API real, aquí podrías procesar parámetros de búsqueda, filtros, paginación, etc.
   // Por ahora, simplemente devolvemos todos los productos.

@@ -4,6 +4,8 @@ import { DUMMY_PRODUCTOS } from '@/data/products'; // Importamos directamente
 import ProductCard from '@/components/ProductCard';
 import Link from 'next/link'; // Asegúrate que Link está importado si ProductCard lo usa internamente o si lo necesitas
 
+export const runtime = 'edge';
+
 // Ya no necesitamos que esta página sea 'async' si no hacemos fetch
 export default function ProductosPage() {
   const productos = DUMMY_PRODUCTOS; // Usamos los datos directamente
