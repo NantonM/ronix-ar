@@ -1,52 +1,68 @@
 /* src/components/Header.module.css */
-.header {
-    background-color: #2c3e50; /* Un azul oscuro */
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ecf0f1; /* Un blanco grisáceo */
-    text-decoration: none;
-  }
-  
-  .logo:hover {
-    color: #fff;
-  }
-  
-  .nav a {
-    color: #ecf0f1;
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-size: 1rem;
-    padding: 0.5rem 0;
-    position: relative;
-  }
-  
-  .nav a:hover {
-    color: #fff;
-  }
-  
-  /* Efecto de subrayado animado opcional */
-  .nav a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #3498db; /* Un azul brillante */
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+.componenHeaderWebsite {
+  /* Si ves estilos específicos en la clase 'componenHeaderWebsite' de Ronix, ponlos aquí */
+  /* Por ejemplo, si tiene una altura específica que no es la de Bootstrap */
+  font-size: 14px; /* Ajusta según el tamaño de fuente de Ronix */
+}
+
+/* Ajustes para que se parezca más a la estructura de Ronix que no es un navbar-nav típico para todo */
+/*.navbarNav {
+ /* Puedes usar esto para controlar el espaciado si no usas ms-auto/me-auto en el ul */
+/*}
+
+/*.navItem {
+  /* Para los elementos que contendrán los enlaces o los triggers de mega-menús */
+/*}*/
+
+.navLink { /* Aplicar a Link y a los span que actúan como links */
+  color: #333 !important; /* Color base, !important si Bootstrap lo sobreescribe */
+  font-weight: 500; /* O el que corresponda */
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  white-space: nowrap; /* Para que no se partan los textos de los links */
+}
+
+.navLink:hover,
+.navItem > span:hover { /* Para los span que actúan como links */
+  color: #ED1C24 !important; /* Rojo Ronix */
+  cursor: pointer;
+}
+
+.iconPlaceholder {
+  font-size: 0.8em; /* Para los emojis o texto de iconos */
+  margin-left: 4px;
+}
+
+.navActions {
+  /* Para el grupo de elementos a la derecha */
+  margin-left: auto; /* Empuja este grupo a la derecha si el ul no usa me-auto */
+}
+
+.ctaButton .btn-sm {
+  /* Ronix usa: bbf0000 cbf0000 tffffff (background, border, text color) */
+  /* Esto se traduce a un rojo específico. Puedes usar variables CSS de Bootstrap o definirlo. */
+  /* background-color: #ED1C24; */ /* Ajusta este color */
+  /* border-color: #ED1C24; */
+  /* color: white; */
+  padding: 0.3rem 0.8rem; /* Ejemplo de padding */
+  font-weight: bold;
+}
+
+.languageSelector button,
+.searchIconButton {
+  border-radius: 50px !important; /* Si quieres botones redondos como algunos iconos */
+  padding: 0.3rem 0.6rem;
+}
+
+
+/* Estilos para la barra de búsqueda superior (search-section en el HTML de Ronix) */
+/* Esta parte es más compleja y se activaría con JS. Por ahora la omitimos del JSX principal.
+.searchSection {
+  display: none; // Se mostraría con JS
+  padding: 1rem 0;
+  background-color: #f0f0f0;
+}
+.searchInput {
+  width: 100%;
+}
+*/
