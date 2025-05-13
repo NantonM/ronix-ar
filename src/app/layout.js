@@ -34,3 +34,17 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="es">
+      <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header />
+        <main style={{ flexGrow: 1, paddingTop: '66px', /* padding horizontal ya en el container */ }}> {/* paddingTop para el header fijo */}
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

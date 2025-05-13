@@ -1,8 +1,17 @@
 /* src/components/Header.module.css */
-.componenHeaderWebsite {
-  /* Si ves estilos específicos en la clase 'componenHeaderWebsite' de Ronix, ponlos aquí */
-  /* Por ejemplo, si tiene una altura específica que no es la de Bootstrap */
-  font-size: 14px; /* Ajusta según el tamaño de fuente de Ronix */
+.componenHeaderWebsite { /* O el nombre de tu clase principal del header */
+  background-color: #fff;
+  height: 66px;
+  position: fixed; /* Para que quede fijo arriba */
+  top: 0;
+  left: 0; /* Asegurar que ocupe todo el ancho */
+  right: 0; /* Asegurar que ocupe todo el ancho */
+  z-index: 1050; /* Bootstrap usa z-index altos para modales, etc. 1050 es un valor común para headers fijos */
+  /* El padding: 0 16px; del CSS original podría aplicarse aquí o al div.container interno,
+     dependiendo de si quieres que el fondo blanco llegue a los bordes o solo el contenido.
+     Si tu <div className="container"> ya maneja el espaciado, quizás no necesites el padding aquí.
+  */
+  border-bottom: 1px solid #e0e0e0; /* Un borde inferior sutil, común en headers */
 }
 
 /* Ajustes para que se parezca más a la estructura de Ronix que no es un navbar-nav típico para todo */
@@ -15,14 +24,24 @@
 /*}*/
 
 .navLink { /* Aplicar a Link y a los span que actúan como links */
-  color: #333 !important; /* Color base, !important si Bootstrap lo sobreescribe */
-  font-weight: 500; /* O el que corresponda */
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important;
-  white-space: nowrap; /* Para que no se partan los textos de los links */
+  color: #3d3d3d !important; /* Usar !important si Bootstrap interfiere */
+  font-size: 14px; /* Tomado de .menu-btn-to p, .menu-btn-to a */
+  font-weight: 400; /* Tomado de .menu-btn-to p, .menu-btn-to a */
+  padding: 8px 16px; /* Ajusta este padding. El original de Ronix es más específico */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Para que el hover del borde ocupe toda la altura */
+  border-bottom: 2px solid transparent; /* Borde inicial transparente */
+  transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Transición suave */
 }
 
-.navLink:hover,
+.navLink:hover { /* Estilo de .menu-btn-to a:hover, .menu-btn-to p:hover */
+  color: #3d3d3d !important; /* Se mantiene el color del texto o se puede poner el rojo si es solo el borde */
+  background: #f2f2f2;
+  border-bottom: 2px solid #bf0000; /* Borde rojo en hover */
+  text-shadow: 0 0 1px #3d3d3d;
+}
 .navItem > span:hover { /* Para los span que actúan como links */
   color: #ED1C24 !important; /* Rojo Ronix */
   cursor: pointer;
@@ -38,14 +57,18 @@
   margin-left: auto; /* Empuja este grupo a la derecha si el ul no usa me-auto */
 }
 
-.ctaButton .btn-sm {
-  /* Ronix usa: bbf0000 cbf0000 tffffff (background, border, text color) */
-  /* Esto se traduce a un rojo específico. Puedes usar variables CSS de Bootstrap o definirlo. */
-  /* background-color: #ED1C24; */ /* Ajusta este color */
-  /* border-color: #ED1C24; */
-  /* color: white; */
-  padding: 0.3rem 0.8rem; /* Ejemplo de padding */
-  font-weight: bold;
+.ctaButton .btn { /* Para ser más específico */
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 16px !important; /* Sobreescribir padding de btn-sm si es necesario */
+  background-color: #1e1e1e !important;
+  border-color: #1e1e1e !important;
+  color: #fff !important;
+  /* ... otros estilos si son necesarios ... */
+}
+.ctaButton .btn:hover {
+  background-color: #484848 !important;
+  border-color: #484848 !important;
 }
 
 .languageSelector button,
