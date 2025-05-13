@@ -78,25 +78,26 @@ export default function Header() {
 
           {/* Acciones a la Derecha (CTA, Idioma, Búsqueda) */}
           <div className={`d-flex align-items-center ${styles.navActions}`}>
-            <div className={styles.ctaButton}>
-              {/* El HTML de Ronix tiene un 'name="Button"' que no es estándar, lo omitimos */}
-              <a 
-                href="https://ronixtools.com/en/pro/representative/" 
-                className="btn btn-danger btn-sm d-flex align-items-center" // <-- Añadido d-flex y align-items-center
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Become Our Distributor
-                <span className="ms-2"> {/* ms-2 para un pequeño margen a la izquierda del icono */}
-                  <Image
-                    src="/images/german-tech.webp" // Tu icono
-                    alt="German Technology Icon"
-                    width={20} // Ajusta el tamaño según necesites
-                    height={20} // Ajusta el tamaño según necesites
-                    // style={{ verticalAlign: 'middle' }} // Podrías necesitar esto o no, dependiendo del tamaño y la fuente
-                  />
-                </span>
-              </a>
+            {/* Contenedor para el botón CTA y el icono, alineados horizontalmente */}
+            <div className={`${styles.ctaWithIconContainer} d-flex align-items-center`}> {/* Contenedor Flex */}
+              <div className={styles.ctaButton}> {/* Contenedor solo para el botón */}
+                <a
+                  href="https://ronixtools.com/en/pro/representative/"
+                  className="btn btn-danger btn-sm" // El botón ya no necesita ser d-flex
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Become Our Distributor
+                </a>
+              </div>
+              <div className="ms-2"> {/* Div para el icono con margen a la izquierda */}
+                <Image
+                  src="/images/german-tech.webp"
+                  alt="German Technology Icon"
+                  width={24} // Ajusta el tamaño según necesites
+                  height={24} // Ajusta el tamaño según necesites
+                />
+              </div>
             </div>
 
             <div className={`ms-lg-3 ${styles.languageSelect}`}>
