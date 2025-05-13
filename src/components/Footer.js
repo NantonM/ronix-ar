@@ -5,9 +5,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
-      <p>&copy; {currentYear} MiClonRonix. Todos los derechos reservados.</p>
+      <p>&copy; {currentYear} Ronix Argentina. Todos los derechos reservados.</p>
       <p>
-        Desarrollado con Next.js como ejercicio de aprendizaje.
+        Web en Desarrollo.
       </p>
     </footer>
   );

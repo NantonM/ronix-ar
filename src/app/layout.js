@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Mi Clon Ronix',
-  description: 'Construyendo un clon de Ronix Argentina con Next.js',
+  title: 'Ronix Argentina',
+  description: 'Ronix Argentina',
 };
 
 export default function RootLayout({ children }) {

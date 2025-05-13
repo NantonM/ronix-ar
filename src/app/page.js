@@ -4,11 +4,11 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main style={{ padding: '20px' }}>
-      <h1>¡Mi Clon de Ronix Argentina!</h1>
-      <p>Empezando con Next.js.</p>
+      <h1>Descubre Ronix</h1>
+      <p>Web en Construcción</p>
 
       <section style={{ marginTop: '30px' }}>
-        <h2>Video Destacado</h2>
+        <h2>Video Prueba</h2>
         <video width="560" height="315" controls>
           {/* Opción 1: Video local desde la carpeta public/videos/ */}
           {/* <source src="/videos/sample.mp4" type="video/mp4" /> */}
