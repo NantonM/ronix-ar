@@ -26,7 +26,7 @@ export default function Footer() {
                   height={42} // Ajusta según tu logo
                 />
               </Link>
-              <p className={styles.footerTextMuted}>[Ronix es una marca de herramientas alemana fundada en 2004 con el objetivo de producir herramientas de alta calidad en diferentes categorías.]</p>
+              <p className={styles.footerText}>Ronix es una marca de herramientas alemana fundada en 2004 con el objetivo de producir herramientas de alta calidad en diferentes categorías.</p>
               <div className={styles.videoPlaceholder}>
                 <p className={styles.footerTextMuted}>[Video Ronix Pequeño]</p>
                 {/* Podrías poner un thumbnail aquí con <Image /> y que al hacer clic abra un modal con el video */}
@@ -72,29 +72,27 @@ export default function Footer() {
                 CONTACTO
               </h6>
               <p className={styles.footerText}>
-                { <FontAwesomeIcon icon={faEnvelope} className="me-2" />}
+                { <FontAwesomeIcon icon={faEnvelope} size="sm" className="me-2" />}
                 📧 <a href="mailto:ronix@ixnova.com.ar" className={styles.footerLinkNoBlock}>ronix@ixnova.com.ar</a>
               </p>
               <p className={styles.footerText}>
-                { <FontAwesomeIcon icon={faPhone} className="me-2" /> }
+                { <FontAwesomeIcon icon={faPhone} size="sm" className="me-2" /> }
                 📞 <a href="tel:+5491168261600" className={styles.footerLinkNoBlock}>+54 9 11 6826 1600</a>
               </p>
               <p className={styles.footerText}>
-                {<FontAwesomeIcon icon={faMapMarkerAlt} className="me-2" />}
+                {<FontAwesomeIcon icon={faMapMarkerAlt} size="sm" className="me-2" />}
                 📍 Salvador Curutchet 1747 - Castelar - Buenos Aires - Argentina
               </p>
               <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
                 REDES SOCIALES
               </h6>
               <div className="mt-3">
-                <a href="tel:+5491168261600" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.whatsappLink} me-3`}>
-                  {<FontAwesomeIcon icon={faWhatsapp} size="lg" />}
-                  WA
-                </a>
-                <a href="https://www.instagram.com/ronixtoolsargentina/" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.instagramLink}`}>
-                  {<FontAwesomeIcon icon={faInstagram} size="lg" />}
-                  IG
-                </a>
+              <a href="https://wa.me/5491168261600" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.whatsappLink} me-3`}>
+                <FontAwesomeIcon icon={faWhatsapp} /> {/* Quitado size="lg" si usas el CSS de arriba para .socialLink svg */}
+              </a>
+              <a href="https://www.instagram.com/ronixtoolsargentina/" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.instagramLink}`}>
+                <FontAwesomeIcon icon={faInstagram} /> {/* Quitado size="lg" */}
+              </a>
               </div>
             </div>
           </div>
