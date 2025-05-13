@@ -3,6 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { DUMMY_PRODUCTOS } from '@/data/products'; // Importamos directamente
 
+export const runtime = 'edge';
+
+
 // Ya no necesitamos que esta página sea 'async'
 export default function ProductoDetailPage({ params }) {
   const productId = params.id;
