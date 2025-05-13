@@ -1,9 +1,10 @@
 // src/app/productos/[id]/page.js
+export const runtime = 'edge';
 import Link from 'next/link';
 import Image from 'next/image';
 import { DUMMY_PRODUCTOS } from '@/data/products'; // Importamos directamente
 
-export const runtime = 'edge';
+
 
 
 // Ya no necesitamos que esta página sea 'async'
