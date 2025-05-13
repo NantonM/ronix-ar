@@ -80,8 +80,22 @@ export default function Header() {
           <div className={`d-flex align-items-center ${styles.navActions}`}>
             <div className={styles.ctaButton}>
               {/* El HTML de Ronix tiene un 'name="Button"' que no es estándar, lo omitimos */}
-              <a href="https://ronixtools.com/en/pro/representative/" className="btn btn-danger btn-sm" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://ronixtools.com/en/pro/representative/" 
+                className="btn btn-danger btn-sm d-flex align-items-center" // <-- Añadido d-flex y align-items-center
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 Become Our Distributor
+                <span className="ms-2"> {/* ms-2 para un pequeño margen a la izquierda del icono */}
+                  <Image
+                    src="/images/german-tech.webp" // Tu icono
+                    alt="German Technology Icon"
+                    width={20} // Ajusta el tamaño según necesites
+                    height={20} // Ajusta el tamaño según necesites
+                    // style={{ verticalAlign: 'middle' }} // Podrías necesitar esto o no, dependiendo del tamaño y la fuente
+                  />
+                </span>
               </a>
             </div>
 
