@@ -1,10 +1,97 @@
 /* src/components/Footer.module.css */
 .footer {
-    background-color: #34495e; /* Un gris azulado oscuro */
-    color: #ecf0f1;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: auto; /* Esto ayuda a empujar el footer hacia abajo con flexbox */
-    font-size: 0.9rem;
-    border-top: 3px solid #3498db;
-  }
+  background-color: #f8f9fa; /* EJEMPLO: Un gris muy claro, revisa el de ronixargentina.com.ar */
+  color: #495057;           /* EJEMPLO: Un gris oscuro para el texto */
+  font-size: 0.9rem;
+  border-top: 1px solid #dee2e6; /* EJEMPLO: Un borde superior sutil */
+}
+
+/*.footerColumn {
+  /* Puedes añadir padding o margin aquí si las columnas necesitan espaciado interno adicional */
+
+
+.footerTitle {
+  color: #212529; /* EJEMPLO: Texto casi negro para títulos */
+  margin-bottom: 1rem;
+  font-weight: 600; /* O 700 (bold) */
+  font-size: 1rem; /* Un poco más grande para los títulos */
+}
+
+.footerText {
+  color: #6c757d; /* EJEMPLO: Texto gris secundario */
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footerTextMuted, .videoPlaceholder p {
+  color: #adb5bd; /* EJEMPLO: Texto aún más suave */
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.footerLink {
+  color: #495057 !important; /* Color principal del texto para enlaces */
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.footerLink:hover {
+  color: #0d6efd !important; /* EJEMPLO: Azul primario de Bootstrap para hover */
+  text-decoration: underline !important;
+}
+
+/* Para enlaces que no deben ser display:block, como email y teléfono */
+.footerLinkNoBlock {
+  color: #495057 !important;
+  text-decoration: none;
+}
+.footerLinkNoBlock:hover {
+  color: #0d6efd !important;
+  text-decoration: underline !important;
+}
+
+.representationImagePlaceholder {
+  margin-top: 0.5rem;
+  /* background-color: #e9ecef; */ /* Fondo para el placeholder de la imagen */
+  /* padding: 0.5rem; */
+  /* border: 1px dashed #ced4da; */
+}
+
+.socialLink {
+  /* Estilos para tus placeholders "WA", "IG" o para los iconos reales */
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  color: #495057;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.socialLink:hover {
+  color: #fff;
+}
+.whatsappLink:hover {
+  background-color: #25D366; /* Color de WhatsApp */
+  border-color: #25D366;
+}
+.instagramLink:hover {
+  /* Gradiente de Instagram */
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  border-color: transparent;
+}
+
+.copyrightSection {
+  background-color: #e9ecef; /* EJEMPLO: Un gris un poco más oscuro para el copyright */
+  color: #6c757d;
+  font-size: 0.8rem;
+  /* border-top: 1px solid #dee2e6; */ /* Ya lo tiene el .footer general */
+}
+
+.poweredBy {
+  font-size: 0.75rem;
+  color: #adb5bd;
+  margin-top: 0.25rem;
+  display: block;
+}
