@@ -72,16 +72,16 @@ export default function Footer() {
                 CONTACTO
               </h6>
               <p className={styles.footerText}>
-                { <FontAwesomeIcon icon={faEnvelope} size="sm" className="me-2" />}
-                📧 <a href="mailto:ronix@ixnova.com.ar" className={styles.footerLinkNoBlock}>ronix@ixnova.com.ar</a>
+                <FontAwesomeIcon icon={faEnvelope} size="xs" className="me-2" /> {/* Añadido size="sm" */}
+              <a href="mailto:ronix@ixnova.com.ar" className={styles.footerLinkNoBlock}>ronix@ixnova.com.ar</a>
               </p>
               <p className={styles.footerText}>
-                { <FontAwesomeIcon icon={faPhone} size="sm" className="me-2" /> }
-                📞 <a href="tel:+5491168261600" className={styles.footerLinkNoBlock}>+54 9 11 6826 1600</a>
+                <FontAwesomeIcon icon={faPhone} size="xs" className="me-2" /> {/* Añadido size="sm" */}
+                <a href="tel:+5491168261600" className={styles.footerLinkNoBlock}>+54 9 11 6826 1600</a>
               </p>
               <p className={styles.footerText}>
-                {<FontAwesomeIcon icon={faMapMarkerAlt} size="sm" className="me-2" />}
-                📍 Salvador Curutchet 1747 - Castelar - Buenos Aires - Argentina
+                <FontAwesomeIcon icon={faMapMarkerAlt} size="xs" className="me-2" /> {/* Añadido size="sm" */}
+                Salvador Curutchet 1747 - Castelar - Buenos Aires - Argentina
               </p>
               <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
                 REDES SOCIALES
