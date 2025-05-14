@@ -12,7 +12,7 @@
   .slide {
     position: relative; /* Necesario para que Image con layout="fill" funcione */
     width: 100%;
-    height: 450px; /* ALTURA DEL SLIDER - ¡AJUSTA ESTE VALOR A TU GUSTO! (ej. 500px, 60vh, etc.) */
+    height: 650px; /* ALTURA DEL SLIDER - ¡AJUSTA ESTE VALOR A TU GUSTO! (ej. 500px, 60vh, etc.) */
     background-color: #f0f0f0; /* Color de fondo mientras carga la imagen */
   }
   

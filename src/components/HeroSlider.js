@@ -46,10 +46,10 @@ export default function HeroSlider() {
               priority={slide.id === 1} // Cargar la primera imagen con prioridad
             />
             {/* Opcional: Puedes añadir texto o botones superpuestos aquí dentro de SwiperSlide */}
-            {/* <div className={styles.slideCaption}>
+            <div className={styles.slideCaption}>
               <h2>Título del Slide</h2>
               <p>Algún texto descriptivo</p>
-            </div> */}
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
