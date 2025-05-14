@@ -60,16 +60,16 @@ export default function Header() {
               </span>
             </li>
             <li className="nav-item">
-              <Link href="/about-us" className={`${styles.navLink} nav-link`}>Nuestra Marca</Link>
+              <Link href="/nosotros" className={`${styles.navLink} nav-link`}>Nosotros</Link>
             </li>
             <li className="nav-item">
-              <Link href="/contacto" className={`${styles.navLink} nav-link`}>Puntos de Venta</Link>
+              <Link href="/puntos-de-venta" className={`${styles.navLink} nav-link`}>Puntos de Venta</Link>
             </li>
             <li className="nav-item">
               <Link href="/contacto" className={`${styles.navLink} nav-link`}>Contacto</Link>
             </li>
             <li className="nav-item">
-              <Link href="/blog" className={`${styles.navLink} nav-link`}>Quiero ser Punto de Venta</Link>
+              <Link href="/quiero-ser-punto-de-venta" className={`${styles.navLink} nav-link`}>Quiero ser Punto de Venta</Link>
             </li>
           </ul>
 
