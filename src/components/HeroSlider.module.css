@@ -1,0 +1,66 @@
+/* src/components/HeroSlider.module.css */
+.sliderContainer {
+    width: 100%; /* Para que ocupe el ancho del contenedor padre */
+    /* Si quieres que rompa el container de Bootstrap y sea full viewport, necesitarás
+       ajustes más complejos en el layout o posicionamiento absoluto.
+       Por ahora, asumimos full-width DENTRO del container principal de la página. */
+    margin-bottom: 2rem; /* Espacio debajo del slider */
+  }
+  
+
+  
+  .slide {
+    position: relative; /* Necesario para que Image con layout="fill" funcione */
+    width: 100%;
+    height: 450px; /* ALTURA DEL SLIDER - ¡AJUSTA ESTE VALOR A TU GUSTO! (ej. 500px, 60vh, etc.) */
+    background-color: #f0f0f0; /* Color de fondo mientras carga la imagen */
+  }
+  
+  /* Estilos para la paginación y navegación de Swiper (opcional, para personalizar) */
+  /* Swiper añade clases como .swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet */
+  /* Puedes sobreescribirlas aquí o en globals.css usando :global() */
+  /* Ejemplo:
+  .mySwiper :global(.swiper-button-next),
+  .mySwiper :global(.swiper-button-prev) {
+    color: #fff; // Cambia el color de las flechas
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .mySwiper :global(.swiper-button-next::after),
+  .mySwiper :global(.swiper-button-prev::after) {
+    font-size: 1.2rem; // Tamaño de la flecha interna
+  }
+  
+  .mySwiper :global(.swiper-pagination-bullet) {
+    background-color: #fff;
+    opacity: 0.7;
+  }
+  
+  .mySwiper :global(.swiper-pagination-bullet-active) {
+    background-color: #ED1C24; // Color rojo Ronix para el bullet activo
+    opacity: 1;
+  }
+  */
+  
+  /* Estilos para el caption superpuesto (opcional) */
+  .slideCaption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  .slideCaption h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+  }
+  .slideCaption p {
+    margin: 0;
+    font-size: 1rem;
+  }

@@ -1,23 +1,28 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// src/app/page.js
+import Image from 'next/image'; // Lo mantengo por si lo usas para otras cosas
+import HeroSlider from '@/components/HeroSlider'; // Importa tu slider
+// import styles from './page.module.css'; // Si tienes estilos específicos para la home
 
 export default function Home() {
   return (
-    <main style={{ padding: '20px' }}>
-      <h1>Descubre Ronix</h1>
-      <p>Web en Construcción</p>
+    <> {/* Usamos un Fragment <>...</> para no añadir un div extra innecesario si el slider es full-width */}
+      <HeroSlider />
 
-      <section style={{ marginTop: '30px' }}>
-        <h2>Video Prueba</h2>
+      <div className="container text-center py-4 py-md-5"> {/* Contenedor para el título */}
+        <h1 className="display-5 fw-bold"> {/* Clases de Bootstrap para un título grande y centrado */}
+          Ingeniería Alemana, ahora en Argentina
+        </h1>
+        {/* Aquí puedes añadir más contenido a tu página de inicio si quieres */}
+      </div>
+
+      {/* El video que tenías antes, puedes decidir si lo mantienes o cómo lo integras */}
+      {/* <section style={{ marginTop: '30px', padding: '20px' }} className="container">
+        <h2>Video Destacado</h2>
         <video width="560" height="315" controls>
-          {/* Opción 1: Video local desde la carpeta public/videos/ */}
-          {/* <source src="/videos/sample.mp4" type="video/mp4" /> */}
-
-          {/* Opción 2: Video de prueba online (descomenta esta y comenta la anterior si la usas) */}
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
           Tu navegador no soporta la etiqueta de video.
         </video>
-      </section>
-    </main>
+      </section> */}
+    </>
   );
 }
