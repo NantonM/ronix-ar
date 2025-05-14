@@ -1,0 +1,60 @@
+/* src/app/nosotros/nosotros.module.css */
+  .mainTitle {
+    /* text-5xl md:text-6xl de Tailwind son fuentes muy grandes.
+       display-3 de Bootstrap es grande. Puedes ajustarlo más aquí si es necesario.
+       Por ejemplo, para md:text-6xl (que es 3.75rem o 60px con fuente base de 16px):
+    */
+    font-size: 2.8rem; /* Base - Ajusta este valor */
+    line-height: 1.2;
+    /* fw-bold y text-center ya están aplicados con Bootstrap en el JSX */
+    color: #1f2937; /* Un gris oscuro, similar al de prose */
+  }
+  
+  @media (min-width: 768px) { /* md breakpoint de Bootstrap/Tailwind */
+    .mainTitle {
+      font-size: 3.5rem; /* Ajusta este valor para emular text-6xl */
+    }
+  }
+  
+  .contentBlock {
+    max-width: 75ch; /* 'prose' suele limitar el ancho para legibilidad, 75-80 caracteres es un buen valor */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contentBlock p {
+    color: #374151; /* Similar a text-gray-700 de Tailwind. Ajusta el color exacto. */
+    font-size: 1rem; /* O el tamaño que veas en la referencia, ej. 1.125rem para 18px */
+    line-height: 1.75; /* Espaciado de línea típico de 'prose' */
+    margin-bottom: 1.25em; /* Espacio entre párrafos */
+  }
+  
+  .contentBlock strong {
+    /* prose-headings:font-bold también hace strongs más notorios */
+    font-weight: 600; /* O 700 */
+    color: #111827; /* Un color más oscuro para el strong, ajusta */
+  }
+  
+  .contentBlock a, .externalLink { /* Estilo para el enlace a OVNISA y otros externos */
+    color: #2563eb; /* Similar a prose-blue, ajusta */
+    text-decoration: underline;
+  }
+  .contentBlock a:hover, .externalLink:hover {
+    color: #1d4ed8;
+  }
+  
+  .imageWrapper {
+    margin-top: 2rem; /* Ajusta según veas en la referencia */
+    margin-bottom: 2.5rem; /* Ajusta según veas en la referencia */
+  }
+  /* Los estilos de la imagen como width: 100%, height: auto y borderRadius se aplican inline en el JSX
+     o podrían ir aquí si creas una clase específica para la imagen */
+  
+  .subHeading { /* Para el <h3>Nuestra visión</h3> */
+    /* prose-headings:font-bold ya lo cubrimos con fw-bold de Bootstrap en el JSX */
+    font-size: 1.75rem; /* Ajusta según la referencia (h3 en prose) */
+    margin-top: 2.5em; /* Espacio antes del subtítulo */
+    margin-bottom: 1em; /* Espacio después del subtítulo */
+    color: #1f2937; /* Color oscuro para headings */
+    font-weight: bold; /* Asegurar que sea bold */
+  }
