@@ -1,17 +1,11 @@
 /* src/components/Header.module.css */
-.componenHeaderWebsite { /* O el nombre de tu clase principal del header */
+.componenHeaderWebsite {
   background-color: #fff;
-  height: 66px;
-  position: fixed; /* Para que quede fijo arriba */
-  top: 0;
-  left: 0; /* Asegurar que ocupe todo el ancho */
-  right: 0; /* Asegurar que ocupe todo el ancho */
-  z-index: 1050; /* Bootstrap usa z-index altos para modales, etc. 1050 es un valor común para headers fijos */
-  /* El padding: 0 16px; del CSS original podría aplicarse aquí o al div.container interno,
-     dependiendo de si quieres que el fondo blanco llegue a los bordes o solo el contenido.
-     Si tu <div className="container"> ya maneja el espaciado, quizás no necesites el padding aquí.
-  */
-  border-bottom: 1px solid #e0e0e0; /* Un borde inferior sutil, común en headers */
+  height: 56px; /* La altura que hayas decidido */
+  /* position: sticky; top: 0;  Bootstrap ya lo hace con sticky-top */
+  z-index: 1020; /* Bootstrap sticky-top usa z-index: 1020 */
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%; /* Asegurar que ocupe todo el ancho para el sticky */
 }
 
 /* Ajustes para que se parezca más a la estructura de Ronix que no es un navbar-nav típico para todo */
@@ -23,33 +17,34 @@
   /* Para los elementos que contendrán los enlaces o los triggers de mega-menús */
 /*}*/
 
-.navLink { /* Aplicar a Link y a los span que actúan como links */
-  color: #3d3d3d !important; /* Usar !important si Bootstrap interfiere */
-  font-size: 14px; /* Tomado de .menu-btn-to p, .menu-btn-to a */
-  font-weight: 400; /* Tomado de .menu-btn-to p, .menu-btn-to a */
-  padding: 8px 16px; /* Ajusta este padding. El original de Ronix es más específico */
-  text-decoration: none;
-  display: flex;
+.navLink { /* Ajusta el padding y font-size de tus enlaces */
+  color: #3d3d3d !important;
+  font-size: 13px; /* REDUCIDO - prueba con 13px o 14px */
+  font-weight: 400;
+  padding-top: 0.4rem !important;    /* REDUCIDO */
+  padding-bottom: 0.4rem !important; /* REDUCIDO */
+  padding-left: 0.5rem !important;  /* ANTES: 0.75rem */
+  padding-right: 0.5rem !important; /* ANTES: 0.75rem */
+  white-space: nowrap; /* Esto evita que el texto de UN SOLO enlace se parta en dos líneas */
+  display: flex;       /* Asegura alineación si tienes iconos dentro */
   align-items: center;
-  height: 100%; /* Para que el hover del borde ocupe toda la altura */
-  border-bottom: 2px solid transparent; /* Borde inicial transparente */
-  transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Transición suave */
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.navLink:hover { /* Estilo de .menu-btn-to a:hover, .menu-btn-to p:hover */
-  color: #3d3d3d !important; /* Se mantiene el color del texto o se puede poner el rojo si es solo el borde */
+.navLink:hover {
+  color: #bf0000 !important;
   background: #f2f2f2;
-  border-bottom: 2px solid #bf0000; /* Borde rojo en hover */
-  text-shadow: 0 0 1px #3d3d3d;
+  border-bottom: 2px solid #bf0000;
 }
 .navItem > span:hover { /* Para los span que actúan como links */
   color: #ED1C24 !important; /* Rojo Ronix */
   cursor: pointer;
 }
 
-.iconPlaceholder {
-  font-size: 0.8em; /* Para los emojis o texto de iconos */
-  margin-left: 4px;
+.iconPlaceholder { /* Si sigues usando el placeholder ▼ 🌐 🔍 */
+  margin-left: 4px; /* Ajusta este espacio */
+  font-size: 0.7em; /* Puede ayudar a que ocupe menos */
 }
 
 .navActions {
@@ -57,14 +52,9 @@
   margin-left: auto; /* Empuja este grupo a la derecha si el ul no usa me-auto */
 }
 
-.ctaButton .btn { /* Para ser más específico */
-  font-size: 1.1rem;
-  font-weight: 400;
-  padding: 1rem 1.8rem;  
-  background-color: #1e1e1e !important;
-  border-color: #1e1e1e !important;
-  color: #fff !important;
-  /* ... otros estilos si son necesarios ... */
+.ctaButton .btn { /* Ajusta el padding del botón CTA si es necesario */
+  font-size: 13px; /* REDUCIDO */
+  padding: 0.25rem 0.75rem !important; /* Padding más pequeño para el botón */
 }
 .ctaButton .btn:hover {
   background-color: #484848 !important;
@@ -89,3 +79,32 @@
   width: 100%;
 }
 */
+
+@media (max-width: 991.98px) { /* Breakpoint lg de Bootstrap, cuando el menú colapsa si usas navbar-expand-lg */
+  /* Si cambiaste a navbar-expand-md, usa 767.98px */
+.navLink {
+white-space: normal; /* Permitir que el texto se parta en varias líneas en móvil */
+padding: 0.75rem 1rem; /* Más padding vertical para ítems de menú móvil */
+width: 100%; /* Para que ocupen todo el ancho del menú desplegable */
+border-bottom: 1px solid #eee; /* Separador entre ítems móviles */
+}
+.navLink:last-child {
+border-bottom: none;
+}
+
+
+.navActions { /* El contenedor de los botones de la derecha */
+/* Bootstrap ya los apila con flex-column dentro del collapse,
+pero podrías querer más espacio o alineación específica */
+margin-top: 1rem;
+padding-top: 1rem;
+border-top: 1px solid #eee;
+}
+.navActions > div { /* Cada elemento dentro de .navActions */
+margin-bottom: 0.5rem;
+width: 100%; /* Para que los botones ocupen el ancho */
+}
+.navActions .btn {
+width: 100%; /* Botones full-width en móvil */
+}
+}

@@ -27,8 +27,8 @@ export default function Header() {
           <Image
             src="/images/ronix-logo.svg" // Asegúrate que esta ruta sea correcta
             alt="Ronix Tools Logo"
-            width={112} // Ancho del SVG original
-            height={42} // Alto del SVG original
+            width={80} // Ancho del SVG original
+            height={30} // Alto del SVG original
             priority
           />
         </Link>
@@ -77,31 +77,20 @@ export default function Header() {
           <div className={`d-flex align-items-center ${styles.navActions}`}>
             {/* Contenedor para el botón CTA y el icono, alineados horizontalmente */}
             <div className={`${styles.ctaWithIconContainer} d-flex align-items-center`}> {/* Contenedor Flex */}
-              <div className={styles.ctaButton}> {/* Contenedor solo para el botón */}
-                <a
-                  href="https://ronixtools.com/en/pro/representative/"
-                  className="btn btn-danger btn-sm" // El botón ya no necesita ser d-flex
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Quiero ser Revendedor Ronix!
-                </a>
-              </div>
-              <div className="ms-3"> {/* Div para el icono con margen a la izquierda */}
-                <Image
-                  src="/images/german-tech.webp"
-                  alt="German Technology Icon"
-                  width={112} // Ajusta el tamaño según necesites
-                  height={28} // Ajusta el tamaño según necesites
-                />
-              </div>
+            <div className={styles.ctaButton}>
+              {/* CAMBIAMOS EL 'a' POR 'Link' Y EL HREF */}
+              <Link href="/revendedores" className="btn btn-danger btn-sm">
+                ¡Quiero ser revendedor Ronix! {/* CAMBIAMOS EL TEXTO */}
+              </Link>
             </div>
-
-            <div className={`ms-lg-3 ${styles.languageSelect}`}>
-              <button className="btn btn-outline-secondary btn-sm">
-                AR <span className={styles.iconPlaceholder}>🌐</span>
-              </button>
-              {/* El dropdown de idiomas se implementará después */}
+            <div className="ms-3"> 
+              <Image
+                src="/images/german-tech.webp"
+                alt="German Technology Icon"
+                width={100}
+                height={24}
+              />
+            </div>
             </div>
 
             <div className="ms-lg-2 d-none d-lg-inline-block"> {/* Oculto en móvil, visible en desktop */}

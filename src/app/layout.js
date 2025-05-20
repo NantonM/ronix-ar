@@ -23,10 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
+      {/* El body no necesita el padding-top si el header es sticky y está en el flujo */}
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-        <main style={{ flexGrow: 1, paddingTop: '66px', /* padding horizontal ya en el container */ }}> {/* paddingTop para el header fijo */}
-          {children}
+        {/* QUITAMOS el paddingTop del main O lo reducimos a 0 si el header está en el flujo normal */}
+        <main style={{ flexGrow: 1 }} className="container-fluid py-0"> {/* O el padding que desees para el contenido, pero no para el header */}
+            {children}
         </main>
         <Footer />
       </body>
