@@ -60,19 +60,16 @@ export default function Header() {
               </span>
             </li>
             <li className="nav-item">
-              <Link href="/about-us" className={`${styles.navLink} nav-link`}>Nuestra Marca</Link>
+              <Link href="/nosotros" className={`${styles.navLink} nav-link`}>Nosotros</Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/puntos-de-venta" className={`${styles.navLink} nav-link`}>Puntos de Venta</Link>
             </li>
             <li className="nav-item">
               <Link href="/contacto" className={`${styles.navLink} nav-link`}>Contacto</Link>
             </li>
-            <li className={`${styles.navItem} nav-item`}>
-              {/* "Locations" - Por ahora un span, luego un botón/div para el mega-menú */}
-              <span className={`${styles.navLink} nav-link`} role="button" tabIndex={0}>
-                Puntos de Venta <span className={styles.iconPlaceholder}>▼</span>
-              </span>
-            </li>
             <li className="nav-item">
-              <Link href="/blog" className={`${styles.navLink} nav-link`}>Blog</Link>
+              <Link href="/quiero-ser-punto-de-venta" className={`${styles.navLink} nav-link`}>Quiero ser Punto de Venta</Link>
             </li>
           </ul>
 
