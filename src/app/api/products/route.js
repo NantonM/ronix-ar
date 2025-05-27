@@ -1,37 +1,38 @@
-// src/app/api/products/[id]/route.js
+// src/app/api/products/route.js
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabaseClient'; // Asegúrate que la ruta a tu cliente Supabase sea correcta
+import { supabase } from '@/lib/supabaseClient'; // Asegúrate que la ruta sea correcta
 
-// export const runtime = 'edge'; // Comentado temporalmente para desarrollo local
+// Para desarrollo local, si el warning de 'params' persiste en la otra API route
+// y no es un problema funcional, puedes dejar esto comentado o quitarlo.
+// Para Cloudflare Pages, era necesario por el error que te daba.
+// export const runtime = 'edge'; 
 
-export async function GET(request, { params }) { // Firma estándar con desestructuración de params
-  const productId = params.id; 
-
-  // Log inicial para ver si la función es llamada y con qué ID
-  console.log(`[API Route - GET /api/products/${productId}] Iniciando. Product ID recibido: ${productId}`);
-
-  if (!productId || productId === 'undefined') { // Chequeo más robusto por si llega como string "undefined"
-    console.error('[API Route - GET /api/products/[id]] Error: productId es undefined, nulo o inválido.');
-    return NextResponse.json({ message: 'Product ID es requerido y no es válido.' }, { status: 400 });
-  }
-
+export async function GET(request) {
   try {
-    console.log(`[API Route - GET /api/products/${productId}] Realizando consulta a Supabase...`);
-    const { data: productData, error, status } = await supabase
+    console.log("[API GET /api/products] Solicitud recibida.");
+
+    // ---- INICIO DE RETRASO ARTIFICIAL PARA PRUEBA ----
+    await new Promise(resolve => setTimeout(resolve, 3000)); // Espera 3 segundos
+    // ---- FIN DE RETRASO ARTIFICIAL ----
+
+    // Verificamos si hay un filtro de categoría en la URL (opcional)
+    const { searchParams } = new URL(request.url);
+    const categoryFilter = searchParams.get('category');
+    console.log(`[API GET /api/products] Filtro de categoría recibido: ${categoryFilter || 'Ninguno'}`);
+
+    let query = supabase
       .from('products')
       .select(`
         id,
         name,
         description,
         category,
-        product_variants (
+        product_variants ( 
           id, 
           variant_name_suffix, 
-          code, 
-          ean, 
-          units_per_box, 
-          attributes,
-          image_url_variant 
+          code,  
+          ean,   
+          units_per_box 
         ),
         product_images (
           id, 
@@ -40,33 +41,41 @@ export async function GET(request, { params }) { // Firma estándar con desestru
           sort_order
         )
       `)
-      .eq('id', productId)
-      .single(); // .single() espera exactamente una fila o devuelve error
+      .order('name', { ascending: true });
+
+    if (categoryFilter) {
+      console.log(`[API GET /api/products] Aplicando filtro de categoría: ${categoryFilter}`);
+      query = query.eq('category', categoryFilter);
+    } else {
+      // Si no hay filtro de categoría explícito, y tu lógica inicial era
+      // solo para "Herramientas Manuales", puedes añadirlo aquí:
+      // query = query.eq('category', 'Herramientas Manuales');
+      // console.log("[API GET /api/products] Aplicando filtro por defecto: Herramientas Manuales");
+    }
+
+    console.log("[API GET /api/products] Ejecutando consulta a Supabase...");
+    const { data: productsData, error, status, count } = await query;
 
     if (error) {
-      // El error 'PGRST116' (PostgREST) significa "Query returned no rows"
-      if (error.code === 'PGRST116') { 
-        console.log(`[API Route - GET /api/products/${productId}] Producto no encontrado en Supabase (PGRST116).`);
-        return NextResponse.json({ message: 'Producto no encontrado en la base de datos' }, { status: 404 });
-      }
-      // Para otros errores de Supabase
-      console.error(`[API Route - GET /api/products/${productId}] Error de Supabase:`, JSON.stringify(error, null, 2));
-      return NextResponse.json({ message: 'Error interno al consultar la base de datos.', details: error.message }, { status: status || 500 });
+      console.error('[API GET /api/products] Error de Supabase al obtener productos:', JSON.stringify(error, null, 2));
+      return NextResponse.json(
+        { message: 'Error al obtener los productos desde Supabase', error: error.message, details: error.details, hint: error.hint },
+        { status: status || 500 }
+      );
     }
 
-    // .single() debería haber dado error si no se encontró, pero es una buena doble verificación
-    if (!productData) { 
-      console.log(`[API Route - GET /api/products/${productId}] Producto no encontrado (datos nulos después de la consulta).`);
-      return NextResponse.json({ message: 'Producto no encontrado (datos nulos)' }, { status: 404 });
+    console.log(`[API GET /api/products] Productos obtenidos de Supabase: ${productsData ? productsData.length : 0}. Count: ${count}`);
+    
+    if (!productsData || productsData.length === 0) {
+        console.log("[API GET /api/products] No se encontraron productos con los filtros aplicados.");
     }
 
-    console.log(`[API Route - GET /api/products/${productId}] Producto obtenido: ${productData.name}`);
-    return NextResponse.json(productData);
+    return NextResponse.json(productsData || []); // Devuelve array vacío si no hay productos
 
-  } catch (e) { // Error genérico en el bloque try de la función GET
-    console.error(`[API Route - GET /api/products/${productId}] Error catastrófico en el handler:`, e.message, e.stack);
+  } catch (e) { // Este catch es para errores inesperados en la lógica de la función GET
+    console.error('[API GET /api/products] Error catastrófico en el handler:', e.message, e.stack);
     return NextResponse.json(
-      { message: 'Error crítico al procesar la solicitud del producto.', errorDetails: e.message },
+      { message: 'Error interno del servidor al procesar la solicitud de productos', errorDetails: e.message },
       { status: 500 }
     );
   }
