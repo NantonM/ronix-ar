@@ -1,0 +1,34 @@
+id;created_at;product_id;image_url;alt_text;sort_order;is_primary
+23;2025-05-26 15:40:29.583996+00;11;/images/products/Juego_de_4_Pinzas_Seeger_0.webp;Juego de 4 Pinzas Seeger ;0;TRUE
+24;2025-05-26 15:40:29.583996+00;12;/images/products/Crimpadora_Automática_0.webp;Crimpadora Automática ;0;TRUE
+25;2025-05-26 15:40:29.583996+00;13;/images/products/Pelacables_Automático_0.webp;Pelacables Automático;0;TRUE
+26;2025-05-26 15:40:29.583996+00;14;/images/products/Pinza_Pelacable_Automática_0.jpg;Pinza Pelacable Automática ;0;TRUE
+27;2025-05-26 15:40:29.583996+00;15;/images/products/Cortador_de_Cables_de_8_0.jpg;"Cortador de Cables de 8""";0;TRUE
+28;2025-05-26 15:40:29.583996+00;16;/images/products/Pinza_de_Presión_LOCKER_0.webp;Pinza de Presión LOCKER;0;TRUE
+29;2025-05-26 15:40:29.583996+00;16;/images/products/Pinza_de_Presión_LOCKER_1.webp;;1;
+30;2025-05-26 15:40:29.583996+00;16;/images/products/Pinza_de_Presión_LOCKER_2.webp;;2;
+31;2025-05-26 15:40:29.583996+00;17;/images/products/Tenaza_de_Carpintero_Corte_Entero_0.webp;Tenaza de Carpintero Corte Entero;0;TRUE
+32;2025-05-26 15:40:29.583996+00;17;/images/products/Tenaza_de_Carpintero_Corte_Entero_1.webp;;1;
+33;2025-05-26 15:40:29.583996+00;18;/images/products/Tenaza_Rusa_Corte_Entero_0.webp;Tenaza Rusa Corte Entero;0;TRUE
+34;2025-05-26 15:40:29.583996+00;18;/images/products/Tenaza_Rusa_Corte_Entero_1.webp;;1;
+35;2025-05-26 15:40:29.583996+00;19;/images/products/Tijera_Corta_Tubos_65mm_0.webp;Tijera Corta Tubos 65mm;0;TRUE
+36;2025-05-26 15:40:29.583996+00;20;/images/products/Tijera_de_Aviación_Corte_Derecha_0.webp;Tijera de Aviación Corte Derecha;0;TRUE
+37;2025-05-26 15:40:29.583996+00;21;/images/products/Tijera_de_Aviación_Corte_Izquierdo_0 .webp;Tijera de Aviación Corte Izquierdo ;0;TRUE
+38;2025-05-26 15:40:29.583996+00;22;/images/products/Tijera_de_Aviación_Corte_Izquierdo_0 .webp;Tijera de Aviacion Corte Recto;0;TRUE
+39;2025-05-26 15:40:29.583996+00;22;/images/products/Tijera_de_Aviación_Corte_Izquierdo_1 .webp;;1;
+40;2025-05-26 15:40:29.583996+00;22;/images/products/Tijera_de_Aviación_Corte_Izquierdo_2 .webp;;2;
+41;2025-05-26 15:40:29.583996+00;23;/images/products/Martillo_Galponero_c_Mango_de_fibra_0 .webp;Martillo Galponero c/ Mango de fibra ;0;TRUE
+42;2025-05-26 15:40:29.583996+00;23;/images/products/Martillo_Galponero_c_Mango_de_fibra_1 .webp;;1;
+43;2025-05-26 15:40:29.583996+00;23;/images/products/Martillo_Galponero_c_Mango_de_fibra_2 .webp;;2;
+44;2025-05-26 15:40:29.583996+00;24;/images/products/Martillo_Bola_c_Mango_de_fibra_0 .webp;Martillo Bola c/ Mango de fibra;0;TRUE
+45;2025-05-26 15:40:29.583996+00;25;/images/products/Martillo_de_Pena_c_Mango_de_fibra_0 .webp;Martillo de Pena c/ Mango de fibra;0;TRUE
+46;2025-05-26 15:40:29.583996+00;25;/images/products/Martillo_de_Pena_c_Mango_de_fibra_1 .webp;;1;
+47;2025-05-26 15:40:29.583996+00;25;/images/products/Martillo_de_Pena_c_Mango_de_fibra_2 .webp;;2;
+48;2025-05-26 15:40:29.583996+00;26;/images/products/Martillo_de_Matricero_c_Mango_de_fibra_0.webp;Martillo de Matricero c/ Mango de fibra ;0;TRUE
+49;2025-05-26 15:40:29.583996+00;26;/images/products/Martillo_de_Matricero_c_Mango_de_fibra_1.webp;;1;
+50;2025-05-26 15:40:29.583996+00;26;/images/products/Martillo_de_Matricero_c_Mango_de_fibra_2.webp;;2;
+51;2025-05-26 15:40:29.583996+00;27;/images/products/Maza_de_Goma_Negra_c_Mango_de_fibra_0.webp;Maza de Goma Negra c/ Mango de fibra;0;TRUE
+52;2025-05-26 15:40:29.583996+00;27;/images/products/Maza_de_Goma_Negra_c_Mango_de_fibra_1.webp;;1;
+53;2025-05-26 15:40:29.583996+00;27;/images/products/Maza_de_Goma_Negra_c_Mango_de_fibra_2.webp;;2;
+54;2025-05-26 15:40:29.583996+00;28;/images/products/Pinza_Porta_Electrodos_0.webp;Pinza Porta Electrodos;0;TRUE
+55;2025-05-26 15:40:29.583996+00;29;/images/products/Pinza_de_Maza_p_Soldar_0.webp;Pinza de Maza p/ Soldar;0;TRUE
