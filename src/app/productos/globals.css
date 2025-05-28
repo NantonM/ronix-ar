@@ -1,0 +1,51 @@
+/* Ejemplo para src/app/productos/detalleProducto.module.css o globals.css */
+/* Asegúrate de que las clases coincidan con las usadas en el JSX (main-product-swiper, product-thumbnails-swiper) */
+
+/* Estilo para el contenedor del slider principal para darle un aspect ratio o altura */
+
+  
+  .product-thumbnails-swiper {
+    margin-top: 10px;
+    padding: 0; /* Ajusta si es necesario */
+  }
+  
+  .product-thumbnails-swiper .swiper-slide {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 4px; /* Heredado del style inline, pero puedes ponerlo aquí */
+    box-sizing: border-box;
+  }
+  
+  .product-thumbnails-swiper .swiper-slide-thumb-active {
+    opacity: 1;
+    border-color: #007bff; /* O tu color primario */
+  }
+  
+  /* Para asegurar que la navegación y paginación sean visibles */
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: #333; /* Un color oscuro para que se vea sobre imágenes claras */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 30px !important; /* Importante para sobreescribir Swiper */
+    height: 30px !important;
+    margin-top: -15px !important; /* Para centrarlo si la altura es 30px */
+  }
+  :global(.swiper-button-next::after),
+  :global(.swiper-button-prev::after) {
+    font-size: 14px !important; /* Tamaño de la flecha */
+    font-weight: bold;
+  }
+  
+  :global(.swiper-pagination-fraction) {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px !important;
+    width: auto !important;
+  }

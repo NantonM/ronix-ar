@@ -1,0 +1,19 @@
+/* src/components/ProductListClient.module.css */
+
+  .filtersStickyWrapper {
+    top: 80px; /* AJUSTA ESTO a la altura de tu header + un poco de margen */
+    /* Para que el bloque de filtros se quede fijo al hacer scroll */
+    /* Necesitarás asegurarte de que la columna de productos sea más larga para ver el efecto */
+    /* También, la columna de filtros podría necesitar una altura máxima y overflow si su contenido es muy largo */
+    max-height: calc(100vh - 100px); /* Ejemplo: que no sea más alto que el viewport menos un margen */
+    overflow-y: auto; /* Si el contenido de los filtros es muy largo */
+    padding-bottom: 2rem; /* Espacio al final si hay scroll */
+  }
+  
+  .filtersContent {
+    background-color: #f8f9fa; /* Un fondo claro para el bloque de filtros */
+    padding: 1.25rem;
+    border-radius: 0.375rem; /* Bootstrap's default border-radius */
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }

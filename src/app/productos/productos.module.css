@@ -7,4 +7,36 @@
     gap: 20px; /* Espacio entre las tarjetas */
     margin-top: 20px;
   }
-  
+/* Personalizar paginación de Bootstrap (ejemplo con el rojo de Ronix) */
+/* Estas son clases globales de Bootstrap, así que si lo pones en un module.css,
+   necesitarías :global() o aplicarlas de forma diferente.
+   Es más fácil ponerlas en globals.css o directamente usar variables CSS de Bootstrap si tuvieras un tema.
+   Por ahora, si lo pones en productos.module.css, usa :global().
+*/
+
+:global(.pagination .page-item.active .page-link) {
+  background-color: #ED1C24; /* Rojo Ronix */
+  border-color: #D90000; /* Un rojo un poco más oscuro para el borde */
+  color: white;
+}
+
+:global(.pagination .page-item.active .page-link:hover) {
+  background-color: #BF0000; /* Rojo más oscuro para hover en activo */
+  border-color: #A60000;
+}
+
+:global(.pagination .page-link) {
+  color: #ED1C24; /* Color de los números de página */
+}
+
+:global(.pagination .page-link:hover) {
+  background-color: #fce7e8; /* Un fondo rojo muy claro para hover */
+  color: #BF0000;
+  border-color: #f8c1c3;
+}
+
+:global(.pagination .page-item.disabled .page-link) {
+  color: #6c757d;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}

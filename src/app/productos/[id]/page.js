@@ -1,50 +1,121 @@
 // src/app/productos/[id]/page.js
-import React from 'react'; // No necesitamos "use client" si getProduct se ejecuta en servidor
+"use client"; 
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// import styles from './detalleProducto.module.css'; // Descomenta si tienes estilos específicos
 
-// Función para obtener los datos del producto
-async function getProduct(id) {
-  const baseUrl = process.env.URL || 'http://localhost:3000';
-  console.log(`[Page - getProduct] Fetching product with ID: ${id} from ${baseUrl}/api/products/${id}`);
-  const res = await fetch(`${baseUrl}/api/products/${id}`, {
-    cache: 'no-store' // Para desarrollo, siempre obtener datos frescos
-  });
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Thumbs, FreeMode, Pagination, EffectFade } from 'swiper/modules';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
+import 'swiper/css/free-mode';
+import 'swiper/css/effect-fade';
+
+// import styles from './detalleProducto.module.css';
+
+async function fetchProductById(id) {
+  const apiUrl = `/api/products/${id}`; 
+  console.log(`[Page - fetchProductById] Fetching product with ID: ${id} from ${apiUrl}`);
+  const res = await fetch(apiUrl, { cache: 'no-store' });
   if (!res.ok) {
-    // Si la API devuelve un error (ej. 404, 500), lo capturamos
-    const errorData = await res.json().catch(() => ({ message: `Error HTTP ${res.status}` }));
-    console.error(`[Page - getProduct] API response not OK for ID ${id}:`, res.status, errorData);
+    let errorData = { message: `Error HTTP ${res.status}` };
+    let responseBody = await res.text();
+    try {
+      if (res.headers.get('content-type')?.includes('application/json')) {
+        errorData = JSON.parse(responseBody);
+      } else {
+        errorData.message = responseBody || errorData.message;
+      }
+    } catch (e) { 
+      console.warn(`[Page - fetchProductById] API response for ID ${id} was not JSON. Status: ${res.status}. Body: ${responseBody}`);
+    }
     throw new Error(errorData.message || `Falló la carga del producto. Status: ${res.status}`);
   }
   try {
     return await res.json();
   } catch (e) {
-    console.error(`[Page - getProduct] Error parsing JSON for product ID ${id}:`, e);
     throw new Error('La respuesta del producto no es un JSON válido.');
   }
 }
 
-// Esta página es un Server Component por defecto y puede ser async
-export default async function ProductoDetailPage({ params }) {
-  const productId = params.id; // params.id viene de la URL para Server Components
-  let producto;
-  let errorOcurrido = null;
+export default function ProductoDetailPage({ params }) {
+  const productId = params.id; 
 
-  console.log(`[Page - ProductoDetailPage] Rendering for productId: ${productId}`);
+  const [producto, setProducto] = useState(null);
+  const [errorOcurrido, setErrorOcurrido] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  try {
-    producto = await getProduct(productId);
-  } catch (error) {
-    console.error(`[Page - ProductoDetailPage] Error al obtener producto:`, error);
-    errorOcurrido = error.message || "Error desconocido al cargar el producto.";
-  }
+  useEffect(() => {
+    // console.log(`[PageEffect] Running for productId: ${productId}. Current isLoading: ${isLoading}, errorOcurrido: ${errorOcurrido}, producto: ${!!producto}`);
+    
+    async function loadProduct() {
+      if (!productId || productId === 'undefined' || typeof productId !== 'string' || productId.trim() === '') {
+        console.log("[PageEffect] Invalid productId in useEffect, setting error.");
+        setErrorOcurrido("ID de producto no válido.");
+        setIsLoading(false);
+        return;
+      }
+      
+      console.log(`[PageEffect] Setting isLoading to true for productId: ${productId}`);
+      setIsLoading(true); // Siempre setear al inicio del fetch
+      setErrorOcurrido(null); 
+      setProducto(null); 
 
-  if (errorOcurrido) {
+      try {
+        console.log(`[PageEffect] Calling fetchProductById for productId: ${productId}`);
+        const productData = await fetchProductById(productId);
+        console.log("[PageEffect] productData received from fetch:", productData);
+
+        if (!productData || Object.keys(productData).length === 0) {
+          console.log("[PageEffect] Product data is empty/null, setting error.");
+          setErrorOcurrido("Producto no encontrado (la API no devolvió datos).");
+        } else {
+          console.log("[PageEffect] Product data found, setting producto state.");
+          setProducto(productData);
+        }
+      } catch (error) {
+        console.error(`[PageEffect] Error fetching product:`, error);
+        setErrorOcurrido(error.message || "Error desconocido al cargar el producto.");
+      } finally {
+        console.log("[PageEffect] Setting isLoading to false.");
+        setIsLoading(false);
+      }
+    }
+    
+    // Solo ejecutar loadProduct si productId tiene un valor.
+    if (productId && productId !== 'undefined' && productId.trim() !== '') {
+        loadProduct();
+    } else {
+        console.log("[PageEffect] productId is invalid, not calling loadProduct.");
+        setErrorOcurrido("ID de producto no proporcionado o inválido.");
+        setIsLoading(false);
+    }
+  }, [productId]);
+
+  console.log(`[PageRender] Rendering. isLoading: ${isLoading}, errorOcurrido: ${errorOcurrido}, producto: ${!!producto}`);
+
+  if (isLoading) {
+    console.log("[PageRender] Showing Loading UI");
     return (
       <div className="container text-center py-5">
-        <h1 className="display-4">Error al Cargar el Producto</h1>
+        <div className="spinner-border text-primary" role="status" style={{ width: '3rem', height: '3rem' }}>
+          <span className="visually-hidden">Cargando producto...</span>
+        </div>
+        <p className="mt-3 lead">Cargando detalles del producto...</p>
+      </div>
+    );
+  }
+  
+  if (errorOcurrido) {
+    console.log("[PageRender] Showing Error UI:", errorOcurrido);
+    return (
+      <div className="container text-center py-5">
+        <h1 className="display-4">Error al Cargar</h1>
         <p className="lead">{errorOcurrido}</p>
         <Link href="/productos" className="btn btn-primary btn-lg mt-3">
           Volver a Productos
@@ -53,11 +124,13 @@ export default async function ProductoDetailPage({ params }) {
     );
   }
 
-  if (!producto || Object.keys(producto).length === 0) { // Chequeo más robusto por si producto es {} o null
+  // Esta es la guarda más importante antes de acceder a producto.details
+  if (!producto) { 
+    console.log("[PageRender] Showing 'Producto no encontrado' UI because producto is null/falsy.");
     return (
       <div className="container text-center py-5">
         <h1 className="display-4">Producto no encontrado</h1>
-        <p className="lead">El producto que buscas no existe o no está disponible en este momento.</p>
+        <p className="lead">El producto que buscas no existe o no está disponible (UI - !producto).</p>
         <Link href="/productos" className="btn btn-primary btn-lg mt-3">
           Volver a Productos
         </Link>
@@ -65,77 +138,97 @@ export default async function ProductoDetailPage({ params }) {
     );
   }
 
-  const detallesLista = producto.details ? producto.details.split(',').map(detail => detail.trim()) : [];
+  // Si llegamos aquí, producto NO es null y no hay errorOcurrido, isLoading es false.
+  console.log("[PageRender] Proceeding to render product details. Producto:", producto);
 
-  // Determinar imagen principal: primero de product_images, luego main_image_url del producto, luego placeholder
-  let mainImageUrl = 'https://via.placeholder.com/600x450.png?text=No+Image';
-  if (producto.product_images && producto.product_images.length > 0) {
-    // Podrías buscar la imagen con sort_order = 0 o is_primary = true si tuvieras esos campos
-    mainImageUrl = producto.product_images[0].image_url;
-  } else if (producto.main_image_url) { // Fallback a main_image_url de la tabla products (si existe)
-    mainImageUrl = producto.main_image_url;
-  }
+  const detallesLista = (producto.details && typeof producto.details === 'string') 
+    ? producto.details.split(',').map(detail => detail.trim()) 
+    : (Array.isArray(producto.details) ? producto.details : []);
   
-  const mainImageAlt = producto.name || "Imagen principal del producto";
+  const productImagesForGallery = (producto.product_images && producto.product_images.length > 0)
+    ? [...producto.product_images].sort((a, b) => (a.sort_order || 0) - (b.sort_order || 0))
+    : (producto.main_image_url ? [{ id: 'main_img_fallback', image_url: producto.main_image_url, alt_text: producto.name, sort_order: 0 }] : []);
 
+  const firstVariant = (producto.product_variants && producto.product_variants.length > 0) 
+    ? producto.product_variants[0] 
+    : null;
+  
+  // El resto del JSX para mostrar el producto, Swiper, etc., va aquí.
+  // Asegúrate de que este JSX esté completo y correcto como lo teníamos.
   return (
     <div className="container mt-4 mb-5">
-      <div className="row g-5">
+      {/* ... (Pega aquí el JSX completo de la vista de detalle que teníamos antes, 
+             asegurándote de que usa 'producto' para los datos y 'productImagesForGallery' para el Swiper) ... */}
+      <div className="row g-md-5">
         <div className="col-lg-7">
-          <div className="mb-4" style={{
-            position: 'relative', width: '100%', paddingTop: '75%', 
-            backgroundColor: '#f8f9fa', borderRadius: '0.375rem'
-          }}>
-            <Image
-              src={mainImageUrl}
-              alt={mainImageAlt}
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 60vw"
-            />
-          </div>
-
-          {producto.product_images && producto.product_images.length > (producto.main_image_url || (producto.product_images && producto.product_images[0].image_url === mainImageUrl) ? 1 : 0) && (
-            <div className="mb-4">
-              <h4 className="mb-3">Más Vistas</h4>
-              <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
-                {producto.product_images.map((img, index) => {
-                  // No mostrar la imagen principal de nuevo en la galería si ya se está mostrando
-                  if (img.image_url === mainImageUrl && (producto.main_image_url || index === 0)) {
-                    return null;
-                  }
-                  return (
-                    <div key={img.id || index} className="col">
-                      <div style={{ position: 'relative', width: '100%', paddingTop: '100%', backgroundColor: '#f8f9fa', borderRadius: '0.25rem', overflow: 'hidden' }}>
-                        <Image
-                          src={img.image_url}
-                          alt={img.alt_text || `${producto.name} - vista ${index + 1}`}
-                          fill
-                          style={{ objectFit: 'contain' }}
-                          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 15vw"
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+          {productImagesForGallery.length > 0 ? (
+            <>
+              <Swiper
+                modules={[Navigation, Thumbs, Pagination, FreeMode, EffectFade]}
+                spaceBetween={10}
+                navigation={true}
+                pagination={{ clickable: true, type: 'fraction' }}
+                thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                effect="fade"
+                fadeEffect={{ crossFade: true }}
+                className="mb-3 main-product-swiper"
+                style={{'--swiper-navigation-color': '#212529', '--swiper-pagination-color': '#212529', aspectRatio: '4/3', backgroundColor: '#f8f9fa', borderRadius: '0.375rem', overflow: 'hidden'}}
+              >
+                {productImagesForGallery.map((img, index) => (
+                  <SwiperSlide key={img.id || `slide-${index}`}>
+                    <Image
+                      src={img.image_url || 'https://via.placeholder.com/600x450.png?text=No+Image'}
+                      alt={img.alt_text || `${producto.name} - vista ${index + 1}`}
+                      layout="fill"
+                      objectFit="contain"
+                      priority={index === 0}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 60vw"
+                      onError={(e) => { console.warn(`Error cargando imagen: ${img.image_url}`); e.target.src = 'https://via.placeholder.com/600x450.png?text=Error+Img';}}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              {productImagesForGallery.length > 1 && (
+                <Swiper
+                  onSwiper={setThumbsSwiper}
+                  loop={false}
+                  spaceBetween={10}
+                  slidesPerView={4}
+                  freeMode={true}
+                  watchSlidesProgress={true}
+                  modules={[FreeMode, Navigation, Thumbs]}
+                  className="product-thumbnails-swiper"
+                >
+                  {productImagesForGallery.map((img, index) => (
+                    <SwiperSlide key={img.id || `thumb-${index}`} style={{ height: '80px', cursor: 'pointer', border: '1px solid #ddd', borderRadius: '4px', overflow: 'hidden'}}>
+                       <Image
+                        src={img.image_url || 'https://via.placeholder.com/100x100.png?text=No+Thumb'}
+                        alt={`Thumbnail ${img.alt_text || producto.name}`}
+                        layout="fill"
+                        objectFit="cover"
+                        sizes="10vw"
+                        onError={(e) => { console.warn(`Error cargando thumbnail: ${img.image_url}`); e.target.src = 'https://via.placeholder.com/100x100.png?text=Error';}}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
+            </>
+          ) : (  
+            <div style={{ position: 'relative', width: '100%', paddingTop: '75%', backgroundColor: '#f8f9fa', borderRadius: '0.375rem' }}>
+              <Image src={'https://via.placeholder.com/600x450.png?text=No+Image'} alt="No hay imagen disponible" layout="fill" objectFit="contain" />
             </div>
           )}
         </div>
-
         <div className="col-lg-5">
-          <h1 className="display-5 fw-bold mb-3">{producto.name}</h1>
-          {/* Mostrar código y EAN de la primera variante como ejemplo */}
-          {producto.product_variants && producto.product_variants.length > 0 && (
-            <>
-              {producto.product_variants[0].code && <p className="text-muted mb-1"><small>Código: {producto.product_variants[0].code}</small></p>}
-              {producto.product_variants[0].ean && <p className="text-muted mb-3"><small>EAN: {producto.product_variants[0].ean}</small></p>}
-            </>
-          )}
-          
-          <p className="lead mb-4">{producto.description}</p>
-          
+          <h1 className="display-6 fw-bold mb-3">{producto.name}</h1>
+          {firstVariant && firstVariant.code && 
+            <p className="text-muted mb-1"><small>Código: {firstVariant.code}</small></p>
+          }
+          {firstVariant && firstVariant.ean &&
+            <p className="text-muted mb-3"><small>EAN: {firstVariant.ean}</small></p>
+          }
+          <p className="lead fs-6 mb-4">{producto.description}</p>
           {detallesLista.length > 0 && (
             <div className="card mb-4">
               <div className="card-header fw-bold">Detalles Técnicos</div>
@@ -146,12 +239,9 @@ export default async function ProductoDetailPage({ params }) {
               </ul>
             </div>
           )}
-
-          {/* Mostrar unidades por caja de la primera variante como ejemplo */}
-          {producto.product_variants && producto.product_variants.length > 0 && typeof producto.product_variants[0].units_per_box !== 'undefined' && (
-            <p><strong>Unidades por Caja:</strong> {producto.product_variants[0].units_per_box}</p>
+          {firstVariant && typeof firstVariant.units_per_box !== 'undefined' && (
+            <p><strong>Unidades por Caja:</strong> {firstVariant.units_per_box}</p>
           )}
-          
           <Link href="/productos" className="btn btn-outline-secondary mt-4">
             &larr; Volver a la lista de Productos
           </Link>

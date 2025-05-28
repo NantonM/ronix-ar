@@ -53,11 +53,8 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="mainNavbarContent">
           {/* Usamos ms-auto en el ul para empujar los items de la derecha, o envolvemos en divs y usamos justify-content-between */}
           <ul className={`navbar-nav me-auto mb-2 mb-lg-0 ${styles.navbarNav}`}>
-            <li className={`${styles.navItem} nav-item`}>
-              {/* "Products" - Por ahora un span, luego un botón/div para el mega-menú */}
-              <span className={`${styles.navLink} nav-link`} role="button" tabIndex={0}>
-                Productos <span className={styles.iconPlaceholder}>▼</span>
-              </span>
+            <li className="nav-item">
+            <Link href="/productos" className={`${styles.navLink} nav-link`}>Productos</Link>
             </li>
             <li className="nav-item">
               <Link href="/nosotros" className={`${styles.navLink} nav-link`}>Nosotros</Link>
@@ -67,9 +64,6 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <Link href="/contacto" className={`${styles.navLink} nav-link`}>Contacto</Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/quiero-ser-punto-de-venta" className={`${styles.navLink} nav-link`}>Quiero ser Punto de Venta</Link>
             </li>
           </ul>
 
