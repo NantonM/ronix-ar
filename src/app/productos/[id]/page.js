@@ -17,6 +17,8 @@ import 'swiper/css/effect-fade';
 
 // import styles from './detalleProducto.module.css';
 
+export const runtime = 'edge';
+
 async function fetchProductById(id) {
   const apiUrl = `/api/products/${id}`; 
   console.log(`[Page - fetchProductById] Fetching product with ID: ${id} from ${apiUrl}`);

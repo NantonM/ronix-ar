@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabaseClient';
 
 // Asegúrate de que esta línea esté COMENTADA o ELIMINADA para desarrollo local
-// export const runtime = 'edge'; 
+export const runtime = 'edge'; 
 
 export async function GET(request, { params }) { // Firma estándar
   const productId = params.id; // Acceso directo

@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabaseClient'; // Asegúrate que la ruta sea c
 // Para desarrollo local, si el warning de 'params' persiste en la otra API route
 // y no es un problema funcional, puedes dejar esto comentado o quitarlo.
 // Para Cloudflare Pages, era necesario por el error que te daba.
-// export const runtime = 'edge'; 
+export const runtime = 'edge'; 
 
 export async function GET(request) {
   try {

@@ -2,6 +2,8 @@
 import ProductListClient from '@/components/ProductListClient';
 // import styles from './productos.module.css';
 
+export const runtime = 'edge';
+
 async function getProducts() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   const res = await fetch(`${baseUrl}/api/products`, { cache: 'no-store' });
