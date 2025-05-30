@@ -25,8 +25,8 @@ export default function ProductListClient({ allProducts }) {
                           product.product_variants[0].code &&
                           product.product_variants[0].code.toLowerCase().includes(lowerSearchTerm);
         const eanMatch = product.product_variants && product.product_variants.length > 0 &&
-                         product.product_variants[0].ean &&
-                         product.product_variants[0].ean.toLowerCase().includes(lowerSearchTerm);
+                          product.product_variants[0].ean &&
+                          String(product.product_variants[0].ean).toLowerCase().includes(lowerSearchTerm);
         return nameMatch || codeMatch || eanMatch;
       });
     }
