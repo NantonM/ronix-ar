@@ -1,104 +1,80 @@
 id;created_at;name;description;category
-11;2025-05-26 15:40:29.583996+00;Juego de 4 Pinzas Seeger ;"Este set incluye 4 pinzas Seeger de 7"":
-1 pinza recta para cerrar.
-1 pinza recta para abrir.
-1 pinza curva para cerrar.
-1 pinza curva para abrir.";Herramientas Manuales
-12;2025-05-26 15:40:29.583996+00;Crimpadora Automática ;"Herramienta multifunción diseñada para crimpar conectores 8P/6P/4P, pelar y
-cortar cables planos o redondos.
-Ideal para conectores modulares Cat 5/6 y RJ-45/11/12.
-Capaz de cortar cables de red y pelar cables redondos Cat 5/6.
-Borde afilado de acero SK5 de alta calidad que garantiza cortes y pelados rápidos
-y eficientes.";Herramientas Manuales
-13;2025-05-26 15:40:29.583996+00;Pelacables Automático;"Hojas n.° 45 endurecidas de alta calidad que ofrecen un máximo rendimiento y
-una vida útil prolongada.
-El pelador de cables eficiente permite pelar rápidamente cables de 0,25 a 6 mm²
-con mínimo esfuerzo.
-Incluye marcas de calibre de cable fáciles de leer.
-Ideal para aplicaciones industriales y domésticas.";Herramientas Manuales
-14;2025-05-26 15:40:29.583996+00;Pinza Pelacable Automática ;"Herramienta multifunción para pelar cables de 10-24 AWG (0,2-6 mm²), cortar
-cables y alambres de 10-24 AWG (0,2-6 mm²) y crimpar terminales de 10-22
-AWG (0,5-6 mm²).
-La regla guía permite un ajuste preciso con un solo toque, optimizando la
-eficiencia y asegurando un pelado más exacto y uniforme.";Herramientas Manuales
-15;2025-05-26 15:40:29.583996+00;"Cortador de Cables de 8""";"Filo afilado fabricado en acero n.° 55 de alta calidad para cortes rápidos y
-eficientes.
-Ideal para cortar aluminio, cobre, alambres y cables de acero.
-El mango de PVC ofrece un agarre cómodo para el usuario.
-Ampliamente utilizado en ensamblaje de componentes eléctricos,
-mantenimiento y corte de cables.";Herramientas Manuales
-16;2025-05-26 15:40:29.583996+00;Pinza de Presión LOCKER;"Fabricado con materiales de alta calidad para garantizar máxima
-resistencia en aplicaciones industriales.
-El revestimiento de níquel en el cuerpo asegura una vida útil prolongada y
-reduce los daños durante trabajos de alta presión.
-El diseño avanzado optimiza el rendimiento y la comodidad.";Herramientas Manuales
-17;2025-05-26 15:40:29.583996+00;Tenaza de Carpintero Corte Entero;"Bordes de corte de acero CR-V de precisión, endurecidos y templados para un
-rendimiento óptimo.
-Mandíbulas afiladas que permiten torcer y cortar cables de diferentes tamaños sin
-necesidad de ejercer fuerza adicional.
-Fabricado con acero de alta calidad para un mejor rendimiento y durabilidad.
-Corte completo y preciso. Ideal para uso en carpintería y mantenimiento.";Herramientas Manuales
-18;2025-05-26 15:40:29.583996+00;Tenaza Rusa Corte Entero;"Bordes de corte de acero CR-V de precisión, endurecidos y templados para un
-rendimiento óptimo.
-Mandíbulas afiladas que permiten torcer y cortar cables de diferentes tamaños
-sin necesidad de aplicar fuerza adicional.
-Fabricado con acero de alta calidad para un mejor rendimiento y durabilidad.
-Corte completo y preciso. Ideal para uso en construcción y mantenimiento.";Herramientas Manuales
-19;2025-05-26 15:40:29.583996+00;Tijera Corta Tubos 65mm;"Corte: 0 mm - 65 mm.
-Material de la hoja: SK5.
-Material del cuerpo: Aluminio ?00.
-Ideal para cortar tuberías y caños de plástico, PVC, CPVC, PE, PEX, PPR
-y OD.";Herramientas Manuales
-20;2025-05-26 15:40:29.583996+00;Tijera de Aviación Corte Derecha;"Hojas fabricadas en acero al cromo vanadio con mordazas dentadas para
-sujetar el material y proporcionar un corte limpio.
-Capaz de cortar chapas de acero laminado en frío de hasta 1,2 mm y acero
-inoxidable hasta 0,7 mm.
-El diseño especial de las hojas previene la corrosión de las mordazas y
-mejora la precisión del corte.";Herramientas Manuales
-21;2025-05-26 15:40:29.583996+00;Tijera de Aviación Corte Izquierdo ;"Hojas elaboradas en acero al cromo vanadio con mordazas dentadas que
-sostienen el material y aseguran un corte limpio.
-Capaz de cortar chapas de acero laminado en frío de hasta 1,2 mm y acero
-inoxidable hasta 0,7 mm.
-El diseño especial de las hojas previene la corrosión de las mordazas y
-mejora la precisión del corte.";Herramientas Manuales
-22;2025-05-26 15:40:29.583996+00;Tijera de Aviacion Corte Recto;"Hojas fabricadas en acero al cromo vanadio con hojas dentadas para
-sujetar el material y garantizar un corte limpio.
-Capaz de cortar chapas de acero laminado en frío de hasta 1,2 mm y acero
-inoxidable hasta 0,7 mm.
-El diseño especial de las hojas previene la corrosión de las mordazas y
-mejora la precisión del corte.";Herramientas Manuales
-23;2025-05-26 15:40:29.583996+00;Martillo Galponero c/ Mango de fibra ;"La cabeza de acero al carbono pulido proporciona máxima resistencia y
-durabilidad, lo que se traduce en una vida útil más prolongada.
-El mango de goma antideslizante ofrece un agarre firme, permitiendo una
-manipulación cómoda y una excelente absorción de impactos.
-El núcleo de fibra de vidrio en el mango reduce la vibración.";Herramientas Manuales
-24;2025-05-26 15:40:29.583996+00;Martillo Bola c/ Mango de fibra;"El mango con núcleo de fibra de vidrio reduce la vibración.
-Recubierto de polipropileno para ofrecer máxima comodidad al sujetarlo.
-Herramienta duradera y resistente, adecuada para diversos tipos de usos.";Herramientas Manuales
-25;2025-05-26 15:40:29.583996+00;Martillo de Pena c/ Mango de fibra;"La cabeza de acero al carbono pulido ofrece máxima resistencia y
-durabilidad, asegurando una vida útil prolongada.
-El mango de goma antideslizante proporciona un agarre firme, permitiendo
-una manipulación cómoda y una excelente absorción de impactos.
-El núcleo de fibra de vidrio en el mango reduce las vibraciones.";Herramientas Manuales
-26;2025-05-26 15:40:29.583996+00;Martillo de Matricero c/ Mango de fibra ;"La cabeza del martillo de doble cara está fabricada con plástico y caucho
-de alta calidad, ofreciendo excelente elasticidad y resistencia al desgaste.
-El diseño de unión de la cabeza al mango utiliza una resina epoxi no
-desmontable, lo que incrementa la durabilidad.
-Tanto la cabeza como el mango están reforzados para prolongar la vida útil
-del martillo.";Herramientas Manuales
-27;2025-05-26 15:40:29.583996+00;Maza de Goma Negra c/ Mango de fibra;"La cabeza del martillo está fabricada en caucho de alta calidad, ofreciendo
-buena elasticidad y resistencia al desgaste.
-El mango de fibra de vidrio de alta resistencia cuenta con un agarre de
-goma antideslizante que ayuda a absorber las vibraciones.
-La cabeza de goma no daña la superficie al golpear.";Herramientas Manuales
-28;2025-05-26 15:40:29.583996+00;Pinza Porta Electrodos;"Diseño liviano y ergonómico, adaptado a la mano del soldador, incluso en
-espacios reducidos.
-Máxima conductividad: mordaza de aleación de cobre que optimiza la
-conductividad y la resistencia.
-Clasificación de amperaje: 300 A.";Herramientas Manuales
-29;2025-05-26 15:40:29.583996+00;Pinza de Maza p/ Soldar;"Con excelente resistencia al desgaste, esta pinza de maza de soldadura
-está procesada mediante galvanoplastia.
-Gracias al cobre de alta calidad, ofrece una gran conductividad y se
-presenta como un reemplazo ideal para soldadores manuales, con un
-rendimiento estable y alta confiabilidad.
-Clasificación de amperaje: 300 A.";Herramientas Manuales
+30;2025-06-1 15:40:29.583996+00;Piqueta para Soldador;Esta piqueta para soldar cuenta con una punta cónica y un bisel doble en el extremo, lo que lo hace ideal para soldadores. Es perfecto para su uso en sitios de construcción, mantenimiento de automóviles, así como para romper hielo y golpear escoria de ladrillo. También puede ser utilizado como martillo salvavidas.;Herramientas Manuales
+31;2025-06-1 15:40:29.583996+00;Set de 6 Escuadras Magnéticas;El set de escuadras incluye: 2 piezas que soportan hasta 12 kg y 4 piezas que soportan hasta 4 kg. Fabricadas en acero A3 de alta calidad, con un imán potente, estas escuadras son duraderas, resistentes al óxido y la corrosión. Ángulos de sujeción de 3 pulgadas: 45°, 90°, 135° y 180°.;Herramientas Manuales
+32;2025-06-1 15:40:29.583996+00;Escuadra Magnética;"Fabricadas en acero A3 de alta calidad con un imán potente, estos imanes
+para soldadores son duraderos, de larga duración y resistentes al óxido y la
+corrosión.
+Diseñados para sujetar piezas de trabajo durante el proceso de soldadura.
+Ángulos de sujeción de 3 pulgadas: 45°, 90°, 135° y 180°.";Herramientas Manuales
+33;2025-06-1 15:40:29.583996+00;Remachadora de Mano ECO;"Diseñada para trabajar con remaches de aluminio de 2,4 a 4,8 mm.
+Sistema de expulsión de remaches para mayor facilidad de uso.
+Mordazas tratadas térmicamente para una mayor vida útil.
+Diseño ergonómico con empuñadura recubierta en PVC antideslizante.
+Incluye llave para cambiar rápidamente los diferentes picos.";Herramientas Manuales
+34;2025-06-1 15:40:29.583996+00;Remachadora de Mano PRO ;"Diseñada para trabajar con remaches de aluminio de 2,4 a 4,8 mm.
+Sistema de expulsión de remaches para facilitar el trabajo.
+Fabricada en aluminio y aleación de cromo molibdeno con dureza de 55-56 HRC.
+Mordazas tratadas térmicamente para una mayor durabilidad.
+Diseño ergonómico con empuñadura recubierta en PVC antideslizante.
+Incluye llave para cambiar rápidamente los diferentes picos.";Herramientas Manuales
+35;2025-06-1 15:40:29.583996+00;Remachadora Manual Cabezal 360°;"Adaptador de remache en tamaños de 2,4, 3,2, 4,0 y 4,8 mm.
+La pistola remachadora está fabricada en aluminio de alta calidad.
+Equipada con una botella recolectora para capturar los clavos remachados.
+Cabezal giratorio de 360° para facilitar el trabajo en lugares de difícil acceso.";Herramientas Manuales
+36;2025-06-1 15:40:29.583996+00;"Remachadora Tijera de 13""";"Adaptador de remache en tamaños de 2,4/3,2/4,0/4,8/6,4 mm.
+La pistola remachadora está fabricada con acero AL+A3 de alta calidad.
+El mango antideslizante está hecho de PVC de alta calidad, ofreciendo un agarre
+seguro.
+La pistola remachadora incluye una botella recolectora para capturar los clavos
+remachados.";Herramientas Manuales
+37;2025-06-1 15:40:29.583996+00;Sargento Tipo F;"Las mordazas de sujeción están fabricadas en hierro fundido de alta calidad.
+Las tapas de plástico previenen marcas de rayones y puntos de presión en la
+pieza de trabajo.
+El mango de madera proporciona un agarre cómodo y una sujeción potente.";Herramientas Manuales
+38;2025-06-1 15:40:29.583996+00;Serrucho Profesional;"Los materiales de alta calidad, el procesamiento cuidadoso y la mecánica precisa
+garantizan un trabajo profesional y una larga vida útil.
+La tecnología de sierra con dientes afilados utiliza tres ángulos de corte, permitiendo
+un corte hasta un 50% más rápido que las sierras convencionales.
+El diseño de dientes endurecidos por inducción mantiene el filo hasta cinco veces
+más que los dientes estándar.";Herramientas Manuales
+39;2025-06-1 15:40:29.583996+00;Set de Formones p/ Madera 4pz CR-V;"Incluye 4 cinceles de diferentes tamaños: 6 mm, 12 mm, 19 mm y 25 mm, para
+cubrir diversas necesidades de carpintería.
+Las hojas, fabricadas en acero al cromo vanadio forjado, son duraderas y tratadas
+térmicamente. Gracias al uso de acero al cromo vanadio especial, el juego de
+cinceles es particularmente estable, resistente al calor y mantiene el filo durante
+más tiemp?.";Herramientas Manuales
+40;2025-06-1 15:40:29.583996+00;"Set de Fresas p/Router 1/4"" ";"El juego de brocas para enrutador está fabricado con acero al carbono duro y
+carburo de tungsteno, lo que garantiza una mayor durabilidad.
+Incluye varios tipos de cortadores para lograr diferentes efectos, ideal para
+proyectos de carpintería, bordes, recortes, ranuras y vetas de madera.
+Su diseño de ángulo de corte optimizado y la superficie de espejo lisa facilitan una
+rápida eliminación de virutas.
+Código Descripción";Herramientas Manuales
+41;2025-06-1 15:40:29.583996+00;"Arco de Sierra Eco 12"" 300mm ";"Los mangos de ABS recubiertos de goma ofrecen un manejo seguro,
+incluso en entornos húmedos y fnos.
+Equipado con pasadores resistentes para facilitar la instalación de la hoja.
+Marco de acero para mayor durabilidad.";Herramientas Manuales
+42;2025-06-1 15:40:29.583996+00;"Arco de Sierra Industrial 12"" 300mm ";"Los mangos de aluminio recubiertos de goma permiten un manejo seguro,
+incluso en entornos húmedos y fríos.
+Ideal para cortar madera verde y seca, plástico y otros materiales.
+Equipado con pasadores resistentes para facilitar la instalación de la hoja.
+Diseño popular a nivel internacional con marco de acero para mayor
+durabilidad.";Herramientas Manuales
+43;2025-06-1 15:40:29.583996+00;Pistola Aplicadora de Silicona;"Pistola aplicadora de silicona liviana y fácil de usar, con acción silenciosa y suave, y
+un gatillo cómodo.
+Permite una operación sin fatiga, incluso durante períodos largos de uso.";Herramientas Manuales
+44;2025-06-1 15:40:29.583996+00;Corta Vidrios Tipo Lapiz de Carburo de Tungsteno ;"Equipada con 6 piedras de diamante de carburo de tungsteno para un corte rápido y
+continuo.
+Cabezal de corte de vidrio reemplazable.
+Diseño exclusivo en la parte operativa para realizar cortes de alta calidad con una
+profundidad de hasta 0,2 mm.";Herramientas Manuales
+45;2025-06-1 15:40:29.583996+00;Sopapa Simple p/Vidrio 115mm;"Ventosas de alta resistencia, que funcionan en un rango de temperatura de
+-10 °C a 45 °C y pueden levantar objetos de hasta 45 kg.
+Equipadas con palanca de liberación y bloqueo para mayor seguridad.
+Adecuadas para levantar y mover vidrio, pisos, ventanas, baldosas, granito,
+puertas y cualquier superficie limpia, lisa, plana y no porosa.";Herramientas Manuales
+46;2025-06-1 15:40:29.583996+00;Sopapa Doble p/Vidrio 115mm;Ventosas de alta resistencia, que operan en un rango de temperatura de -10 °C a 45 °C y pueden levantar objetos de hasta 60 kg. Cada ventosa está equipada con palanca de liberación y bloqueo para mayor seguridad. Ideales para levantar y mover vidrio, pisos, ventanas, baldosas, granito, puertas y cualquier superficie limpia, lisa, plana y no porosa.;Herramientas Manuales
+47;2025-06-1 15:40:29.583996+00;Set de 3 Limas p/ Acero;Ideal para acero, el juego de limas de 3 piezas está compuesto por limas T12 con formas redondas, medias y planas. Los mangos ergonómicos brindan una sensación cómoda durante el uso. Perfecto para artesanos caseros, carpintería, trabajos industriales y mecánicos.;Herramientas Manuales
+48;2025-06-1 15:40:29.583996+00;Set de Llaves Largas Allen Bola 9pz Magnéticas;Varilla fabricada en acero al cromo-vanadio (CRV) con acabado mate para evitar la oxidación y ofrecer mayor durabilidad. Diseño moderno de soporte fabricado en PVC suave. Llave hexagonal magnetizada de brazo largo, con extremo de bola para un mejor alcance y facilidad de uso.;Herramientas Manuales
+49;2025-06-1 15:40:29.583996+00;Set de Llaves Largas Torx 9pz;Varilla fabricada en acero al cromo-vanadio (CRV) con acabado mate para prevenir la oxidación y asegurar mayor durabilidad. Diseño moderno de soporte fabricado en PVC. Llave Torx magnetizada de brazo largo, con orificio para facilitar el uso.;Herramientas Manuales
+50;2025-06-1 15:40:29.583996+00;Set Llaves Largas Allen y Torx 18pz ;El juego hexagonal incluye los allens de: 1,5, 2, 2,5, 3, 4, 5, 6 y 8 mm. Fabricadas en acero al cromo vanadio tratado térmicamente, lo que les proporciona mayor resistencia y durabilidad. Recubrimiento resistente a la oxidación para una mayor vida útil. Extremos endurecidos diseñados para soportar grandes torques durante su uso.;Herramientas Manuales
