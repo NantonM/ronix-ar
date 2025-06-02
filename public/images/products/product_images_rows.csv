@@ -1,54 +1,17 @@
 id;created_at;product_id;image_url;alt_text;sort_order;is_primary
-56;2025-06-1 15:40:29.583996+00;30;/images/products/Piqueta_para_Soldador_0.webp;Piqueta para Soldador;0;TRUE
-57;2025-06-1 15:40:29.583996+00;31;/images/products/Set_de_6_Escuadras_Magneticas_0.webp;Set de 6 Escuadras Magnéticas;0;TRUE
-58;2025-06-1 15:40:29.583996+00;32;/images/products/Escuadra_Magnetica_0.webp;Escuadra Magnética;0;TRUE
-59;2025-06-1 15:40:29.583996+00;32;/images/products/Escuadra_Magnetica_1.webp;;1;
-60;2025-06-1 15:40:29.583996+00;32;/images/products/Escuadra_Magnetica_2.webp;;2;
-61;2025-06-1 15:40:29.583996+00;33;/images/products/Remachadora_de_Mano_ECO_0.webp;Remachadora de Mano ECO;0;TRUE
-62;2025-06-1 15:40:29.583996+00;33;/images/products/Remachadora_de_Mano_ECO_1.webp;;1;
-63;2025-06-1 15:40:29.583996+00;33;/images/products/Remachadora_de_Mano_ECO_2.webp;;2;
-64;2025-06-1 15:40:29.583996+00;34;/images/products/Remachadora_de_Mano_PRO_0.webp;Remachadora de Mano PRO ;0;TRUE
-65;2025-06-1 15:40:29.583996+00;34;/images/products/Remachadora_de_Mano_PRO_1.webp;;1;
-66;2025-06-1 15:40:29.583996+00;34;/images/products/Remachadora_de_Mano_PRO_2.webp;;2;
-67;2025-06-1 15:40:29.583996+00;35;/images/products/Remachadora_Manual_Cabezal_360_0.webp;Remachadora Manual Cabezal 360°;0;TRUE
-68;2025-06-1 15:40:29.583996+00;35;/images/products/Remachadora_Manual_Cabezal_360_1.webp;;1;
-69;2025-06-1 15:40:29.583996+00;35;/images/products/Remachadora_Manual_Cabezal_360_2.webp;;2;
-70;2025-06-1 15:40:29.583996+00;36;/images/products/Remachadora_Tijera_de_13_0.webp;"Remachadora Tijera de 13""";0;TRUE
-71;2025-06-1 15:40:29.583996+00;36;/images/products/Remachadora_Tijera_de_13_1.webp;;1;
-72;2025-06-1 15:40:29.583996+00;36;/images/products/Remachadora_Tijera_de_13_2.webp;;2;
-73;2025-06-1 15:40:29.583996+00;37;/images/products/Sargento_Tipo_F_0.webp;Sargento Tipo F;0;TRUE
-74;2025-06-1 15:40:29.583996+00;37;/images/products/Sargento_Tipo_F_1.webp;;1;
-75;2025-06-1 15:40:29.583996+00;37;/images/products/Sargento_Tipo_F_2.webp;;2;
-76;2025-06-1 15:40:29.583996+00;38;/images/products/Sargento_Tipo_F_0.webp;Serrucho Profesional;0;TRUE
-77;2025-06-1 15:40:29.583996+00;38;/images/products/Sargento_Tipo_F_1.webp;;1;
-78;2025-06-1 15:40:29.583996+00;38;/images/products/Sargento_Tipo_F_2.webp;;2;
-79;2025-06-1 15:40:29.583996+00;39;/images/products/Set_de_Formones_p_Madera_4pz_CR-V_0.webp;Set de Formones p/ Madera 4pz CR-V;0;TRUE
-80;2025-06-1 15:40:29.583996+00;39;/images/products/Set_de_Formones_p_Madera_4pz_CR-V_1.webp;;1;
-81;2025-06-1 15:40:29.583996+00;39;/images/products/Set_de_Formones_p_Madera_4pz_CR-V_2.webp;;2;
-82;2025-06-1 15:40:29.583996+00;40;/images/products/Set_de_Fresas_p_Router_1_4_0.webp;"Set de Fresas p/Router 1/4"" ";0;TRUE
-83;2025-06-1 15:40:29.583996+00;41;/images/products/Arco_de_Sierra_Eco_12_300mm_0.webp;"Arco de Sierra Eco 12"" 300mm ";0;TRUE
-84;2025-06-1 15:40:29.583996+00;41;/images/products/Arco_de_Sierra_Eco_12_300mm_1.webp;;1;
-85;2025-06-1 15:40:29.583996+00;41;/images/products/Arco_de_Sierra_Eco_12_300mm_2.webp;;2;
-86;2025-06-1 15:40:29.583996+00;42;/images/products/Arco_de_Sierra_Eco_12_300mm_0.webp;"Arco de Sierra Industrial 12"" 300mm ";0;TRUE
-87;2025-06-1 15:40:29.583996+00;42;/images/products/Arco_de_Sierra_Eco_12_300mm_1.webp;;1;
-88;2025-06-1 15:40:29.583996+00;42;/images/products/Arco_de_Sierra_Eco_12_300mm_2.webp;;2;
-89;2025-06-1 15:40:29.583996+00;43;/images/products/Pistola_Aplicadora_de_Silicona_0.webp;Pistola Aplicadora de Silicona;0;TRUE
-90;2025-06-1 15:40:29.583996+00;44;/images/products/Corta_Vidrios_Tipo_Lapiz_de_Carburo_de_Tungsteno_0.webp;Corta Vidrios Tipo Lapiz de Carburo de Tungsteno ;0;TRUE
-91;2025-06-1 15:40:29.583996+00;44;/images/products/Corta_Vidrios_Tipo_Lapiz_de_Carburo_de_Tungsteno_1.webp;;1;
-92;2025-06-1 15:40:29.583996+00;44;/images/products/Corta_Vidrios_Tipo_Lapiz_de_Carburo_de_Tungsteno_2.webp;;2;
-93;2025-06-1 15:40:29.583996+00;45;/images/products/Sopapa_Simple_p_Vidrio_115mm_0.webp;Sopapa Simple p/Vidrio 115mm;0;TRUE
-94;2025-06-1 15:40:29.583996+00;45;/images/products/Sopapa_Simple_p_Vidrio_115mm_1.webp;;1;
-95;2025-06-1 15:40:29.583996+00;45;/images/products/Sopapa_Simple_p_Vidrio_115mm_2.webp;;2;
-96;2025-06-1 15:40:29.583996+00;46;/images/products/Sopapa_Doble_p_Vidrio_115mm_0.webp;Sopapa Doble p/Vidrio 115mm;0;TRUE
-97;2025-06-1 15:40:29.583996+00;46;/images/products/Sopapa_Doble_p_Vidrio_115mm_1.webp;;1;
-98;2025-06-1 15:40:29.583996+00;47;/images/products/Set_de_3_Limas_p_Acero_0.webp;Set de 3 Limas p/ Acero;0;TRUE
-99;2025-06-1 15:40:29.583996+00;48;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_0.webp;Set de Llaves Largas Allen Bola 9pz Magnéticas;0;TRUE
-100;2025-06-1 15:40:29.583996+00;48;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_1.webp;;1;
-101;2025-06-1 15:40:29.583996+00;48;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_2.webp;;2;
-102;2025-06-1 15:40:29.583996+00;48;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_3.webp;;3;
-103;2025-06-1 15:40:29.583996+00;49;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_0.webp;Set de Llaves Largas Torx 9pz;0;TRUE
-104;2025-06-1 15:40:29.583996+00;49;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_1.webp;;1;
-105;2025-06-1 15:40:29.583996+00;49;/images/products/Set_de_Llaves_Largas_Allen_Bola_9pz_Magneticas_2.webp;;2;
-106;2025-06-1 15:40:29.583996+00;50;/images/products/Set_Llaves_Largas_Allen_y_Torx_18pz_0.webp;Set Llaves Largas Allen y Torx 18pz ;0;TRUE
-107;2025-06-1 15:40:29.583996+00;50;/images/products/Set_Llaves_Largas_Allen_y_Torx_18pz_1.webp;;1;
-108;2025-06-1 15:40:29.583996+00;50;/images/products/Set_Llaves_Largas_Allen_y_Torx_18pz_2.webp;;2;
+109;2025-06-1 15:40:29.583996+00;51;/images/products/Llaves_Allen_Plegables_de_8pz_0.webp;Llaves Allen Plegables de 8pz;0;TRUE
+110;2025-06-1 15:40:29.583996+00;51;/images/products/Llaves_Allen_Plegables_de_8pz_1.webp;;1;
+111;2025-06-1 15:40:29.583996+00;51;/images/products/Llaves_Allen_Plegables_de_8pz_2.webp;;2;
+112;2025-06-1 15:40:29.583996+00;52;/images/products/Llaves_Torx_Plegables_8pz_0.webp;Llaves Torx Plegables 8pz;0;TRUE
+113;2025-06-1 15:40:29.583996+00;52;/images/products/Llaves_Torx_Plegables_8pz_1.webp;;1;
+114;2025-06-1 15:40:29.583996+00;52;/images/products/Llaves_Torx_Plegables_8pz_2.webp;;2;
+115;2025-06-1 15:40:29.583996+00;53;/images/products/Llaves_T_Allen_CR-V_0.webp;Llaves T Allen CR-V;0;TRUE
+116;2025-06-1 15:40:29.583996+00;54;/images/products/Llaves_T_Torx_CR-V_0.webp;Llaves T Torx CR-V;0;TRUE
+117;2025-06-1 15:40:29.583996+00;54;/images/products/Llaves_T_Torx_CR-V_1.webp;;1;
+118;2025-06-1 15:40:29.583996+00;55;/images/products/Destornillador_Philips_CR-V_Imantado_0.webp;Destornillador Philips CR-V Imantado;0;TRUE
+119;2025-06-1 15:40:29.583996+00;55;/images/products/Destornillador_Philips_CR-V_Imantado_1.webp;;1;
+120;2025-06-1 15:40:29.583996+00;55;/images/products/Destornillador_Philips_CR-V_Imantado_2.webp;;2;
+121;2025-06-1 15:40:29.583996+00;56;/images/products/Destornillador_Plano_CR-V_Imantado_0.webp;Destornillador Plano CR-V Imantado;0;TRUE
+122;2025-06-1 15:40:29.583996+00;56;/images/products/Destornillador_Plano_CR-V_Imantado_1.webp;;1;
+123;2025-06-1 15:40:29.583996+00;56;/images/products/Destornillador_Plano_CR-V_Imantado_2.webp;;2;
+124;2025-06-1 15:40:29.583996+00;57;/images/products/Buscapolo_Plano_Economico_0.webp;Buscapolo Plano Económico;0;TRUE
