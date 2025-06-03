@@ -1,22 +1,71 @@
-id;created_at;name;description;category
+id;created_at;name;description;category;
 51;2025-06-2 15:40:29.583996+00;Llaves Allen Plegables de 8pz;"El juego hexagonal incluye los allens de: 1,5, 2, 2,5, 3, 4, 5, 6 y 8 mm.
 Fabricadas en acero al cromo vanadio tratado térmicamente, lo que les proporciona
 mayor resistencia y durabilidad.
 Recubrimiento resistente a la oxidación para una mayor vida útil.
-Extremos endurecidos diseñados para soportar grandes torques durante su uso.";Herramientas Manuales
+Extremos endurecidos diseñados para soportar grandes torques durante su uso.";Herramientas Manuales;
 52;2025-06-2 15:40:29.583996+00;Llaves Torx Plegables 8pz;"El juego de llaves Torx incluye las medidas: T9, T10, T15, T20, T25, T27, T30 y
 T40.
 Juego plegable de 8 llaves Torx para apretar o aflojar sujetadores rápidamente.
 Cuerpo liviano de aluminio y construcción de acero al cromo vanadio tratado
-térmicamente, lo que garantiza mayor resistencia y durabilidad.";Herramientas Manuales
+térmicamente, lo que garantiza mayor resistencia y durabilidad.";Herramientas Manuales;
 53;2025-06-2 15:40:29.583996+00;Llaves T Allen CR-V;"Tratamiento térmico del material 40 CR, que proporciona una larga vida útil y
 resistencia.
-Mango de plástico y goma de alta calidad para mayor comodidad durante el trabajo.";Herramientas Manuales
-54;2025-06-2 15:40:29.583996+00;Llaves T Torx CR-V;El diseño de brazo largo y corto proporciona un alcance extendido en un extremo y mayor apalancamiento en el otro. Fabricado en acero de aleación para ofrecer una resistencia superior y mayor durabilidad. Extremos endurecidos para soportar un torque extra alto durante las operaciones.;Herramientas Manuales
-55;2025-06-2 15:40:29.583996+00;Destornillador Philips CR-V Imantado;;Herramientas Manuales
-56;2025-06-2 15:40:29.583996+00;Destornillador Plano CR-V Imantado;;Herramientas Manuales
+Mango de plástico y goma de alta calidad para mayor comodidad durante el trabajo.";Herramientas Manuales;
+54;2025-06-2 15:40:29.583996+00;Llaves T Torx CR-V;El diseño de brazo largo y corto proporciona un alcance extendido en un extremo y mayor apalancamiento en el otro. Fabricado en acero de aleación para ofrecer una resistencia superior y mayor durabilidad. Extremos endurecidos para soportar un torque extra alto durante las operaciones.;Herramientas Manuales;
+55;2025-06-2 15:40:29.583996+00;Destornillador Philips CR-V Imantado;;Herramientas Manuales;
+56;2025-06-2 15:40:29.583996+00;Destornillador Plano CR-V Imantado;;Herramientas Manuales;
 57;2025-06-2 15:40:29.583996+00;Buscapolo Plano Económico;"Buscapolo de prueba de voltaje multicolor diseñado según los estándares Ronix
 para ofrecer alta eficiencia en funciones eléctricas.
 Las varillas están fabricadas en acero inoxidable de alta calidad, lo que garantiza
 un rendimiento óptimo a largo plazo.
-Voltaje de trabajo: entre 120 y 250 V.";Herramientas Manuales
+Voltaje de trabajo: entre 120 y 250 V.";Herramientas Manuales;
+58;2025-06-3 15:40:29.583996+00;Buscapolo PL y PH 2 en 1;"Buscapolo de prueba de voltaje diseñado según los estándares Ronix, ideal para
+funciones eléctricas de alta eficiencia.
+Las varillas están fabricadas en acero al cromo vanadio de alta calidad, asegurando un
+rendimiento duradero a largo plazo.
+Equipado con una lámpara de xenón de alta calidad.
+Varilla intercambiable, con PL en un lado y PH en el otro.";Herramientas Manuales;
+59;2025-06-3 15:40:29.583996+00;Buscapolo Automático Tipo Lápiz;"Detector de voltaje de CA profesional con función de detección NCV.
+Modo de rango dual para ajustar la sensibilidad y seleccionar el rango de voltaje de
+CA entre 12 V- 1000 V y 48 V- 1000 V.
+Emite una alarma sonora con diferentes frecuencias y un LED de distintos colores
+para indicar sensibilidad baja, moderada o alta.";Herramientas Manuales;
+60;2025-06-3 15:40:29.583996+00;Set de Destornilladores de Golpe 7pz;"El juego de destornilladores multiusos incluye 7 tamaños de destornilladores planos
+y Phillips, adecuados para diversas necesidades.
+Las varillas están fabricadas en acero CR-V de alta calidad, lo que asegura un alto
+rendimiento a largo plazo.
+La punta endurecida de alta resistencia garantiza durabilidad y resistencia.
+Diseño tipo martillo para mayor eficiencia en situaciones difíciles.";Herramientas Manuales;
+61;2025-06-3 15:40:29.583996+00;Set de Destornilladores Aislados 6pz;"Juego de destornilladores de 6 piezas con aislamiento VDE 1000 V, fabricados
+en material CRV, con alta dureza y tenacidad.
+El mango de acabado suave y multicomponente, con diseño de orificio para
+colgar, ofrece máxima comodidad.
+Destornilladores certificados por VDE y probados por GS.
+Mango ergonómico aislado y varilla delgada para un mejor control y precisión.";Herramientas Manuales;
+62;2025-06-3 15:40:29.583996+00;Set de Destornilladores de 12pz;"El juego de destonilladores está fabricado en acero al cromo vanadio de alta calidad, lo
+que garantiza resistencia y durabilidad.
+Diseñado para ofrecer una mayor longevidad.
+Cada tapa cuenta con un diseño giratorio especial, lo que permite un ajuste estrecho
+durante el uso. Facilita quitar o fijar los tornillos, mejorando la velocidad y eficiencia.";Herramientas Manuales;
+63;2025-06-3 15:40:29.583996+00;Set Destornilladores Precisión 7pz;"El juego incluye un total de 7 destornilladores de precisión:
+(2) Phillips: n.° 0 y n.° 00
+(3) Ranurados: 2 mm, 2,5 mm, 3 mm
+(2) Torx Star: T6, T8
+Las varillas, fabricadas en acero CR-V de alta calidad, garantizan un alto rendimiento a
+largo plazo, reduciendo el desgaste y el pelado para una mayor vida útil de la herramienta.";Herramientas Manuales;
+64;2025-06-3 15:40:29.583996+00;Destornillador 19 en 1;"Destornillador crique múltiple versátil 19 en 1, que incluye una amplia gama de
+puntas.
+El mecanismo de crique de 3 posiciones permite giraren el sentido de las agujas
+del reloj, en el sentido contrario y en posición bloqueada.
+Capacidad para almacenar las puntas en el extremo del mango.";Herramientas Manuales;
+65;2025-06-3 15:40:29.583996+00;Set de Llaves Combinadas 8pz;"Contenido del set: Juego de llaves combinadas de 8 piezas (8 mm, 10 mm, 11
+mm, 12 mm, 13 mm, 14 mm, 15 mm, 17 mm, 19 mm).
+Cuentan con un ángulo de 15° para ofrecer un mejor acceso en espacios
+reducidos.
+Ideal para usuarios profesionales e industriales.";Herramientas Manuales;
+66;2025-06-3 15:40:29.583996+00;Set de Llaves Combinadas c/Crique 6pz;"Construcción de acero al cromo vanadio endurecido, que garantiza resistencia y
+durabilidad.
+Mecanismo de crique mecanizado con precisión para un rendimiento superior.
+Ideal para diversas aplicaciones, como mecánica de automóviles, bicicletas, motores y
+otros electrodomésticos.";Herramientas Manuales;
