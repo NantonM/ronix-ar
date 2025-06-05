@@ -1,10 +1,8 @@
 /* src/components/HeroSlider.module.css */
 .sliderContainer {
-    width: 100%; /* Para que ocupe el ancho del contenedor padre */
-    /* Si quieres que rompa el container de Bootstrap y sea full viewport, necesitarás
-       ajustes más complejos en el layout o posicionamiento absoluto.
-       Por ahora, asumimos full-width DENTRO del container principal de la página. */
-    margin-bottom: 2rem; /* Espacio debajo del slider */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 2rem;
   }
   
 
