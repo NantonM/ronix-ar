@@ -27,9 +27,18 @@ export default function Footer() {
                 />
               </Link>
               <p className={styles.footerText}>Ronix es una marca de herramientas alemana fundada en 2004 con el objetivo de producir herramientas de alta calidad en diferentes categorías.</p>
-              <div className={styles.videoPlaceholder}>
-                <p className={styles.footerTextMuted}>[Video Ronix Pequeño]</p>
-                {/* Podrías poner un thumbnail aquí con <Image /> y que al hacer clic abra un modal con el video */}
+              <div className={styles.videoContainer}>
+                <video
+                  className={styles.footerVideo}
+                  src="/videos/video-ronix.mp4" // Ruta relativa a la carpeta 'public'
+                  autoPlay // Para que empiece solo
+                  loop     // Para que se repita
+                  muted    // NECESARIO para que autoPlay funcione en la mayoría de los navegadores
+                  playsInline // Importante para que no se ponga en pantalla completa en iOS
+                  aria-label="Video promocional de Ronix" // Para accesibilidad
+                >
+                  Tu navegador no soporta el tag de video.
+                </video>
               </div>
             </div>
           </div>
@@ -55,7 +64,7 @@ export default function Footer() {
               </h6>
               <div className={styles.representationImagePlaceholder}>
                 <Image
-                  src="https://via.placeholder.com/200x100.png?text=Imagen+Carta+Rep." // Placeholder
+                  src="/images/carta-de-representacion.svg" // Placeholder
                   alt="Placeholder Carta de Representación"
                   width={200}
                   height={100}
@@ -101,7 +110,7 @@ export default function Footer() {
       <div className={`text-center p-3 mt-4 ${styles.copyrightSection}`}>
         © {currentYear} IXNova. All rights reserved.
         <br />
-        <span className={styles.poweredBy}>Powered by Rayo.</span>
+        <span className={styles.poweredBy}>Powered by Somos Rayo.</span>
       </div>
     </footer>
   );

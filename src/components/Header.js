@@ -74,7 +74,7 @@ export default function Header() {
             <div className={styles.ctaButton}>
               {/* CAMBIAMOS EL 'a' POR 'Link' Y EL HREF */}
               <Link href="/revendedores" className="btn btn-danger btn-sm">
-                ¡Quiero ser revendedor Ronix! {/* CAMBIAMOS EL TEXTO */}
+                ¡Quiero ser un Punto de Venta Ronix! {/* CAMBIAMOS EL TEXTO */}
               </Link>
             </div>
             <div className="ms-3"> 

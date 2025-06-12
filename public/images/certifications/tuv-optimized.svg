@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <rect width="80" height="80" rx="40" fill="#F5F5F5"/>
+  <circle cx="40" cy="40" r="30" fill="#E0E0E0"/>
+  <circle cx="40" cy="40" r="15" fill="#9E9E9E"/>
+  <text x="40" y="65" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#424242">TÜV</text>
+</svg>

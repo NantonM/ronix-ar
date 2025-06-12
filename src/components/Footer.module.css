@@ -6,10 +6,13 @@
   border-top: 1px solid #dee2e6; /* EJEMPLO: Un borde superior sutil */
 }
 
-/*.footerColumn {
-  /* Puedes añadir padding o margin aquí si las columnas necesitan espaciado interno adicional */
-
-
+.footerColumn {
+  /* Opcional: si quieres que el contenido de la columna (logo y video) esté centrado */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los items horizontalmente */
+  text-align: center;  /* Centra el texto si lo hubiera */
+}
 .footerTitle {
   color: #212529; /* EJEMPLO: Texto casi negro para títulos */
   margin-bottom: 1rem;
@@ -112,4 +115,22 @@
   color: #adb5bd;
   margin-top: 0.25rem;
   display: block;
+}
+
+.videoContainer {
+  margin-top: 1rem; /* Espacio debajo del logo */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  overflow: hidden;      /* Para que el video respete los bordes */
+  background-color: #000; /* Fondo mientras carga */
+  line-height: 0;         /* Para evitar espacios extra */
+
+  /* --- CAMBIO PRINCIPAL AQUÍ --- */
+  width: 250px; /* ¡ANCHO FIJO! Ajusta este valor a tu gusto (ej. 150px, 200px) */
+  /* Ya no usamos max-width, sino un width directo */
+}
+
+.footerVideo {
+  width: 100%;  /* El video ocupará el 100% de su contenedor (.videoContainer) */
+  height: auto; /* La altura se ajustará para mantener la proporción del video */
+  display: block; 
 }

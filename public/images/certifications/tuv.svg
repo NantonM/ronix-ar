@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="80" height="80" rx="40" fill="#F5F5F5"/>
+  <circle cx="40" cy="40" r="30" fill="#E0E0E0"/>
+  <path d="M40 25C31.7157 25 25 31.7157 25 40C25 48.2843 31.7157 55 40 55C48.2843 55 55 48.2843 55 40C55 31.7157 48.2843 25 40 25Z" fill="#9E9E9E"/>
+  <path d="M40 30C35.0294 30 31 34.0294 31 39C31 43.9706 35.0294 48 40 48C44.9706 48 49 43.9706 49 39C49 34.0294 44.9706 30 40 30Z" fill="#757575"/>
+  <text x="40" y="65" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#424242">TÜV</text>
+</svg>

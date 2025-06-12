@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80">
+  <rect width="120" height="80" rx="8" fill="#F5F5F5"/>
+  <path d="M30 40a10 10 0 0 1 10-10h40a10 10 0 0 1 0 20H40a10 10 0 0 1-10-10z" fill="#E0E0E0"/>
+  <path d="M40 35a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm20 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm-20 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z" fill="#9E9E9E"/>
+  <text x="60" y="65" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#616161">ISO 9001</text>
+</svg>
