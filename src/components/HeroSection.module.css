@@ -40,6 +40,31 @@
   font-weight: 300;
 }
 
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.featureIcon {
+  font-size: 1.2rem;
+}
+
 .buttons {
   display: flex;
   gap: 1rem;
@@ -104,6 +129,16 @@
   .button {
     padding: 0.6rem 1.5rem;
     font-size: 0.85rem;
+  }
+  
+  .features {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
   }
   
   .buttons {
