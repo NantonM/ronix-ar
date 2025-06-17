@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
         {/* QUITAMOS el paddingTop del main O lo reducimos a 0 si el header está en el flujo normal */}
-        <main style={{ flexGrow: 1 }} className="container-fluid py-0"> {/* O el padding que desees para el contenido, pero no para el header */}
+        <main style={{ flexGrow: 1 }}> {/* O el padding que desees para el contenido, pero no para el header */}
             {children}
         </main>
         <Footer />

@@ -1,0 +1,21 @@
+/* src/app/revendedores/revendedores.module.css */
+
+.pageWrapper {
+    background-color: #cfcfcf77; /* Un gris claro, pero más oscuro que el blanco. ¡Puedes cambiar este color! */
+    width: 100%;
+  }
+  
+  /* El resto de tus estilos (.formCardContainer, .imageBackground) no necesitan cambios */
+  .formCardContainer {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .imageBackground {
+    background-image: url('/images/punto-de-venta3.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 450px;
+  }
