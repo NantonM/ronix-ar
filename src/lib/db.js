@@ -1,15 +1,11 @@
-import postgres from 'postgres';
+// src/lib/db.js
+import { Pool } from '@neondatabase/serverless';
 
-const connectionString = process.env.POSTGRES_URL;
-
-if (!connectionString) {
+if (!process.env.POSTGRES_URL) {
   throw new Error('La variable de entorno POSTGRES_URL no está definida.');
 }
 
-const sql = postgres(connectionString, {
-  // Puedes añadir opciones de configuración aquí si es necesario
-  // Por ejemplo, para SSL en algunos entornos:
-  // ssl: { rejectUnauthorized: false }
-});
+const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
 
-export default sql;
+// Exportamos la función 'query' del pool para usarla como nuestro cliente SQL
+export default pool.query.bind(pool);

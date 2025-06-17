@@ -1,10 +1,10 @@
 // src/lib/dataService.js
-import sql from './db'; // <-- Importa el nuevo cliente de Neon, NO el de Supabase
+import sql from './db'; // Ahora importa la función 'query' del pool de Neon
 
 export async function getAllProducts(categoryFilter = null) {
+  console.log(`[dataService] Obteniendo productos con filtro: ${categoryFilter || 'Ninguno'}`);
   try {
-    console.log(`[dataService] Obteniendo productos con filtro: ${categoryFilter || 'Ninguno'}`);
-    let query = sql`
+    const baseQuery = `
       SELECT 
         p.id, p.name, p.description, p.category,
         (SELECT json_agg(pv) FROM product_variants pv WHERE pv.product_id = p.id) as product_variants,
@@ -13,15 +13,19 @@ export async function getAllProducts(categoryFilter = null) {
         products p
     `;
 
+    let finalQuery;
+    let queryParams = [];
+
     if (categoryFilter) {
-      // Para añadir un WHERE dinámico con la librería 'postgres'
-      query = sql`
-        ${query} WHERE p.category = ${categoryFilter}
-      `;
+      finalQuery = `${baseQuery} WHERE p.category = $1 ORDER BY p.name ASC`;
+      queryParams = [categoryFilter];
+    } else {
+      finalQuery = `${baseQuery} ORDER BY p.name ASC`;
     }
-    
-    const products = await sql`${query} ORDER BY p.name ASC`;
-    
+
+    const result = await sql(finalQuery, queryParams);
+    const products = result.rows;
+
     console.log(`[dataService] Productos obtenidos de Neon: ${products.length}`);
     return products.map(p => ({
       ...p,
@@ -40,7 +44,7 @@ export async function getProductById(productId) {
   if (!productId) return null;
 
   try {
-    const products = await sql`
+    const query = `
       SELECT 
         p.*,
         (SELECT json_agg(pv) FROM product_variants pv WHERE pv.product_id = p.id) as product_variants,
@@ -48,22 +52,22 @@ export async function getProductById(productId) {
       FROM 
         products p
       WHERE 
-        p.id = ${productId};
+        p.id = $1;
     `;
+    const result = await sql(query, [productId]);
 
-    if (products.length === 0) {
+    if (result.rowCount === 0) {
       return null;
     }
-    
-    const product = products[0];
+
+    const product = result.rows[0];
     console.log(`[dataService] Producto obtenido: ${product.name}`);
-    
+
     return {
       ...product,
       product_variants: product.product_variants || [],
       product_images: product.product_images || [],
     };
-
   } catch (error) {
     console.error(`[dataService] Error en getProductById para ID ${productId}:`, error);
     throw new Error("Error al obtener el producto desde la base de datos.");
