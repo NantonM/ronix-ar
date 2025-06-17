@@ -63,4 +63,4 @@ export async function POST(request) {
 }
 
 // Comenta runtime = 'edge' si la verificación de reCAPTCHA da problemas en Edge.
-export const runtime = 'edge';
+// export const runtime = 'edge';
