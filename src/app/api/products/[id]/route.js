@@ -2,6 +2,8 @@
 import { NextResponse } from 'next/server';
 import { getProductById } from '@/lib/dataService'; // <-- IMPORTANTE
 
+export const runtime = 'edge'
+
 export async function GET(request, { params }) {
   const productId = params.id;
   if (!productId) {
