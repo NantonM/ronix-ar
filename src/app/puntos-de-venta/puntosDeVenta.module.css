@@ -7,7 +7,41 @@
     border-radius: 0.5rem;
     margin-bottom: 2rem;
   }
-  
+
+/* Estilo para el ÍTEM SELECCIONADO EN LA LISTA */
+.activeLocationItem {
+  background-color: #e30613 !important; /* Rojo corporativo de Ronix */
+  border-color: #bf0000 !important;   /* Borde rojo más oscuro */
+  color: white !important;            /* Texto blanco */
+  z-index: 2; 
+}
+
+/* Estilo para el ÍTEM SELECCIONADO CUANDO ADEMÁS PASAS EL MOUSE POR ENCIMA */
+.activeLocationItem:hover {
+  background-color: #c20411 !important; /* Un rojo un poco más oscuro para el feedback del hover */
+  border-color: #a1000d !important;   /* Un borde aún más oscuro */
+  color: white !important;            /* Aseguramos que el texto siga siendo blanco */
+}
+
+/* Para asegurar que los elementos hijos como <small> también sean blancos */
+.activeLocationItem small {
+    color: white !important;
+}
+
+/* También puedes dejar una regla para el hover de los items NO activos */
+.locationItem:hover {
+  background-color: #f8f9fa; /* Un gris claro para el hover de los no seleccionados */
+  border-color: #dee2e6;
+  cursor: pointer;
+}
+.activeLocationItem,
+.activeLocationItem:hover,
+.activeLocationItem small,
+.activeLocationItem:hover small,
+.activeLocationItem strong,
+.activeLocationItem:hover strong {
+  color: white !important; /* Usamos !important para asegurar que sobreescriba todo */
+}
 
   
   .listSectionWrapper {
@@ -62,7 +96,7 @@
   .locationName {
     font-size: 1rem;
     font-weight: 500;
-    color: #212529;
+    color: #330a0a;
   }
   
   .locationAddressMb0, .locationPhoneMb0 {
