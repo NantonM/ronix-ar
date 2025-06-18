@@ -1,4 +1,5 @@
 // src/app/productos/page.js
+import Image from 'next/image';
 import ProductListClient from '@/components/ProductListClient';
 import { getAllProducts } from '@/lib/dataService'; // <-- IMPORTAMOS DIRECTAMENTE
 // import styles from './productos.module.css';
@@ -33,7 +34,19 @@ export default async function ProductosPage() {
   }
 
   return (
+
+    
     <div className="container-fluid py-4">
+      <div className="mb-4">
+        <Image
+          src="/images/productos.webp"
+          alt="Banner de Productos Ronix"
+          className="img-fluid rounded shadow-sm"
+          width={1920} // ¡IMPORTANTE! Reemplaza con el ANCHO real de tu imagen
+          height={300}  // ¡IMPORTANTE! Reemplaza con el ALTO real de tu imagen
+          style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
+        />
+      </div>
       <div className="text-center mb-4">
         <h1 className="display-5 fw-bold">Nuestros Productos</h1>
         <p className="lead">Explora nuestro catálogo de herramientas</p>

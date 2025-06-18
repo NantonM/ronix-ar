@@ -34,14 +34,6 @@ const products = [
     ctaText: 'Explorar',
     ctaLink: '/productos/herramientas-de-corte'
   },
-  {
-    id: 4,
-    title: 'Equipos de Medición',
-    description: 'Precisión en cada medición',
-    image: '/images/products/measuring-tools.jpg',
-    ctaText: 'Ver Catálogo',
-    ctaLink: '/productos/equipos-de-medicion'
-  }
 ];
 
 const ProductShowcase = () => {

@@ -1,0 +1,21 @@
+/* src/app/contacto/contacto.module.css */
+
+.pageWrapper {
+    background-color: #f0f2f5; /* El mismo gris claro de fondo */
+  }
+  
+  .formCardContainer {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .imageBackground {
+    /* --- CAMBIO PRINCIPAL AQUÍ --- */
+    background-image: url('/images/banner-nosotros.jpg'); /* Usando la nueva imagen */
+  
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 500px; /* Puedes ajustar esta altura si lo necesitas */
+  }

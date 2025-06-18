@@ -12,7 +12,7 @@
   overflow: hidden;
   color: white;
   text-align: center;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), 
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
               url('/images/hero-bg.webp') center/cover no-repeat fixed;
   background-attachment: fixed;
   background-position: center;

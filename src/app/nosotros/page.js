@@ -1,53 +1,56 @@
-// src/app/nosotros/page.js
 import Image from 'next/image';
-import Link from 'next/link'; // Aunque el link en el contenido es externo, lo mantenemos por si acaso
-import styles from './nosotros.module.css'; // Para nuestros estilos personalizados
+import styles from './nosotros.module.css'; // Asegúrate de que este archivo exista
 
-export default function NosotrosPage() {
+const NosotrosPage = () => {
   return (
-    <div className={`container py-5 ${styles.nosotrosContainer}`}> {/* Bootstrap container y padding vertical */}
-      {/* Título Principal */}
-      <h1 className={`text-center fw-bold display-3 mb-5 ${styles.mainTitle}`}> {/* Clases Bootstrap + custom */}
-        Nosotros
-      </h1>
-
-      {/* Contenedor del contenido principal (para emular el 'prose' de Tailwind) */}
-      <div className={styles.contentBlock}>
-        <p>
-        En Ronix, somos parte del grupo Ixnova, con 37 años de experiencia en la representación de marcas internacionales como Ronix, Tramontina y Botafogo. También desarrollamos nuestra propia línea de adhesivos y selladores, Fixnova, y trabajamos con las marcas nacionales más importantes de Argentina.
-        </p>
-        <p>
-        Nuestro propósito es abastecer a distribuidores, mayoristas y ferreterías en todas las provincias del país, ofreciendo productos de calidad y marcas reconocidas a nivel mundial.
-        </p>
-        <p>
-        Nos enorgullece ser un socio confiable para el crecimiento de nuestros clientes, combinando innovación, trayectoria y excelencia en el servicio.
-        </p>
-
-        {/* Imagen */}
-        <div className={styles.imageWrapper}>
-          <Image
-            src="/images/banner-nosotros.jpg" // Asume que descargaste la imagen y la pusiste aquí
-            alt="Banner Ronix Argentina"
-            width={1000} // Un ancho de muestra, Next.js la optimizará. Elige un ancho base para tu diseño.
-            height={434} // (1000 * 832 / 1920) Proporcional al ancho de muestra
-            style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} // rounded-xl de Tailwind es 0.75rem (12px)
-            priority // Si es una imagen importante al inicio de la página
-          />
+    <div className="container py-5">
+      <div className="row align-items-center g-5"> {/* 'g-5' añade espacio entre columnas */}
+        
+        {/* --- Columna Izquierda: Texto y la NUEVA imagen --- */}
+        <div className="col-md-7">
+          <h1 className="display-4 fw-bold mb-4 text-center">Acerca de Ronix</h1>
+          <p className="lead mb-3">
+            Somos una empresa apasionada por ofrecer herramientas de alta calidad para profesionales y aficionados del bricolaje.
+            Nuestra misión es proporcionar productos innovadores, duraderos y a precios competitivos.
+          </p>
+          <p className="mb-3">
+            Con años de experiencia en el mercado, hemos construido una reputación basada en la excelencia de nuestros productos y el compromiso con nuestros clientes.
+          </p>
+          <p>
+            Explora nuestro catálogo y descubre la herramienta perfecta para tus proyectos.
+          </p>
+          
+          {/* --- INICIO DE LA NUEVA IMAGEN --- */}
+          <div className="mt-4 pt-2"> {/* mt-4 y pt-2 para dar espacio entre el texto y la imagen */}
+            <Image
+              src="/images/representaciones.avif"
+              alt="Representaciones Oficiales de Ronix"
+              width={800}  // ¡IMPORTANTE! Reemplaza con el ANCHO real de tu imagen
+              height={150} // ¡IMPORTANTE! Reemplaza con el ALTO real de tu imagen
+              className="img-fluid rounded shadow-sm" // Responsiva, redondeada y con sombra
+              style={{ width: '100%', height: 'auto' }} // Estilo para asegurar que la imagen se ajuste bien a la columna
+            />
+          </div>
+          {/* --- FIN DE LA NUEVA IMAGEN --- */}
         </div>
-        <p>
-        Nos enorgullece ser un socio confiable para el crecimiento de nuestros clientes, combinando innovación, trayectoria y excelencia en el servicio.
-        </p>
-        <h3 className={`fw-bold ${styles.subHeading}`}>Nuestras representaciones internacionales</h3> {/* Clases Bootstrap + custom */}
-        <div className={styles.imageWrapper}>
-          <Image
-            src="/images/representaciones.avif" // Asume que descargaste la imagen y la pusiste aquí
-            alt="Banner Ronix Argentina"
-            width={817} // Un ancho de muestra, Next.js la optimizará. Elige un ancho base para tu diseño.
-            height={84} // (1000 * 832 / 1920) Proporcional al ancho de muestra
-            style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }} // rounded-xl de Tailwind es 0.75rem (12px)
-          />
+
+        {/* --- Columna Derecha: Imagen que ya teníamos --- */}
+        <div className="col-md-5">
+          <div className={styles.imageContainer || ''}> {/* Opcional: si quieres aplicar estilos específicos */}
+            <Image
+              src="/images/nosotros.jpg"
+              alt="Acerca de Nosotros - Imagen Ronix"
+              className="img-fluid rounded shadow-sm"
+              width={400}
+              height={200}
+              priority
+            />
+          </div>
         </div>
+
       </div>
     </div>
   );
-}
+};
+
+export default NosotrosPage;

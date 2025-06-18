@@ -1,57 +1,60 @@
-'use client';
-
-import { useEffect } from 'react';
-import Image from 'next/image';
+// src/components/TrustSection.js
 import styles from './TrustSection.module.css';
 
+// Hacemos un array con los datos para mantener el código más limpio
+const featuresData = [
+  {
+    number: '01',
+    title: 'RENDIMIENTO',
+    description: 'Cada herramienta RONIX está diseñada para enfrentar trabajos exigentes, garantizando un rendimiento confiable en cualquier entorno.'
+  },
+  {
+    number: '02',
+    title: 'DURABILIDAD',
+    description: 'Construidas con materiales de alta calidad y diseñadas en Alemania, las herramientas RONIX ofrecen una resistencia excepcional que soporta el uso intensivo.'
+  },
+  {
+    number: '03',
+    title: 'INNOVACIÓN',
+    description: 'Con ergonomía avanzada y tecnología de vanguardia, RONIX proporciona una experiencia de uso cómoda y eficiente, permitiendo terminar cada tarea con precisión y menos esfuerzo.'
+  }
+];
+
 const TrustSection = () => {
-  useEffect(() => {
-    const animateElements = () => {
-      const elements = document.querySelectorAll(`.${styles.animateOnScroll}`);
-      elements.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementTop < windowHeight - 100) {
-          el.classList.add(styles.animateIn);
-        }
-      });
-    };
-
-    animateElements();
-    window.addEventListener('scroll', animateElements);
-    return () => window.removeEventListener('scroll', animateElements);
-  }, []);
-
   return (
     <section className={styles.trustSection}>
-      <div className={`${styles.container} ${styles.animateOnScroll}`}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Confianza y Calidad Garantizada</h2>
-          <p className={styles.subtitle}>
-            Más de dos décadas de excelencia en herramientas manuales respaldadas por certificaciones internacionales
-            y la confianza de profesionales en todo el mundo.
-          </p>
-        </div>
+      <div className="container">
+        <div className="row align-items-center">
+          
+          {/* Columna Izquierda: Título Principal */}
+          <div className="col-lg-5">
+            <div className={styles.titleWrapper}>
+              <h2 className={styles.title}>
+                Ingeniería Alemana,
+                <br />
+                ahora en Argentina
+              </h2>
+            </div>
+          </div>
 
-        <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>25+</div>
-            <div className={styles.statLabel}>Años de Experiencia</div>
-            <div className={styles.statIcon}>🏭</div>
+          {/* Columna Derecha: Lista de Características */}
+          <div className="col-lg-7">
+            <div className={styles.featuresList}>
+              {featuresData.map((feature) => (
+                <div key={feature.number} className={styles.featureItem}>
+                  <h3 className={styles.featureTitle}>
+                    <span className={styles.featureNumber}>{feature.number}</span>
+                    <span className={styles.featureSlash}>/</span>
+                    {feature.title}
+                  </h3>
+                  <p className={styles.featureDescription}>
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>90+</div>
-            <div className={styles.statLabel}>Países</div>
-            <div className={styles.statIcon}>🌎</div>
-          </div>
-          
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>1M+</div>
-            <div className={styles.statLabel}>Herramientas Vendidas</div>
-            <div className={styles.statIcon}>🔧</div>
-          </div>
+
         </div>
       </div>
     </section>

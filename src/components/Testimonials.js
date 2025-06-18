@@ -9,7 +9,7 @@ const testimonials = [
     role: 'Técnico Industrial',
     content: 'La calidad de las herramientas Ronix es excepcional. Las uso a diario en mi taller y nunca me han fallado. La relación calidad-precio es inmejorable.',
     rating: 5,
-    image: '/images/testimonials/user1.jpg'
+    image: '/images/testmonial-1.jpg'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const testimonials = [
     role: 'Jefa de Mantenimiento',
     content: 'Desde que implementamos herramientas Ronix en nuestro equipo, la eficiencia ha aumentado notablemente. Los técnicos están muy satisfechos con el rendimiento.',
     rating: 5,
-    image: '/images/testimonials/user2.jpg'
+    image: '/images/testimonial-3.jpg'
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const testimonials = [
     role: 'Contratista',
     content: 'La durabilidad de estas herramientas es impresionante. Después de meses de uso intensivo, siguen funcionando como el primer día. Muy recomendables.',
     rating: 4,
-    image: '/images/testimonials/user3.jpg'
+    image: '/images/testimonial-2.jpeg'
   }
 ];
 
