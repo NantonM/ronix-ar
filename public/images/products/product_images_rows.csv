@@ -1,32 +1,57 @@
-id;created_at;product_id;image_url;alt_text;sort_order;is_primary;;
-109;2025-06-1 15:40:29.583996+00;51;/images/products/Llaves_Allen_Plegables_de_8pz_0.webp;Llaves Allen Plegables de 8pz;0;TRUE;;
-110;2025-06-1 15:40:29.583996+00;51;/images/products/Llaves_Allen_Plegables_de_8pz_1.webp;;1;;;
-111;2025-06-1 15:40:29.583996+00;51;/images/products/Llaves_Allen_Plegables_de_8pz_2.webp;;2;;;
-112;2025-06-1 15:40:29.583996+00;52;/images/products/Llaves_Torx_Plegables_8pz_0.webp;Llaves Torx Plegables 8pz;0;TRUE;;
-113;2025-06-1 15:40:29.583996+00;52;/images/products/Llaves_Torx_Plegables_8pz_1.webp;;1;;;
-114;2025-06-1 15:40:29.583996+00;52;/images/products/Llaves_Torx_Plegables_8pz_2.webp;;2;;;
-115;2025-06-1 15:40:29.583996+00;53;/images/products/Llaves_T_Allen_CR-V_0.webp;Llaves T Allen CR-V;0;TRUE;;
-116;2025-06-1 15:40:29.583996+00;54;/images/products/Llaves_T_Torx_CR-V_0.webp;Llaves T Torx CR-V;0;TRUE;;
-117;2025-06-1 15:40:29.583996+00;54;/images/products/Llaves_T_Torx_CR-V_1.webp;;1;;;
-118;2025-06-1 15:40:29.583996+00;55;/images/products/Destornillador_Philips_CR-V_Imantado_0.webp;Destornillador Philips CR-V Imantado;0;TRUE;;
-119;2025-06-1 15:40:29.583996+00;55;/images/products/Destornillador_Philips_CR-V_Imantado_1.webp;;1;;;
-120;2025-06-1 15:40:29.583996+00;55;/images/products/Destornillador_Philips_CR-V_Imantado_2.webp;;2;;;
-121;2025-06-1 15:40:29.583996+00;56;/images/products/Destornillador_Plano_CR-V_Imantado_0.webp;Destornillador Plano CR-V Imantado;0;TRUE;;
-122;2025-06-1 15:40:29.583996+00;56;/images/products/Destornillador_Plano_CR-V_Imantado_1.webp;;1;;;Buscapolo_PL_y_PH_2_en_1_0
-123;2025-06-1 15:40:29.583996+00;56;/images/products/Destornillador_Plano_CR-V_Imantado_2.webp;;2;;;
-124;2025-06-1 15:40:29.583996+00;57;/images/products/Buscapolo_Plano_Economico_0.webp;Buscapolo Plano Económico;0;TRUE;;
-125;2025-06-1 15:40:29.583996+00;58;/images/products/Buscapolo_PL_y_PH_2_en_1_0.webp;Buscapolo PL y PH 2 en 1;0;TRUE;;
-126;2025-06-1 15:40:29.583996+00;58;/images/products/Buscapolo_PL_y_PH_2_en_1_1.webp;;1;;;
-127;2025-06-1 15:40:29.583996+00;58;/images/products/Buscapolo_PL_y_PH_2_en_1_2.webp;;2;;;
-128;2025-06-1 15:40:29.583996+00;59;/images/products/Buscapolo_Automatico_Tipo_Lapiz_0.webp;Buscapolo Automático Tipo Lápiz;0;TRUE;;
-129;2025-06-1 15:40:29.583996+00;59;/images/products/Buscapolo_Automatico_Tipo_Lapiz_1.webp;;1;;;
-130;2025-06-1 15:40:29.583996+00;59;/images/products/Buscapolo_Automatico_Tipo_Lapiz_2.webp;;2;;;
-131;2025-06-1 15:40:29.583996+00;60;/images/products/Set_de_Destornilladores_de_Golpe_7pz_0.webp;Set de Destornilladores de Golpe 7pz;0;TRUE;;
-132;2025-06-1 15:40:29.583996+00;61;/images/products/Set_de_Destornilladores_Aislados_6pz_0.webp;Set de Destornilladores Aislados 6pz;0;TRUE;;
-133;2025-06-1 15:40:29.583996+00;62;/images/products/Set_de_Destornilladores_de_12pz_0.webp;Set de Destornilladores de 12pz;0;TRUE;;
-134;2025-06-1 15:40:29.583996+00;63;/images/products/Set_Destornilladores_Precision_7pz_0.webp;Set Destornilladores Precisión 7pz;0;TRUE;;
-135;2025-06-1 15:40:29.583996+00;63;/images/products/Set_Destornilladores_Precision_7pz_1.webp;;1;;;
-136;2025-06-1 15:40:29.583996+00;64;/images/products/Destornillador_19_en_1_0.webp;Destornillador 19 en 1;0;TRUE;;
-137;2025-06-1 15:40:29.583996+00;64;/images/products/Destornillador_19_en_1_1.webp;;1;;;
-138;2025-06-1 15:40:29.583996+00;64;/images/products/Destornillador_19_en_1_2.webp;;2;;;
-139;2025-06-1 15:40:29.583996+00;65;/images/products/Set_de_Llaves_Combinadas_c_Crique_6pz_0.webp;Set de Llaves Combinadas c/Crique 6pz;0;TRUE;;
+id;created_at;product_id;image_url;alt_text;sort_order;is_primary
+140;2025-07-3 15:40:29.583996+00;67;/images/products/Llave_Combinada_Crique_c_Cabezal_Reemplazable_0.webp;Llave Combinada Crique c/Cabezal Reemplazable;0;TRUE
+141;2025-07-3 15:40:29.583996+00;67;/images/products/Llave_Combinada_Crique_c_Cabezal_Reemplazable_1.webp;;1;
+142;2025-07-3 15:40:29.583996+00;67;/images/products/Llave_Combinada_Crique_c_Cabezal_Reemplazable_2.webp;;2;
+143;2025-07-3 15:40:29.583996+00;68;/images/products/Set_De_Llaves_Combinadas_Criques_8pz_0.webp;Set De Llaves Combinadas Criques 8pz;0;TRUE
+144;2025-07-3 15:40:29.583996+00;68;/images/products/Set_De_Llaves_Combinadas_Criques_8pz_1.webp;;1;
+145;2025-07-3 15:40:29.583996+00;69;/images/products/Nivel_De_Aluminio_Profesional_0.webp;Nivel De Aluminio Profesional;0;TRUE
+146;2025-07-3 15:40:29.583996+00;69;/images/products/Nivel_De_Aluminio_Profesional_1.webp;;1;
+147;2025-07-3 15:40:29.583996+00;69;/images/products/Nivel_De_Aluminio_Profesional_2.webp;;2;
+148;2025-07-3 15:40:29.583996+00;69;/images/products/Nivel_De_Aluminio_Profesional_3.webp;;3;
+149;2025-07-3 15:40:29.583996+00;70;/images/products/Nivel_Magnetico_Plegable_Aluminio_Profesional_0.webp;Nivel Magnético Plegable Aluminio Profesional;0;TRUE
+150;2025-07-3 15:40:29.583996+00;71;/images/products/Medidor_De_Distancia_Laser_100_Mts_0.webp;Medidor De Distancia Laser 100 Mts;0;TRUE
+151;2025-07-3 15:40:29.583996+00;71;/images/products/Medidor_De_Distancia_Laser_100_Mts_1.webp;;1;
+152;2025-07-3 15:40:29.583996+00;71;/images/products/Medidor_De_Distancia_Laser_100_Mts_2.webp;;2;
+153;2025-07-3 15:40:29.583996+00;72;/images/products/Cutter_de_9mm_0.webp;Cutter de 9mm;0;TRUE
+154;2025-07-3 15:40:29.583996+00;72;/images/products/Cutter_de_9mm_1.webp;;1;
+155;2025-07-3 15:40:29.583996+00;73;/images/products/Llave_Ajustable_0.webp;Llave Ajustable;0;TRUE
+156;2025-07-3 15:40:29.583996+00;74;/images/products/Llave_de_cano_tipo_Stilson_0.webp;Llave De Caño Tipo Stilson;0;TRUE
+157;2025-07-3 15:40:29.583996+00;74;/images/products/Llave_de_cano_tipo_Stilson_1.webp;;1;
+158;2025-07-3 15:40:29.583996+00;74;/images/products/Llave_de_cano_tipo_Stilson_2.webp;;2;
+159;2025-07-3 15:40:29.583996+00;75;/images/products/Llave_de_cano_tipo_Stilson_0.webp;Llave De Caño Sueca;0;TRUE
+160;2025-07-3 15:40:29.583996+00;75;/images/products/Llave_de_cano_tipo_Stilson_1.webp;;1;
+161;2025-07-3 15:40:29.583996+00;75;/images/products/Llave_de_cano_tipo_Stilson_2.webp;;2;
+162;2025-07-3 15:40:29.583996+00;76;/images/products/Tijera_Corta_Pernos_0.webp;Tijera Corta Pernos;0;TRUE
+163;2025-07-3 15:40:29.583996+00;76;/images/products/Tijera_Corta_Pernos_1.webp;;1;
+164;2025-07-3 15:40:29.583996+00;76;/images/products/Tijera_Corta_Pernos_2.webp;;2;
+165;2025-07-3 15:40:29.583996+00;77;/images/products/Cutter_Ergonomico_18mm_00CUE018_0.webp;Cutter Ergónomico 18mm 00CUE018;0;TRUE
+166;2025-07-3 15:40:29.583996+00;77;/images/products/Cutter_Ergonomico_18mm_00CUE018_1.webp;;1;
+167;2025-07-3 15:40:29.583996+00;77;/images/products/Cutter_Ergonomico_18mm_00CUE018_2.webp;;2;
+168;2025-07-3 15:40:29.583996+00;78;/images/products/Cutter_Ergonomico_18mm_00CUM018_0.webp;Cutter Ergónomico 18mm 00CUM018;0;TRUE
+169;2025-07-3 15:40:29.583996+00;78;/images/products/Cutter_Ergonomico_18mm_00CUM018_1.webp;;1;
+170;2025-07-3 15:40:29.583996+00;78;/images/products/Cutter_Ergonomico_18mm_00CUM018_2.webp;;2;
+171;2025-07-3 15:40:29.583996+00;79;/images/products/Cutter_Profesional_18mm_0.webp;Cutter Profesional 18mm ;0;TRUE
+172;2025-07-3 15:40:29.583996+00;79;/images/products/Cutter_Profesional_18mm_1.webp;;1;
+173;2025-07-3 15:40:29.583996+00;79;/images/products/Cutter_Profesional_18mm_2.webp;;2;
+174;2025-07-3 15:40:29.583996+00;80;/images/products/Cutter_Profesional_18mm_0.webp;Cutter Trincheta Trapezoidal Tipo Navaja;0;TRUE
+175;2025-07-3 15:40:29.583996+00;80;/images/products/Cutter_Profesional_18mm_1.webp;;1;
+176;2025-07-3 15:40:29.583996+00;80;/images/products/Cutter_Profesional_18mm_2.webp;;2;
+177;2025-07-3 15:40:29.583996+00;81;/images/products/Cutter_Trincheta_Trapezoidal_Tipo_Navaja_Profesional_0.webp;Cutter Trincheta Trapezoidal Tipo Navaja Profesional;0;TRUE
+178;2025-07-3 15:40:29.583996+00;81;/images/products/Cutter_Trincheta_Trapezoidal_Tipo_Navaja_Profesional_1.webp;;1;
+179;2025-07-3 15:40:29.583996+00;82;/images/products/Cutter_Trincheta_Trapezoidal_Retractil_0.webp;Cutter Trincheta Trapezoidal Retractil;0;TRUE
+180;2025-07-3 15:40:29.583996+00;82;/images/products/Cutter_Trincheta_Trapezoidal_Retractil_1.webp;;1;
+181;2025-07-3 15:40:29.583996+00;82;/images/products/Cutter_Trincheta_Trapezoidal_Retractil_2.webp;;2;
+182;2025-07-3 15:40:29.583996+00;83;/images/products/Cutter_Trincheta_Trapezoida_Metalico_0.webp;Cutter Trincheta Trapezoidal Metálico ;0;TRUE
+183;2025-07-3 15:40:29.583996+00;83;/images/products/Cutter_Trincheta_Trapezoida_Metalico_2.webp;;1;
+184;2025-07-3 15:40:29.583996+00;83;/images/products/Cutter_Trincheta_Trapezoida_Metalico_2.webp;;2;
+185;2025-07-3 15:40:29.583996+00;84;/images/products/Trincheta_Trapezoidal_Tipo_Navaja_Industrial_0.webp;Trincheta Trapezoidal Tipo Navaja Industrial;0;TRUE
+186;2025-07-3 15:40:29.583996+00;84;/images/products/Trincheta_Trapezoidal_Tipo_Navaja_Industrial_1.webp;;1;
+187;2025-07-3 15:40:29.583996+00;84;/images/products/Trincheta_Trapezoidal_Tipo_Navaja_Industrial_2.webp;;2;
+188;2025-07-3 15:40:29.583996+00;85;/images/products/Cutter_Scraper_Plastico_p_Hojas_de_18mm_0.webp;Cutter Scraper Plástico p/Hojas de 18mm ;0;TRUE
+189;2025-07-3 15:40:29.583996+00;86;/images/products/Cutter_Scraper_Inoxidable_200mm.png;Cutter Scraper Inoxidable 200mm ;0;TRUE
+190;2025-07-3 15:40:29.583996+00;87;/images/products/Repuestos_Hojas_De_Cutter_9mm_De_10pz_0.webp;Repuestos Hojas De Cutter 9mm De 10pz;0;TRUE
+191;2025-07-3 15:40:29.583996+00;88;/images/products/Repuestos_Hojas_De_Cutter_18mm_De_10pz_0.webp;Repuestos Hojas De Cutter 18mm De 10pz;0;TRUE
+192;2025-07-3 15:40:29.583996+00;89;/images/products/Repuestos_Hojas_De_Cutter_Trapezoidal_10pz_0.webp;Repuestos Hojas De Cutter Trapezoidal 10pz;0;TRUE
+193;2025-07-3 15:40:29.583996+00;90;/images/products/Cutter_Trincheta_Trapezoida_Metalico_0.webp;Caballete Metálico 3TN x2 PZS ;0;TRUE
+194;2025-07-3 15:40:29.583996+00;90;/images/products/Cutter_Trincheta_Trapezoida_Metalico_2.webp;;1;
+195;2025-07-3 15:40:29.583996+00;90;/images/products/Cutter_Trincheta_Trapezoida_Metalico_2.webp;;2;
