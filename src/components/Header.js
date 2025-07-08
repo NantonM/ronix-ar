@@ -1,103 +1,103 @@
-// src/components/Header.js
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './Header.module.css'; // Necesitarás crear/actualizar este archivo
-
-// Si decides usar FontAwesome más adelante:
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faChevronDown, faSearch, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/navigation';
+import styles from './Header.module.css';
 
 export default function Header() {
-  // El estado para el menú móvil (isMobileMenuOpen) se añadirá después
-  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [headerSearchTerm, setHeaderSearchTerm] = useState('');
+  const router = useRouter();
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const searchTerm = headerSearchTerm.trim();
+    if (searchTerm) {
+      router.push(`/productos?search=${encodeURIComponent(searchTerm)}`);
+      setHeaderSearchTerm(''); // Limpia el campo después de buscar
+      if (isMobileMenuOpen) {
+        toggleMobileMenu(); // Cierra el menú móvil si estaba abierto
+      }
+    }
+  };
 
   return (
-    <header className={`${styles.componenHeaderWebsite} navbar navbar-expand-lg navbar-light bg-light sticky-top py-0`}>
-      {/* Clases de Ronix: componenHeaderWebsite new-navigation innerHeight-header performanceMenu c mobile-header
-        Bootstrap base: navbar navbar-expand-lg
-        Colores/Estilo base: navbar-light bg-light (puedes cambiar a navbar-dark bg-dark para un tema oscuro)
-        Posición: sticky-top (para que se quede fijo arriba al hacer scroll)
-        Padding: py-0 (Ronix parece tener poco padding vertical en la barra principal)
-      */}
-      <div className="container"> {/* Ronix usa px-0 en su container, puedes añadirlo si es necesario */}
-        
-        {/* Logo */}
-        <Link href="/" className="navbar-brand py-0"> {/* py-0 para quitar padding vertical si el logo lo necesita */}
+    <header className={`${styles.componenHeaderWebsite} navbar navbar-expand-lg navbar-light bg-light fixed-top py-0`}>
+      <div className="container">
+        <Link href="/" className="navbar-brand py-0">
           <Image
-            src="/images/ronix-logo.svg" // Asegúrate que esta ruta sea correcta
+            src="/images/ronix-logo.svg"
             alt="Ronix Tools Logo"
-            width={80} // Ancho del SVG original
-            height={30} // Alto del SVG original
+            width={80}
+            height={30}
             priority
           />
         </Link>
 
-        {/* Botón Hamburguesa para Móvil (Toggler de Bootstrap) */}
         <button
-          className="navbar-toggler d-lg-none" // d-lg-none lo oculta en pantallas grandes
+          className="navbar-toggler d-lg-none"
           type="button"
-          data-bs-toggle="collapse" // Atributos de Bootstrap para funcionalidad (requieren JS de Bootstrap o React-Bootstrap)
-          data-bs-target="#mainNavbarContent" // Debe coincidir con el ID del div colapsable
+          onClick={toggleMobileMenu}
           aria-controls="mainNavbarContent"
-          aria-expanded="false" // Esto será dinámico con el estado de React
+          aria-expanded={isMobileMenuOpen}
           aria-label="Toggle navigation"
-          // onClick={toggleMobileMenu} // La funcionalidad la implementaremos con React useState
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Contenedor Principal del Menú (Colapsable) */}
-        {/* Este div contendrá tanto los enlaces de navegación como las acciones de la derecha en desktop */}
-        {/* Y será el menú desplegable en móvil */}
-        <div className="collapse navbar-collapse" id="mainNavbarContent">
-          {/* Usamos ms-auto en el ul para empujar los items de la derecha, o envolvemos en divs y usamos justify-content-between */}
-          <ul className={`navbar-nav me-auto mb-2 mb-lg-0 ${styles.navbarNav}`}>
-            <li className="nav-item">
-            <Link href="/productos" className={`${styles.navLink} nav-link`}>Productos</Link>
+        <div className={`collapse navbar-collapse ${isMobileMenuOpen ? 'show' : ''}`} id="mainNavbarContent">
+          <ul className={`navbar-nav me-auto mb-2 mb-lg-0`}>
+            {/* Aquí puedes añadir tus links de navegación principales si lo deseas */}
+             <li className="nav-item">
+              <Link href="/productos" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Productos</Link>
             </li>
             <li className="nav-item">
-              <Link href="/nosotros" className={`${styles.navLink} nav-link`}>Nosotros</Link>
+              <Link href="/nosotros" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Nosotros</Link>
             </li>
             <li className="nav-item">
-              <Link href="/puntos-de-venta" className={`${styles.navLink} nav-link`}>Puntos de Venta</Link>
+                <Link href="/puntos-de-venta" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Puntos de Venta</Link>
             </li>
             <li className="nav-item">
-              <Link href="/contacto" className={`${styles.navLink} nav-link`}>Contacto</Link>
+                <Link href="/contacto" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Contacto</Link>
             </li>
           </ul>
 
-          {/* Acciones a la Derecha (CTA, Idioma, Búsqueda) */}
-          <div className={`d-flex align-items-center ${styles.navActions}`}>
-            {/* Contenedor para el botón CTA y el icono, alineados horizontalmente */}
-            <div className={`${styles.ctaWithIconContainer} d-flex align-items-center`}> {/* Contenedor Flex */}
-            <div className={styles.ctaButton}>
-              {/* CAMBIAMOS EL 'a' POR 'Link' Y EL HREF */}
-              <Link href="/revendedores" className="btn btn-danger btn-sm">
-                ¡Quiero ser un Punto de Venta Ronix! {/* CAMBIAMOS EL TEXTO */}
-              </Link>
-            </div>
-            <div className="ms-3"> 
-              <Image
-                src="/images/german-tech.webp"
-                alt="German Technology Icon"
-                width={100}
-                height={24}
+          <div className="d-flex flex-column flex-lg-row align-items-lg-center">
+            {/* Formulario de Búsqueda */}
+            <form onSubmit={handleSearchSubmit} className="d-flex me-lg-3 my-2 my-lg-0">
+              <input
+                className="form-control form-control-sm"
+                type="search"
+                placeholder="Buscar productos..."
+                aria-label="Search"
+                value={headerSearchTerm}
+                onChange={(e) => setHeaderSearchTerm(e.target.value)}
               />
-            </div>
-            </div>
-
-            <div className="ms-lg-2 d-none d-lg-inline-block"> {/* Oculto en móvil, visible en desktop */}
-              <button className={`btn btn-outline-secondary btn-sm ${styles.searchIconButton}`} aria-label="Search">
-                <span className={styles.iconPlaceholder}>🔍</span>
-              </button>
-              {/* La funcionalidad de búsqueda/despliegue de barra se implementará después */}
+            </form>
+            
+            {/* Botón CTA y Logo German Tech */}
+            <div className="d-flex align-items-center mt-2 mt-lg-0">
+              <div className={styles.ctaButton}>
+                <Link href="/revendedores" className="btn btn-danger btn-sm">
+                  ¡Quiero ser revendedor Ronix!
+                </Link>
+              </div>
+              <div className="ms-2">
+                <Image
+                  src="/images/german-tech.webp"
+                  alt="German Technology Icon"
+                  width={100}
+                  height={24}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/* Los mega-menús y la barra de búsqueda expandida irían fuera del 'collapse navbar-collapse'
-          y se mostrarían condicionalmente con estado de React. Los abordaremos después. */}
     </header>
   );
 }

@@ -1,16 +1,24 @@
-// src/components/ProductListClient.js
 "use client";
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ProductCard from '@/components/ProductCard';
-import styles from './ProductListClient.module.css'; 
+import styles from './ProductListClient.module.css';
 
-const PRODUCTS_PER_PAGE = 9; 
+const PRODUCTS_PER_PAGE = 9;
 
-export default function ProductListClient({ allProducts }) {
+// Un componente interno para poder usar el hook 'useSearchParams' dentro de Suspense
+function ProductGrid({ allProducts }) {
+  const searchParams = useSearchParams();
+  const initialSearch = searchParams.get('search') || "";
+
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(initialSearch);
   const [sortOrder, setSortOrder] = useState("name-asc");
+
+  useEffect(() => {
+    setSearchTerm(initialSearch);
+  }, [initialSearch]);
 
   const processedProducts = useMemo(() => {
     if (!allProducts || allProducts.length === 0) {
@@ -21,12 +29,8 @@ export default function ProductListClient({ allProducts }) {
       const lowerSearchTerm = searchTerm.toLowerCase();
       productsToProcess = productsToProcess.filter(product => {
         const nameMatch = product.name.toLowerCase().includes(lowerSearchTerm);
-        const codeMatch = product.product_variants && product.product_variants.length > 0 &&
-                          product.product_variants[0].code &&
-                          product.product_variants[0].code.toLowerCase().includes(lowerSearchTerm);
-        const eanMatch = product.product_variants && product.product_variants.length > 0 &&
-                          product.product_variants[0].ean &&
-                          String(product.product_variants[0].ean).toLowerCase().includes(lowerSearchTerm);
+        const codeMatch = product.product_variants && product.product_variants.some(v => v.code?.toLowerCase().includes(lowerSearchTerm));
+        const eanMatch = product.product_variants && product.product_variants.some(v => String(v.ean || '').toLowerCase().includes(lowerSearchTerm));
         return nameMatch || codeMatch || eanMatch;
       });
     }
@@ -54,17 +58,11 @@ export default function ProductListClient({ allProducts }) {
   const handleSearchChange = (event) => setSearchTerm(event.target.value);
   const handleSortChange = (event) => setSortOrder(event.target.value);
 
-  if (!allProducts) {
-    return <p className="text-center text-danger mt-3">Error al cargar productos.</p>;
-  }
-
   return (
     <div className={styles.productListLayout}>
       <div className={`row justify-content-center mb-4 ${styles.searchBarRow}`}>
         <div className="col-md-10 col-lg-8 col-xl-6">
-          <label htmlFor="search-input" className="form-label visually-hidden">Buscar productos</label>
           <input
-            id="search-input"
             type="text"
             className="form-control form-control-lg"
             placeholder="Buscar por nombre, código o EAN..."
@@ -73,10 +71,9 @@ export default function ProductListClient({ allProducts }) {
           />
         </div>
       </div>
-
       <div className={`row ${styles.mainContentRow}`}>
         <div className={`col-lg-3 col-md-4 ${styles.filtersColumn}`}>
-          <div className={`sticky-top ${styles.filtersStickyWrapper}`} style={{top: '80px'}}>
+          <div className={`sticky-top ${styles.filtersStickyWrapper}`} style={{ top: '80px' }}>
             <div className={styles.filtersContent}>
               <h5 className="mb-3 fw-bold">Filtros</h5>
               <div className="mb-4">
@@ -97,14 +94,12 @@ export default function ProductListClient({ allProducts }) {
             </div>
           </div>
         </div>
-
         <div className={`col-lg-9 col-md-8 ${styles.productsColumn}`}>
           {processedProducts.currentProducts.length > 0 ? (
             <>
-              {/* CAMBIO AQUÍ: g-0 para no gutters horizontales, y mb-3 en la columna para espacio vertical */}
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-0">
                 {processedProducts.currentProducts.map((product, index) => (
-                  <div key={product.id} className="col d-flex align-items-stretch mb-3"> {/* Añadido mb-3 */}
+                  <div key={product.id} className="col d-flex align-items-stretch mb-3">
                     <ProductCard 
                       product={product} 
                       isPriority={currentPage === 1 && index < 3} 
@@ -112,26 +107,19 @@ export default function ProductListClient({ allProducts }) {
                   </div>
                 ))}
               </div>
-
               {processedProducts.totalPages > 1 && (
                 <nav aria-label="Paginación de productos" className="mt-5 d-flex justify-content-center">
                   <ul className="pagination">
                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                      <button className="page-link" onClick={() => handlePaginate(currentPage - 1)} disabled={currentPage === 1}>
-                        Anterior
-                      </button>
+                      <button className="page-link" onClick={() => handlePaginate(currentPage - 1)} disabled={currentPage === 1}>Anterior</button>
                     </li>
                     {Array.from({ length: processedProducts.totalPages }, (_, i) => i + 1).map(number => (
                       <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
-                        <button className="page-link" onClick={() => handlePaginate(number)}>
-                          {number}
-                        </button>
+                        <button className="page-link" onClick={() => handlePaginate(number)}>{number}</button>
                       </li>
                     ))}
                     <li className={`page-item ${currentPage === processedProducts.totalPages ? 'disabled' : ''}`}>
-                      <button className="page-link" onClick={() => handlePaginate(currentPage + 1)} disabled={currentPage === processedProducts.totalPages}>
-                        Siguiente
-                      </button>
+                      <button className="page-link" onClick={() => handlePaginate(currentPage + 1)} disabled={currentPage === processedProducts.totalPages}>Siguiente</button>
                     </li>
                   </ul>
                 </nav>
@@ -150,4 +138,16 @@ export default function ProductListClient({ allProducts }) {
       </div>
     </div>
   );
+}
+
+// Componente principal que envuelve a ProductGrid con Suspense
+export default function ProductListClientWrapper({ allProducts }) {
+  if (!allProducts) {
+    return <p className="text-center text-danger mt-3">Error al cargar la data de productos.</p>;
+  }
+  return (
+    <Suspense fallback={<div className="text-center py-5">Cargando Búsqueda...</div>}>
+      <ProductGrid allProducts={allProducts} />
+    </Suspense>
+  )
 }
