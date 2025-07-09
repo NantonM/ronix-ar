@@ -1,6 +1,7 @@
 // src/app/productos/page.js
 import Image from 'next/image';
 import ProductListClient from '@/components/ProductListClient';
+import ProductListClientWrapper from '@/components/ProductListClient'; // <-- CAMBIO DE NOMBRE
 import { getAllProducts } from '@/lib/dataService'; // <-- IMPORTAMOS DIRECTAMENTE
 // import styles from './productos.module.css';
 
@@ -53,7 +54,7 @@ export default async function ProductosPage() {
       </div>
       
       {/* ProductListClient recibe los productos directamente */}
-      <ProductListClient allProducts={allProducts} /> 
+      <ProductListClientWrapper allProducts={allProducts} /> 
       {/* El mensaje de "no hay productos" ahora lo manejará principalmente ProductListClient si allProducts llega vacío */}
     </div>
   );

@@ -91,7 +91,21 @@ border-bottom: 1px solid #eee; /* Separador entre ítems móviles */
 .navLink:last-child {
 border-bottom: none;
 }
-
+.searchBtn {
+  /* Hacemos que sea un círculo perfecto */
+  border-radius: 50% !important; 
+  width: 31px;  /* Ancho igual a la altura de un botón 'sm' de Bootstrap */
+  height: 31px; /* Alto igual al ancho para que sea un cuadrado */
+  
+  /* Centramos el ícono/emoji dentro del círculo */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Quitamos el margen que lo pegaba al input rectangular */
+  margin-left: 0.5rem; /* Añadimos un pequeño margen a la izquierda */
+  padding: 0; /* Quitamos el padding para que el centrado funcione bien */
+}
 
 .navActions { /* El contenedor de los botones de la derecha */
 /* Bootstrap ya los apila con flex-column dentro del collapse,
