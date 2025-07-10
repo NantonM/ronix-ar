@@ -33,7 +33,7 @@ const subcategoryData  = [
     description: 'Corte limpio y preciso en cada uso',
     image: '/images/home_products/sierra.webp',
     ctaText: 'Explorar',
-    ctaLink: '/productos?subcategory=Cortantes'
+    ctaLink: '/productos?subcategory=Herramientas de Corte'
   },
 ];
 

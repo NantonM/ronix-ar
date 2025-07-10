@@ -1,170 +1,135 @@
-// src/app/puntos-de-venta/page.js
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import MapDisplay from '@/components/MapDisplay'; // Asegúrate que la ruta sea correcta
-import { DUMMY_LOCATIONS } from '@/data/locations'; // Asegúrate que la ruta sea correcta
-import styles from './puntosDeVenta.module.css'; // Tu archivo de estilos
-import Link from 'next/link'; // Para los enlaces de "Volver" en caso de error
+import MapDisplay from '@/components/MapDisplay';
+import styles from './puntosDeVenta.module.css'; // Asegúrate de que este archivo se esté importando
 
 export default function PuntosDeVentaPage() {
-  const [allLocations] = useState(DUMMY_LOCATIONS);
-  const [filteredLocations, setFilteredLocations] = useState(DUMMY_LOCATIONS);
+  const [allLocations, setAllLocations] = useState([]);
+  const [filteredLocations, setFilteredLocations] = useState([]);
   const [provinces, setProvinces] = useState([]);
-  const [selectedProvince, setSelectedProvince] = useState("");
+  const [selectedProvince, setSelectedProvince] = useState("all");
+  const [mapCenter, setMapCenter] = useState({ lat: -38.416097, lng: -63.616672 });
+  const [mapZoom, setMapZoom] = useState(4);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   
-  const [mapCenter, setMapCenter] = useState(
-    DUMMY_LOCATIONS.length > 0
-      ? { lat: DUMMY_LOCATIONS[0].lat, lng: DUMMY_LOCATIONS[0].lng }
-      : { lat: -34.603722, lng: -58.381592 } // Buenos Aires como fallback
-  );
-  const [mapZoom, setMapZoom] = useState(10); // Zoom inicial del mapa
-
-  // Estado para la ubicación seleccionada (para el InfoWindow)
+  // Estado para la ubicación activa (la que se seleccionó)
   const [activeLocation, setActiveLocation] = useState(null);
 
-  // Efecto para extraer las provincias únicas de nuestras ubicaciones
   useEffect(() => {
-    if (allLocations && allLocations.length > 0) {
-      const uniqueProvinces = [...new Set(allLocations.map(loc => loc.province))].sort();
-      setProvinces(uniqueProvinces);
-
-      // Ajustar el zoom inicial si hay varias provincias/ubicaciones y no hay filtro activo
-      if (!selectedProvince) {
-        if (uniqueProvinces.length > 1) {
-          setMapZoom(6); // Zoom más alejado si hay múltiples provincias
-          setMapCenter({ lat: -38.416097, lng: -63.616672 }); // Centro de Argentina
-        } else if (allLocations.length === 1) {
-          setMapZoom(13); // Zoom más cercano si solo hay una ubicación
-          setMapCenter({ lat: allLocations[0].lat, lng: allLocations[0].lng });
-        } else if (allLocations.length > 0) {
-           setMapCenter({ lat: allLocations[0].lat, lng: allLocations[0].lng });
-           setMapZoom(10); // Un zoom intermedio si hay varias ubicaciones en una sola provincia
-        }
+    async function loadLocations() {
+      // ... (tu lógica para cargar ubicaciones desde /api/locations) ...
+      try {
+        const response = await fetch('/api/locations');
+        if (!response.ok) throw new Error('No se pudieron cargar las ubicaciones.');
+        const data = await response.json();
+        setAllLocations(data);
+        setFilteredLocations(data);
+        const uniqueProvinces = [...new Set(data.map(loc => loc.province))].sort();
+        setProvinces(uniqueProvinces);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
       }
     }
-  }, [allLocations, selectedProvince]); // Depende de allLocations y selectedProvince para reajustar zoom/centro inicial
+    loadLocations();
+  }, []);
 
-  // Manejador para el cambio en el selector de provincia
   const handleProvinceChange = (event) => {
     const province = event.target.value;
     setSelectedProvince(province);
-    setActiveLocation(null); // Cerramos cualquier InfoWindow al cambiar de provincia
+    setActiveLocation(null); // Limpiar la selección al cambiar de provincia
 
-    if (province === "") {
+    if (province === "all") {
       setFilteredLocations(allLocations);
-      // Reajustar centro y zoom para "Todas las Provincias"
-      if (allLocations.length > 1 && provinces.length > 1) {
-        setMapCenter({ lat: -38.416097, lng: -63.616672 });
-        setMapZoom(6);
-      } else if (allLocations.length > 0) {
-        setMapCenter({ lat: allLocations[0].lat, lng: allLocations[0].lng });
-        setMapZoom(10);
-      }
+      setMapCenter({ lat: -38.416097, lng: -63.616672 });
+      setMapZoom(4);
     } else {
       const filtered = allLocations.filter(loc => loc.province === province);
       setFilteredLocations(filtered);
       if (filtered.length > 0) {
         setMapCenter({ lat: filtered[0].lat, lng: filtered[0].lng });
-        setMapZoom(12);
-      } else {
-        // Si no hay resultados para la provincia, podemos centrar en una vista general
-        setMapCenter({ lat: -38.416097, lng: -63.616672 });
-        setMapZoom(4);
+        setMapZoom(9);
       }
     }
   };
 
-  // Se llama al hacer clic en un ítem de la lista O en un marcador del mapa
-  const handleLocationSelect = (location) => {
-    if (activeLocation && activeLocation.id === location.id) {
-      setActiveLocation(null); // Si se clica el mismo, se deselecciona (cierra InfoWindow)
-    } else {
-      setActiveLocation(location);
-      setMapCenter({ lat: location.lat, lng: location.lng }); // Centra en la ubicación
-      setMapZoom(15); // Zoom más cercano al seleccionar
-    }
-  };
-  
-  // Se llama cuando se cierra el InfoWindow desde el mapa (clic en mapa o 'x' del InfoWindow)
-  const handleMapInteractionClose = () => {
-    setActiveLocation(null);
+  const handleLocationItemClick = (location) => {
+    setMapCenter({ lat: location.lat, lng: location.lng });
+    setMapZoom(15);
+    // Actualizamos el estado para saber qué ubicación está activa
+    setActiveLocation(location); 
+    // Log para depurar: verifica en la consola del navegador si esto se ejecuta
+    console.log("Ubicación activa seteada:", location); 
   };
 
-  return (
-    <div className={`container-fluid py-4 ${styles.pageContainer || ''}`}>
-      <div className="text-center mb-4">
-        <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
-        <p className="lead">
-          Encuentra nuestras herramientas y distribuidores autorizados cerca de ti.
-        </p>
-      </div>
+  const renderContent = () => {
+    if (isLoading) { /* ... JSX de carga ... */ }
+    if (error) { /* ... JSX de error ... */ }
 
-      <div className={styles.redBackgroundContainer}>
-        <div className="row align-items-stretch">
-          
-          <div className="col-lg-4 col-md-5 mb-4 mb-md-0 d-flex flex-column">
-            <div className="mb-4 p-3 bg-light rounded shadow-sm">
-              <label htmlFor="province-filter" className={`form-label fw-bold ${styles.filterLabel || ''}`}>
-                Filtrar por Provincia:
-              </label>
-              <select
-                id="province-filter"
-                className="form-select form-select-lg"
-                value={selectedProvince}
-                onChange={handleProvinceChange}
-              >
-                <option value="">Todas las Provincias</option>
-                {provinces.map(prov => (
-                  <option key={prov} value={prov}>{prov}</option>
-                ))}
-              </select>
-            </div>
-            
-            <div className={`${styles.listSectionWrapper} flex-grow-1 d-flex flex-column`}>
-              <h2 className={`h5 mb-2 ${styles.listTitle || ''}`}> 
-                Direcciones {selectedProvince ? `en ${selectedProvince}` : '(Todas)'}:
-              </h2>
-              {filteredLocations.length > 0 ? (
-                <div className={styles.locationListScrollable}>
-                  <ul className="list-group">
-                    {filteredLocations.map(loc => (
-                      <li
-                        key={loc.id}
-                        className={`list-group-item list-group-item-action ${styles.locationItem || ''} ${activeLocation && activeLocation.id === loc.id ? styles.activeLocationItem || 'active' : ''}`}
-                        onClick={() => handleLocationSelect(loc)}
-                        style={{ cursor: 'pointer' }}
-                      >
-                        <strong className={styles.locationName || ''}>{loc.name}</strong>
-                        <p className={`${styles.locationAddressMb0 || ''} mb-0`}><small>{loc.address} ({loc.province})</small></p>
-                        {loc.phone && <p className={`${styles.locationPhoneMb0 || ''} mb-0`}><small>Tel: {loc.phone}</small></p>}
-                      </li>
-                    ))}
+    return (
+      <div className="row">
+        <div className="col-lg-4 col-md-5 mb-4 mb-md-0">
+          <div className="sticky-top" style={{top: '80px'}}>
+            <div className={styles.filtersContent}>
+              <h5 className="mb-3 fw-bold">Ubicaciones</h5>
+              <div className="mb-4">
+                <label htmlFor="province-filter" className="form-label">Filtrar por Provincia:</label>
+                <select id="province-filter" className="form-select" value={selectedProvince} onChange={handleProvinceChange}>
+                  <option value="all">Todas las Provincias</option>
+                  {provinces.map(prov => (
+                    <option key={prov} value={prov}>{prov}</option>
+                  ))}
+                </select>
+              </div>
+              <div className={styles.locationListScrollable}>
+                {filteredLocations.length > 0 ? (
+                  <ul className="list-group list-group-flush">
+                    {filteredLocations.map(loc => {
+                      // Determinamos si este ítem es el que está activo
+                      const isActive = activeLocation && activeLocation.id === loc.id;
+                      
+                      return (
+                        <li 
+                          key={loc.id} 
+                          // --- CAMBIO CLAVE AQUÍ ---
+                          // Aplicamos la clase de módulo condicionalmente
+                          className={`${styles.locationItem} list-group-item list-group-item-action ${isActive ? styles.activeLocationItem : ''}`}
+                          onClick={() => handleLocationItemClick(loc)}
+                        >
+                          <strong className={styles.locationName}>{loc.name}</strong>
+                          <p className={`${styles.locationAddressMb0} mb-0`}><small>{loc.address}, {loc.city}</small></p>
+                        </li>
+                      );
+                    })}
                   </ul>
-                </div>
-              ) : (
-                <p className={`text-center text-muted mt-3 ${styles.noResultsText || ''}`}>
-                  No se encontraron puntos de venta para la selección actual.
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="col-lg-8 col-md-7 d-flex">
-            <div className={`${styles.mapWrapper} flex-grow-1`}>
-              <MapDisplay
-                initialCenter={mapCenter}
-                zoomLevel={mapZoom}
-                locations={filteredLocations}
-                selectedLocation={activeLocation}
-                onMarkerClick={handleLocationSelect}
-                onInfoWindowClose={handleMapInteractionClose}
-                onMapClick={handleMapInteractionClose} 
-              />
+                ) : <p className="text-muted small p-2">No se encontraron ubicaciones para esta selección.</p>}
+              </div>
             </div>
           </div>
         </div>
+        <div className="col-lg-8 col-md-7">
+          <div className={styles.mapWrapper}>
+            <MapDisplay 
+              initialCenter={mapCenter} 
+              zoomLevel={mapZoom}
+              locations={filteredLocations} 
+            />
+          </div>
+        </div>
       </div>
+    );
+  };
+
+  return (
+    <div className={`container py-4`}>
+      <div className="text-center mb-4">
+        <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
+        <p className="lead">Encuentra nuestras herramientas y distribuidores autorizados.</p>
+      </div>
+      {renderContent()}
     </div>
   );
 }

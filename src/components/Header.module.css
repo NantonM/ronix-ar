@@ -1,124 +1,141 @@
 /* src/components/Header.module.css */
+
+/* --- Estilos Generales y de ESCRITORIO --- */
 .componenHeaderWebsite {
-  background-color: #fff;
-  height: 56px; /* La altura que hayas decidido */
-  /* position: sticky; top: 0;  Bootstrap ya lo hace con sticky-top */
-  z-index: 1020; /* Bootstrap sticky-top usa z-index: 1020 */
-  border-bottom: 1px solid #e0e0e0;
-  width: 100%; /* Asegurar que ocupe todo el ancho para el sticky */
+  background-color: #ffffff;
+  height: 56px;
+  z-index: 1030;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Ajustes para que se parezca más a la estructura de Ronix que no es un navbar-nav típico para todo */
-/*.navbarNav {
- /* Puedes usar esto para controlar el espaciado si no usas ms-auto/me-auto en el ul */
-/*}
-
-/*.navItem {
-  /* Para los elementos que contendrán los enlaces o los triggers de mega-menús */
-/*}*/
-
-.navLink { /* Ajusta el padding y font-size de tus enlaces */
+/* ESTA ES LA REGLA DE ESCRITORIO QUE QUEREMOS ANULAR EN MÓVIL */
+.navLink {
   color: #3d3d3d !important;
-  font-size: 13px; /* REDUCIDO - prueba con 13px o 14px */
-  font-weight: 400;
-  padding-top: 0.4rem !important;    /* REDUCIDO */
-  padding-bottom: 0.4rem !important; /* REDUCIDO */
-  padding-left: 0.5rem !important;  /* ANTES: 0.75rem */
-  padding-right: 0.5rem !important; /* ANTES: 0.75rem */
-  white-space: nowrap; /* Esto evita que el texto de UN SOLO enlace se parta en dos líneas */
-  display: flex;       /* Asegura alineación si tienes iconos dentro */
-  align-items: center;
+  font-size: 14px; /* Tamaño para escritorio */
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  white-space: nowrap;
   border-bottom: 2px solid transparent;
-  transition: border-bottom 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .navLink:hover {
   color: #bf0000 !important;
-  background: #f2f2f2;
-  border-bottom: 2px solid #bf0000;
-}
-.navItem > span:hover { /* Para los span que actúan como links */
-  color: #ED1C24 !important; /* Rojo Ronix */
-  cursor: pointer;
+  border-bottom-color: #bf0000;
+  background-color: transparent !important;
 }
 
-.iconPlaceholder { /* Si sigues usando el placeholder ▼ 🌐 🔍 */
-  margin-left: 4px; /* Ajusta este espacio */
-  font-size: 0.7em; /* Puede ayudar a que ocupe menos */
+.searchBtn { /* Estilos para tu botón de búsqueda */ }
+.ctaButton {
+  /* Sobrescribimos los estilos de .btn de Bootstrap para ajustarlo */
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease-in-out !important;
+  white-space: nowrap;
 }
 
-.navActions {
-  /* Para el grupo de elementos a la derecha */
-  margin-left: auto; /* Empuja este grupo a la derecha si el ul no usa me-auto */
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.ctaButton .btn { /* Ajusta el padding del botón CTA si es necesario */
-  font-size: 13px; /* REDUCIDO */
-  padding: 0.25rem 0.75rem !important; /* Padding más pequeño para el botón */
-}
-.ctaButton .btn:hover {
-  background-color: #484848 !important;
-  border-color: #484848 !important;
+/* ================================================= */
+/* === Estilos EXCLUSIVOS para Vista MÓVIL === */
+/* ================================================= */
+@media (max-width: 991.98px) {
+
+  .menuOpen .ctaButton {
+  width: 100%; /* Hacemos que el contenedor del botón ocupe el ancho */
+  margin-top: 1rem; /* Un poco de espacio arriba */
 }
 
-.languageSelector button,
-.searchIconButton {
-  border-radius: 50px !important; /* Si quieres botones redondos como algunos iconos */
-  padding: 0.3rem 0.6rem;
+.menuOpen .ctaButton .btn {
+  width: 100%; /* Hacemos que el botón en sí ocupe todo el ancho */
+  padding: 0.75rem 1rem !important; /* Hacemos el botón más alto y fácil de tocar */
+  font-size: 1rem !important; /* Agrandamos un poco la letra del botón */
 }
-
-
-/* Estilos para la barra de búsqueda superior (search-section en el HTML de Ronix) */
-/* Esta parte es más compleja y se activaría con JS. Por ahora la omitimos del JSX principal.
-.searchSection {
-  display: none; // Se mostraría con JS
-  padding: 1rem 0;
-  background-color: #f0f0f0;
-}
-.searchInput {
-  width: 100%;
-}
-*/
-
-@media (max-width: 991.98px) { /* Breakpoint lg de Bootstrap, cuando el menú colapsa si usas navbar-expand-lg */
-  /* Si cambiaste a navbar-expand-md, usa 767.98px */
-.navLink {
-white-space: normal; /* Permitir que el texto se parta en varias líneas en móvil */
-padding: 0.75rem 1rem; /* Más padding vertical para ítems de menú móvil */
-width: 100%; /* Para que ocupen todo el ancho del menú desplegable */
-border-bottom: 1px solid #eee; /* Separador entre ítems móviles */
-}
-.navLink:last-child {
-border-bottom: none;
-}
-.searchBtn {
-  /* Hacemos que sea un círculo perfecto */
-  border-radius: 50% !important; 
-  width: 31px;  /* Ancho igual a la altura de un botón 'sm' de Bootstrap */
-  height: 31px; /* Alto igual al ancho para que sea un cuadrado */
   
-  /* Centramos el ícono/emoji dentro del círculo */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* Quitamos el margen que lo pegaba al input rectangular */
-  margin-left: 0.5rem; /* Añadimos un pequeño margen a la izquierda */
-  padding: 0; /* Quitamos el padding para que el centrado funcione bien */
-}
+  .navbarToggler {
+    border: none;
+  }
+  .navbarToggler:focus {
+    box-shadow: none;
+  }
+  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+    height: 22px;
+  }
+  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::before,
+  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    content: ''; position: absolute; left: 0; top: 50%; width: 100%;
+    height: 2px; background-color: currentColor; transition: transform 0.3s ease-in-out;
+  }
+  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+  }
+  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+  }
 
-.navActions { /* El contenedor de los botones de la derecha */
-/* Bootstrap ya los apila con flex-column dentro del collapse,
-pero podrías querer más espacio o alineación específica */
-margin-top: 1rem;
-padding-top: 1rem;
-border-top: 1px solid #eee;
-}
-.navActions > div { /* Cada elemento dentro de .navActions */
-margin-bottom: 0.5rem;
-width: 100%; /* Para que los botones ocupen el ancho */
-}
-.navActions .btn {
-width: 100%; /* Botones full-width en móvil */
-}
+  /* Estilo del menú desplegable abierto */
+  .menuOpen {
+    position: fixed !important;
+    top: 56px;
+    left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2rem !important;
+    animation: fadeInMenu 0.3s ease-in-out;
+  }
+
+  @keyframes fadeInMenu {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* --- CAMBIO CLAVE Y DEFINITIVO AQUÍ --- */
+  
+  /* Hacemos que el selector sea más específico:
+     Buscamos un enlace que tenga NUESTRA clase .navLink
+     y que esté DENTRO de un elemento con NUESTRA clase .menuOpen */
+  .menuOpen .navLink {
+    font-size: 2.2rem !important;   /* Letra más grande */
+    font-weight: 700 !important;   /* Letra más gruesa */
+    color: #212529 !important;     /* Color de texto oscuro */
+    margin-bottom: 2rem !important;/* Espacio extra entre los links */
+    border-bottom: none !important;  /* Nos aseguramos que no tenga borde de hover */
+    text-align: center;
+  }
+  
+  .menuOpen .navActions {
+    margin-top: 3rem;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .menuOpen form {
+      margin-bottom: 1rem;
+  }
+
+  .menuOpen .form-control {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    height: auto;
+  }
+
+  .menuOpen .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
 }

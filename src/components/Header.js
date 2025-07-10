@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -11,27 +11,40 @@ export default function Header() {
   const [headerSearchTerm, setHeaderSearchTerm] = useState('');
   const router = useRouter();
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileNav = (path) => {
+    if (isMobileMenuOpen) {
+      toggleMobileMenu();
+    }
+    router.push(path);
+  };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     const searchTerm = headerSearchTerm.trim();
     if (searchTerm) {
-      router.push(`/productos?search=${encodeURIComponent(searchTerm)}`);
-      setHeaderSearchTerm(''); // Limpia el campo después de buscar
-      if (isMobileMenuOpen) {
-        toggleMobileMenu(); // Cierra el menú móvil si estaba abierto
-      }
+      handleMobileNav(`/productos?search=${encodeURIComponent(searchTerm)}`);
+      setHeaderSearchTerm('');
     }
   };
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className={`${styles.componenHeaderWebsite} navbar navbar-expand-lg navbar-light bg-light fixed-top py-0`}>
       <div className="container">
-        <Link href="/" className="navbar-brand py-0">
+        <Link href="/" className="navbar-brand py-0" onClick={() => isMobileMenuOpen && toggleMobileMenu()}>
           <Image
             src="/images/ronix-logo.svg"
-            alt="Ronix Tools Logo"
+            alt="Logo de Ronix Tools"
             width={80}
             height={30}
             priority
@@ -39,7 +52,7 @@ export default function Header() {
         </Link>
 
         <button
-          className="navbar-toggler d-lg-none"
+          className={`navbar-toggler ${styles.navbarToggler}`} 
           type="button"
           onClick={toggleMobileMenu}
           aria-controls="mainNavbarContent"
@@ -49,47 +62,49 @@ export default function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className={`collapse navbar-collapse ${isMobileMenuOpen ? 'show' : ''}`} id="mainNavbarContent">
-          <ul className={`navbar-nav me-auto mb-2 mb-lg-0`}>
-            {/* Aquí puedes añadir tus links de navegación principales si lo deseas */}
-             <li className="nav-item">
-              <Link href="/productos" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Productos</Link>
+        <div 
+          className={`collapse navbar-collapse ${isMobileMenuOpen ? styles.menuOpen : ''}`} 
+          id="mainNavbarContent"
+        >
+          {/* CAMBIO: Quitamos 'me-auto' para que el CSS controle el layout */}
+          <ul className="navbar-nav mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link href="/productos" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Productos</Link>
             </li>
             <li className="nav-item">
-              <Link href="/nosotros" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Nosotros</Link>
+              <Link href="/nosotros" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Nosotros</Link>
             </li>
             <li className="nav-item">
-                <Link href="/puntos-de-venta" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Puntos de Venta</Link>
+              <Link href="/puntos-de-venta" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Puntos de Venta</Link>
             </li>
             <li className="nav-item">
-                <Link href="/contacto" className="nav-link" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Contacto</Link>
+              <Link href="/contacto" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Contacto</Link>
             </li>
           </ul>
 
-          <div className="d-flex flex-column flex-lg-row align-items-lg-center">
-            {/* Formulario de Búsqueda */}
+          <div className={`d-flex flex-column flex-lg-row align-items-lg-center ${styles.navActions}`}>
             <form onSubmit={handleSearchSubmit} className="d-flex me-lg-3 my-2 my-lg-0">
               <input
-                className="form-control form-control-sm"
+                className="form-control" // Quitamos -sm para que sea más grande en móvil
                 type="search"
-                placeholder="Buscar productos..."
+                placeholder="Buscar..."
                 aria-label="Search"
                 value={headerSearchTerm}
                 onChange={(e) => setHeaderSearchTerm(e.target.value)}
               />
+              <button className={`btn ${styles.searchBtn}`} type="submit" aria-label="Buscar">🔍</button>
             </form>
             
-            {/* Botón CTA y Logo German Tech */}
             <div className="d-flex align-items-center mt-2 mt-lg-0">
               <div className={styles.ctaButton}>
-                <Link href="/revendedores" className="btn btn-danger btn-sm">
-                  ¡Quiero ser revendedor Ronix!
-                </Link>
+              <Link href="/revendedores" className={`btn btn-danger ${styles.ctaButton}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>
+                ¡Quiero ser revendedor Ronix!
+              </Link>
               </div>
               <div className="ms-2">
                 <Image
                   src="/images/german-tech.webp"
-                  alt="German Technology Icon"
+                  alt="Icono de Tecnología Alemana"
                   width={100}
                   height={24}
                 />
