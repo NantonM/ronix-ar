@@ -48,9 +48,10 @@
 @media (max-width: 991.98px) {
 
   .menuOpen .ctaButton {
-  width: 100%; /* Hacemos que el contenedor del botón ocupe el ancho */
-  margin-top: 1rem; /* Un poco de espacio arriba */
-}
+    width: 100%;
+    font-size: 1.1rem !important;
+    padding: 0.75rem 1rem !important;
+  }
 
 .menuOpen .ctaButton .btn {
   width: 100%; /* Hacemos que el botón en sí ocupe todo el ancho */
