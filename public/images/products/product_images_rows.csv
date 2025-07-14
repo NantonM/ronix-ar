@@ -15,3 +15,92 @@ id;created_at;product_id;image_url;alt_text;sort_order;is_primary
 209;2025-07-3 15:40:29.583996+00;98;/images/products/Set_de_5_Cepillos_Rizados_p_Taladro_2.webp;;2;
 210;2025-07-3 15:40:29.583996+00;99;/images/products/Cepillo_Copa_Rizado_p_Taladro_0.webp;Cepillo Copa Rizado p/Taladro;0;TRUE
 211;2025-07-3 15:40:29.583996+00;100;/images/products/Cepillo_Plano_Rizado_p_Taladro_0.webp;Cepillo Plano Rizado p/Taladro;0;TRUE
+212;2025-07-14 15:40:29.583996+00;101;/images/products/Cepillo_Copa_Rizado_p_Amoladora_M14_0.webp;Cepillo Copa Rizado p/Amoladora M14;0;TRUE
+213;2025-07-14 15:40:29.583996+00;101;/images/products/Cepillo_Copa_Rizado_p_Amoladora_M14_1.webp;;1;
+214;2025-07-14 15:40:29.583996+00;102;/images/products/Cepillo_Copa_Trenzado_p_Amoladora_M14_0.webp;Cepillo Copa Trenzado p/Amoladora M14;0;TRUE
+215;2025-07-14 15:40:29.583996+00;102;/images/products/Cepillo_Copa_Trenzado_p_Amoladora_M14_1.webp;;1;
+216;2025-07-14 15:40:29.583996+00;103;/images/products/Cepillo_de_Alambre_Mango_PVC_0.webp;Cepillo de Alambre Mango PVC;0;TRUE
+217;2025-07-14 15:40:29.583996+00;104;/images/products/Set_de_Mechas_p_Madera_5pz_0.webp;Set de Mechas p/Madera 5pz;0;TRUE
+218;2025-07-14 15:40:29.583996+00;105;/images/products/Set_de_13_Mechas_Paleta_p_Madera_0.webp;Set de 13 Mechas Paleta p/Madera;0;TRUE
+219;2025-07-14 15:40:29.583996+00;106;/images/products/Set_de_Mechas_de_Acero_Rapido_M2_0.webp;Set de Mechas de Acero Rápido M2;0;TRUE
+220;2025-07-14 15:40:29.583996+00;107;/images/products/Set_de_25_Mechas_HSS_1_13_0.webp;Set de 25 Mechas HSS 1-13;0;TRUE
+221;2025-07-14 15:40:29.583996+00;107;/images/products/Set_de_25_Mechas_HSS_1_13_1.webp;;1;
+222;2025-07-14 15:40:29.583996+00;108;/images/products/Set_de_Mechas_Escalonadas_de_3pz_HSS_c_Titanio_0.webp;Set de Mechas Escalonadas de 3pz HSS c/Titanio ;0;TRUE
+223;2025-07-14 15:40:29.583996+00;109;/images/products/Mecha_Escalonada_4_20mm_HSS_c_Titanio_0.webp;Mecha Escalonada 4-20mm HSS c/Titanio ;0;TRUE
+224;2025-07-14 15:40:29.583996+00;109;/images/products/Mecha_Escalonada_4_20mm_HSS_c_Titanio_1.webp;;1;
+225;2025-07-14 15:40:29.583996+00;110;/images/products/Set_de_Mechas_Multimaterial_0.webp;Set de Mechas Multimaterial;0;TRUE
+226;2025-07-14 15:40:29.583996+00;110;/images/products/Set_de_Mechas_Multimaterial_1.webp;;1;
+227;2025-07-14 15:40:29.583996+00;111;/images/products/Set_de_Mechas_p_Vidrio_0.webp;Set de Mechas p/Vidrio;0;TRUE
+228;2025-07-14 15:40:29.583996+00;111;/images/products/Set_de_Mechas_p_Vidrio_1.webp;;1;
+229;2025-07-14 15:40:29.583996+00;111;/images/products/Set_de_Mechas_p_Vidrio_2.webp;;2;
+230;2025-07-14 15:40:29.583996+00;112;/images/products/Set_De_Mechas_de_Widia_0.png;Set de Mechas p/Vidrio;0;TRUE
+231;2025-07-14 15:40:29.583996+00;113;/images/products/Mechas_de_Widia_0.png;Mechas de Widia;0;TRUE
+232;2025-07-14 15:40:29.583996+00;114;/images/products/Set_de_Mechas_SDS_PLUS_0.webp;Set de Mechas SDS PLUS;0;TRUE
+233;2025-07-14 15:40:29.583996+00;114;/images/products/Set_de_Mechas_SDS_PLUS_1.webp;;1;
+234;2025-07-14 15:40:29.583996+00;115;/images/products/Set_de_Mechas_y_Puntas_SDS_PLUS_0.webp;Set de Mechas y Puntas SDS PLUS ;0;TRUE
+235;2025-07-14 15:40:29.583996+00;116;/images/products/Set_de_10_Sierras_Copas_Bi_metalicas_0.webp;Set de 10 Sierras Copas Bi-metálicas;0;TRUE
+236;2025-07-14 15:40:29.583996+00;117;/images/products/Disco_de_Corte_p_Metal_0.png;Disco de Corte p/Metal ;0;TRUE
+237;2025-07-14 15:40:29.583996+00;117;/images/products/Disco_de_Corte_p_Metal_1.webp;;1;
+238;2025-07-14 15:40:29.583996+00;117;/images/products/Disco_de_Corte_p_Metal_2.webp;;2;
+239;2025-07-14 15:40:29.583996+00;118;/images/products/Disco_Flap_de_Zircornio_115mm_0.webp;Disco Flap de Zircornio 115mm;0;TRUE
+240;2025-07-14 15:40:29.583996+00;118;/images/products/Disco_Flap_de_Zircornio_115mm_1.webp;;1;
+241;2025-07-14 15:40:29.583996+00;118;/images/products/Disco_Flap_de_Zircornio_115mm_2.webp;;2;
+242;2025-07-14 15:40:29.583996+00;119;/images/products/Disco_Flap_de_Zircornio_115mm_0.webp;Muela Diamantada de 125mm;0;TRUE
+243;2025-07-14 15:40:29.583996+00;119;/images/products/Disco_Flap_de_Zircornio_115mm_1.webp;;1;
+244;2025-07-14 15:40:29.583996+00;119;/images/products/Disco_Flap_de_Zircornio_115mm_2.webp;;2;
+245;2025-07-14 15:40:29.583996+00;120;/images/products/Escalera_de_Aluminio_Plegable_4x4_0.webp;Escalera de Aluminio Plegable 4x4;0;TRUE
+246;2025-07-14 15:40:29.583996+00;121;/images/products/Porta_Puntas_de_1_4_Magnetico_0.webp;Porta Puntas de 1/4 Magnético ;0;TRUE
+247;2025-07-14 15:40:29.583996+00;122;/images/products/Set_de_Porta_Puntas_de_1_4_Magnetico_0.webp;Set de Porta Puntas de 1/4 Magnético ;0;TRUE
+248;2025-07-14 15:40:29.583996+00;123;/images/products/Porta_Puntas_8_Puntas_PL_y_PH_0.webp;Porta Puntas + 8 Puntas PL y PH;0;TRUE
+249;2025-07-14 15:40:29.583996+00;124;/images/products/Set_de_Adaptadores_Magneticos_0.webp;Set de Adaptadores Magnéticos ;0;TRUE
+250;2025-07-14 15:40:29.583996+00;125;/images/products/Set_de_10_Puntas_PH2_x_50mm_0.webp;Set de 10 Puntas PH2 x 50mm ;0;TRUE
+251;2025-07-14 15:40:29.583996+00;125;/images/products/Set_de_10_Puntas_PH2_x_50mm_1.png;;1;
+252;2025-07-14 15:40:29.583996+00;126;/images/products/Set_de_10_Puntas_PL6_x_50mm_0.webp;Set de 10 Puntas PL6 x 50mm;0;TRUE
+253;2025-07-14 15:40:29.583996+00;126;/images/products/Set_de_10_Puntas_PL6_x_50mm_1.png;;1;
+254;2025-07-14 15:40:29.583996+00;127;/images/products/Set_de_10_Puntas_PH2_PL6_x_65mm_0.webp;Set de 10 Puntas PH2-PL6 x 65mm;0;TRUE
+255;2025-07-14 15:40:29.583996+00;127;/images/products/Set_de_10_Puntas_PH2_PL6_x_65mm_1.webp;;1;
+256;2025-07-14 15:40:29.583996+00;127;/images/products/Set_de_10_Puntas_PH2_PL6_x_65mm_2.webp;;2;
+258;2025-07-14 15:40:29.583996+00;128;/images/products/Set_de_Puntas_PL_PH_ALLEN_Y_T_30_pzs_0.webp;Set de Puntas PL PH ALLEN Y T 30 pzs;0;TRUE
+259;2025-07-14 15:40:29.583996+00;129;/images/products/Set_de_Puntas_y_Tubos_de_1_4_25_pzs_0.webp;"Set de Puntas y Tubos de 1/4"" 25 pzs";0;TRUE
+260;2025-07-14 15:40:29.583996+00;129;/images/products/Set_de_Puntas_y_Tubos_de_1_4_25_pzs_1.webp;;1;
+261;2025-07-14 15:40:29.583996+00;129;/images/products/Set_de_Puntas_y_Tubos_de_1_4_25_pzs_2.webp;;2;
+262;2025-07-14 15:40:29.583996+00;129;/images/products/Set_de_Puntas_y_Tubos_de_1_4_25_pzs_3.webp;;3;
+263;2025-07-14 15:40:29.583996+00;130;/images/products/Set_de_Puntas_y_Acoples_1_4_48_pzs_0.webp;Set de Puntas y Acoples 1/4 48 pzs ;0;TRUE
+264;2025-07-14 15:40:29.583996+00;130;/images/products/Set_de_Puntas_y_Acoples_1_4_48_pzs_1.webp;;1;
+265;2025-07-14 15:40:29.583996+00;130;/images/products/Set_de_Puntas_y_Acoples_1_4_48_pzs_2.webp;;2;
+266;2025-07-14 15:40:29.583996+00;130;/images/products/Set_de_Puntas_y_Acoples_1_4_48_pzs_3.webp;;3;
+267;2025-07-14 15:40:29.583996+00;131;/images/products/Set_de_Tubos_de_1_4_y_Puntas_27_pzs_0.webp;Set de Tubos de 1/4 y Puntas 27 pzs;0;TRUE
+268;2025-07-14 15:40:29.583996+00;131;/images/products/Set_de_Tubos_de_1_4_y_Puntas_27_pzs_1.webp;;1;
+269;2025-07-14 15:40:29.583996+00;131;/images/products/Set_de_Tubos_de_1_4_y_Puntas_27_pzs_2.webp;;2;
+270;2025-07-14 15:40:29.583996+00;132;/images/products/Set_de_Tubos_y_Puntas_de_1_4_64_pzs_0.webp;Set de Tubos y Puntas de 1/4 64 pzs;0;TRUE
+271;2025-07-14 15:40:29.583996+00;132;/images/products/Set_de_Tubos_y_Puntas_de_1_4_64_pzs_1.webp;;1;
+272;2025-07-14 15:40:29.583996+00;132;/images/products/Set_de_Tubos_y_Puntas_de_1_4_64_pzs_2.webp;;2;
+273;2025-07-14 15:40:29.583996+00;133;/images/products/Set_de_Puntas_y_Tubos_de_1_4_56_pzs_0.webp;"Set de Puntas y Tubos de 1/4"" 56 pzs";0;TRUE
+274;2025-07-14 15:40:29.583996+00;133;/images/products/Set_de_Puntas_y_Tubos_de_1_4_56_pzs_1.webp;;1;
+275;2025-07-14 15:40:29.583996+00;134;/images/products/Set_de_Puntas_y_Tubos_de_1_4_56_pzs_0.webp;Set de Tubos y Crique de 1/2 12 pzs;0;TRUE
+276;2025-07-14 15:40:29.583996+00;135;/images/products/Set_de_Tubos_de_1_4_?_3_8_40_pzs_0.webp;Set de Tubos de 1/4 ? 3/8 40 pzs;0;TRUE
+277;2025-07-14 15:40:29.583996+00;135;/images/products/Set_de_Tubos_de_1_4_?_3_8_40_pzs_1.webp;;1;
+278;2025-07-14 15:40:29.583996+00;135;/images/products/Set_de_Tubos_de_1_4_?_3_8_40_pzs_2.webp;;2;
+279;2025-07-14 15:40:29.583996+00;135;/images/products/Set_de_Tubos_de_1_4_?_3_8_40_pzs_3.webp;;3;
+280;2025-07-14 15:40:29.583996+00;136;/images/products/Set_de_Tubos_de_1_2_24_pzs_0.webp;Set de Tubos de 1/2 24 pzs;0;TRUE
+281;2025-07-14 15:40:29.583996+00;136;/images/products/Set_de_Tubos_de_1_2_24_pzs_1.webp;;1;
+282;2025-07-14 15:40:29.583996+00;136;/images/products/Set_de_Tubos_de_1_2_24_pzs_2.webp;;2;
+283;2025-07-14 15:40:29.583996+00;136;/images/products/Set_de_Tubos_de_1_2_24_pzs_3.webp;;3;
+284;2025-07-14 15:40:29.583996+00;137;/images/products/Destornilladores_Relojeros_0.webp;Destornilladores Relojeros;0;TRUE
+285;2025-07-14 15:40:29.583996+00;137;/images/products/Destornilladores_Relojeros_1.webp;;1;
+286;2025-07-14 15:40:29.583996+00;138;/images/products/Set_de_Herramientas_p_Celulares_0.webp;Set de Herramientas p/Celulares;0;TRUE
+287;2025-07-14 15:40:29.583996+00;138;/images/products/Set_de_Herramientas_p_Celulares_1.webp;;1;
+288;2025-07-14 15:40:29.583996+00;138;/images/products/Set_de_Herramientas_p_Celulares_2.webp;;2;
+289;2025-07-14 15:40:29.583996+00;138;/images/products/Set_de_Herramientas_p_Celulares_3.webp;;3;
+290;2025-07-14 15:40:29.583996+00;138;/images/products/Set_de_Herramientas_p_Celulares_4.webp;;4;
+291;2025-07-14 15:40:29.583996+00;139;/images/products/Set_de_Herramientas_p_Bicicletas_0.webp;Set de Herramientas p/Bicicletas ;0;TRUE
+292;2025-07-14 15:40:29.583996+00;139;/images/products/Set_de_Herramientas_p_Bicicletas_1.webp;;1;
+293;2025-07-14 15:40:29.583996+00;139;/images/products/Set_de_Herramientas_p_Bicicletas_2.webp;;2;
+294;2025-07-14 15:40:29.583996+00;140;/images/products/Estuche_Portaherramientas_0.webp;Estuche Portaherramientas;0;TRUE
+295;2025-07-14 15:40:29.583996+00;141;/images/products/Cinturon_Portaherramientas_0.webp;Cinturón Portaherramientas;0;TRUE
+296;2025-07-14 15:40:29.583996+00;142;/images/products/Set_de_Sondas_mm_y_pulg_0.webp;Set de Sondas mm y pulg;0;TRUE
+297;2025-07-14 15:40:29.583996+00;142;/images/products/Set_de_Sondas_mm_y_pulg_1.webp;;1;
+298;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_0.webp;Kit de Seguridad p/Autos;0;TRUE
+299;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_1.webp;;1;
+300;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_2.webp;;2;
+301;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_3.webp;;3;

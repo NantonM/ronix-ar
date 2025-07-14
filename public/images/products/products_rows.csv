@@ -1,4 +1,4 @@
-id;created_at;name;description;category
+id;created_at;name;description;category;
 91;2025-07-3 15:40:29.583996+00;Camilla de Mecánico c/Luz Led ;"Se puede utilizar como asiento o camilla.
 Ideal para trabajos de mantenimiento y servicio.
 Ruedas giratorias de 3 pulgadas, resistentes al aceite.
@@ -6,18 +6,18 @@ Reposacabezas acolchado para mayor comodidad.
 Permite trabajar de manera más limpia y cómoda debajo y alrededor del vehículo.
 Linterna LED regulable para iluminación adicional.
 Baterías no incluidas.
-";Herramientas Manuales
+";Herramientas Manuales;
 92;2025-07-3 15:40:29.583996+00;Crique Botella Hidráulico;" Fabricado en acero aleado forjado para máxima resistencia, con una estructura
 completamente soldada y sin fugas.
-Pistón hidráulico reforzado para mayor durabilidad y rendimiento.";Herramientas Manuales
+Pistón hidráulico reforzado para mayor durabilidad y rendimiento.";Herramientas Manuales;
 93;2025-07-3 15:40:29.583996+00;Caja Plástica Profesional;"Caja de PVC de alto impacto reforzada, con gaveteros superiores.
 Doble cierre plástico extra resistente que evita la apertura accidental de la caja.
 Sello de goma integrado para proteger contra el agua y el polvo.
 Mango ergonómico para un fácil agarre y transporte.
-";Herramientas Manuales
+";Herramientas Manuales;
 94;2025-07-3 15:40:29.583996+00;"Caja Metálica Fuelle 20"" ";"Fabricado en acero resistente y duradero.
 Tipo fuelle con 3 niveles para una mejor organización de las herramientas.
-Remaches de acero para una mayor vida útil y mejor rendimiento.";Herramientas Manuales
+Remaches de acero para una mayor vida útil y mejor rendimiento.";Herramientas Manuales;
 95;2025-07-3 15:40:29.583996+00;"Bolso Porta Herramientas 16""";"Bolso para herramientas de 16"" con 14 compartimentos: 6 interiores y 8 exteriores, ideal
 para el hogar, el taller o el lugar de trabajo.
 Anillas en D de metal plateado resistentes y asas de transporte duraderas, con correa de
@@ -25,13 +25,13 @@ hombro ajustable para un transporte cómodo.
 Portaherramientas robusto con asa resistente y correa de hombro acolchada para una
 larga vida útily máxima comodidad.
 Acceso rápido y organización individual de las herramientas gracias a las presillas de
-sujeción integradas.";Herramientas Manuales
+sujeción integradas.";Herramientas Manuales;
 96;2025-07-3 15:40:29.583996+00;"Bolso Porta Herramientas 17""";"Bolso para herramientas de 17"" con 15 compartimentos: 4 interiores y 11 exteriores,
 ideal para el hogar, el taller o el lugar de trabajo.
 Anillos en D de metal plateado resistentes y asas de transporte duraderas, con correa de
 hombro ajustable para un transporte cómodo.
 Portaherramientas robusto con asa resistente y correa de hombro acolchada,
-garantizando una larga vida útil y máxima comodidad.";Herramientas Manuales
+garantizando una larga vida útil y máxima comodidad.";Herramientas Manuales;
 97;2025-07-3 15:40:29.583996+00;Mochila Reforzada c/ Base Plástica ;"Mochila porta herramientas de 13"" con 22 compartimentos: 19 interiores y 3
 exteriores, ideal para el hogar, el taller o el lugar de trabajo.
 Base de goma para evitar filtraciones y mayor durabilidad.
@@ -39,37 +39,212 @@ Espacio de almacenamiento ideal para herramientas manuales y artículos
 pequeños a medianos; 4 cierres suaves facilitan una apertura rápida.
 Anillos en D de metal plateado resistentes y asas de transporte duraderas, con
 correa de hombro ajustable para un transporte cómodo.
-";Herramientas Manuales
+";Herramientas Manuales;
 98;2025-07-3 15:40:29.583996+00;Set de 5 Cepillos Rizados p/Taladro ;"El set incluye diferentes tamaños: 50 mm (plano), 75 mm (plano), 50 mm (copa), 75 mm
 (copa) y 25 mm (frontal), con un total de 5 cepillos para diversas aplicaciones.
 Disponible en varios espesores para una amplia gama de usos.
 Diseñado para raspar y decapar superficies duras, eliminar suciedad, óxido, pintura,
 sarro y salpicaduras de soldadura.
-Se recomienda el uso de protectores oculares al utilizar cepillos.";Herramientas Manuales
+Se recomienda el uso de protectores oculares al utilizar cepillos.";Herramientas Manuales;
 99;2025-07-3 15:40:29.583996+00;Cepillo Copa Rizado p/Taladro;"Diseñado para trabajar a velocidades de hasta 4500 RPM.
 Ideal para raspar y decapar superficies duras, eliminar suciedad, óxido, pintura,
 incrustaciones y salpicaduras de soldadura.
 Fabricado con alambre de acero al carbono revestido de latón, ofreciendo alta
 elasticidad, resistencia a la temperatura y durabilidad para un uso intensivo.
-Se recomienda el uso de protectores oculares al utilizar cepillos.";Herramientas Manuales
+Se recomienda el uso de protectores oculares al utilizar cepillos.";Herramientas Manuales;
 100;2025-07-3 15:40:29.583996+00;Cepillo Plano Rizado p/Taladro;"Diseñado para trabajar a velocidades de hasta 4500 RPM.
 Ideal para raspar y decapar superficies duras, eliminar suciedad, óxido, pintura,
 incrustaciones y salpicaduras de soldadura.
 Fabricado con alambre de acero al carbono revestido de latón, ofreciendo alta
 elasticidad, resistencia a la temperatura y capacidad para resistir un uso intenso.
 Se recomienda el uso de protectores oculares al utilizar cepillos.
-";Herramientas Manuales
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
-;;;;
+";Herramientas Manuales;
+101;2025-07-14 15:40:29.583996+00;Cepillo Copa Rizado p/Amoladora M14;"Diseñado para trabajar a velocidades de hasta 12,500 RP?.
+Ideal para raspar y decapar superficies duras, eliminar suciedad, óxido, pintura,
+incrustaciones y salpicaduras de soldadura.
+Fabricado con alambre de acero al carbono revestido de latón, ofreciendo alta
+elasticidad, resistencia a la temperatura y capacidad para resistir un uso intensivo.
+Se recomienda el uso de protectores oculares al utilizar el cepillo.";Herramientas Manuales;
+102;2025-07-14 15:40:29.583996+00;Cepillo Copa Trenzado p/Amoladora M14;"Diseñado para trabajar a velocidades de hasta 12,500 RPM.
+Fabricado con alambre de acero al carbono revestido de latón, con alta elasticidad y
+resistencia a la temperatura, lo que lo hace adecuado para un uso intensivo.
+Se recomienda el uso de protectores oculares al utilizar cepillos.";Herramientas Manuales;
+103;2025-07-14 15:40:29.583996+00;Cepillo de Alambre Mango PVC;"Diseñado para raspar y decapar superficies duras, así como eliminar suciedad, óxido,
+pintura, incrustaciones y salpicaduras de soldadura.
+Fabricado con alambre de acero al carbono revestido de latón, que ofrece alta
+elasticidad y resistencia a la temperatura, lo que garantiza durabilidad incluso con un uso
+intensivo.";Herramientas Manuales;
+104;2025-07-14 15:40:29.583996+00;Set de Mechas p/Madera 5pz;"Ideal para perforar tableros duros, madera contrachapada, aglomerado y maderas duras
+y blandas naturales.
+Incluye mechas de los siguientes diámetros: 3, 4, 5, 6 y 8 mm.";Herramientas Manuales;
+105;2025-07-14 15:40:29.583996+00;Set de 13 Mechas Paleta p/Madera;"La punta rectificada con precisión asegura un rendimiento rápido y una eficiente
+eliminación de residuos durante la perforación.
+Fabricada en acero de alto contenido de carbono con vástago hexagonal para un
+agarre superior.
+Incluye las siguientes mechas: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 30, 32 y 35 mm.";Herramientas Manuales;
+106;2025-07-14 15:40:29.583996+00;Set de Mechas de Acero Rápido M2;"El acero rápido M2 ofrece mayor durabilidad que el HSS común, gracias a su alto
+contenido de molibdeno y tungsteno.
+Ángulo de la punta: 118°.
+Incluye mechas de: 2, 3, 4, 5, 6, y 8 mm.";Herramientas Manuales;
+107;2025-07-14 15:40:29.583996+00;Set de 25 Mechas HSS 1-13;"Acero HSS endurecido y forjado para mayor durabilidad.
+Superficie cromada para prevenir oxidación.
+Ángulo de punta: 118°.
+Incluye caja organizadora metálica.
+Contiene mechas de: 1.00, 1.50, 2.00, 2.50, 3.00, 3.50, 4.00, 4.50, 5.00, 5.50, 6.00,
+6.50, 7.00, 7.50, 8.00, 8.50, 9.00, 9.50, 10.00, 10.50, 11.00, 11.50, 12.00, 12.50 y
+13.00 mm.";Herramientas Manuales;
+108;2025-07-14 15:40:29.583996+00;Set de Mechas Escalonadas de 3pz HSS c/Titanio ;"Fabricada en acero HSS con recubrimiento de titanio para mayor durabilidad y vida
+útil.
+Ideal para perforar acero, acero inoxidable, cobre, láminas de aluminio e hierro.
+Diámetros incluidos: 4-12 mm, 4-20 mm, 4-32 mm.";Herramientas Manuales;
+109;2025-07-14 15:40:29.583996+00;Mecha Escalonada 4-20mm HSS c/Titanio ;Fabricada en acero HSS y recubierta de titanio para mayor durabilidad y vida útil prolongada. Ideal para perforar acero, acero inoxidable, cobre, láminas de aluminio e hierro. Diámetros disponibles: 4, 6, 8, 10, 12, 14, 16, 18 y 20 mm.;Herramientas Manuales;
+110;2025-07-14 15:40:29.583996+00;Set de Mechas Multimaterial;"El set de mechas incluye un estuche de ABS para una organización óptima.
+Contiene tres tipos de mechas:
+Para metal: 2, 3, 4, 5, 6 y 8 mm.
+Para concreto: 4, 5, 6, 8 y 10 mm.
+Para madera: 4, 5, 6, 8 y 10 mm.";Herramientas Manuales;
+111;2025-07-14 15:40:29.583996+00;Set de Mechas p/Vidrio;"Punta de carburo para perforaciones limpias y suaves, con buena durabilidad y
+resistencia.
+Ideal para todos los azulejos de cerámica, vidrio y espejos.
+La punta central asegura un inicio preciso sin deslizamientos.
+Diámetros incluidos: 4, 5, 6, 8 y 10 mm.";Herramientas Manuales;
+112;2025-07-14 15:40:29.583996+00;Set de Mechas de Widia ;"Broca helicoidal fabricada en acero de alta calidad y carburo YG8C (8% de cobalto),
+resistente y duradera.
+Su material de acero de alta velocidad asegura la durabilidad del filo y un arranque
+preciso de la perforación. El proceso endurecido ofrece una óptima combinación de
+resistencia al calor y al desgaste.
+Medidas incluidas: 4, 5, 6, 8 y 10 mm.";Herramientas Manuales;
+113;2025-07-14 15:40:29.583996+00;Mechas de Widia;Broca helicoidal fabricada en acero de alta calidad con carburo YG8C (8% de cobalto), que garantiza la durabilidad del filo y permite un arranque de perforación preciso. El acero de alta velocidad ofrece resistencia, mientras que el proceso endurecido optimiza la combinación de resistencia al calor y al desgaste.;Herramientas Manuales;
+114;2025-07-14 15:40:29.583996+00;Set de Mechas SDS PLUS;"Punta de carburo de tungsteno, soldada a alta temperatura, diseñada para
+perforaciones rápidas y precisas con una mayor vida útil.
+Encastre SDS-PLUS.
+Medidas incluidas en el set: 6x110, 8x110, 8x160, 10x160, y 12x160 mm.";Herramientas Manuales;
+115;2025-07-14 15:40:29.583996+00;Set de Mechas y Puntas SDS PLUS ;"Punta de carburo de tungsteno soldada a alta temperatura para
+perforaciones rápidas, precisas y de alta velocidad.
+Encastre SDS PLUS.
+El set incluye: 1 punta de 250 mm, 1 cincel de 250 mm, y mechas de
+6x160, 8x160, 10x160, 8x210, 10x210, 12x210, 14x210, y 16x210 mm.";Herramientas Manuales;
+116;2025-07-14 15:40:29.583996+00;Set de 10 Sierras Copas Bi-metálicas;"Fabricado con Bi-metal HSS y diseñado para una profundidad de corte de 38 mm
+en la pieza de trabajo.
+Multifunción, apto para diversos materiales metálicos y aleaciones de distintos
+grados de dureza.
+Incluye una caja de aluminio y copas de: 20, 22, 25, 29, 32, 35, 38, 44, 48, y 50 mm.";Herramientas Manuales;
+117;2025-07-14 15:40:29.583996+00;Disco de Corte p/Metal ;"Corte extremadamente rápido y larga vida útil, para cortes precisos y seguros. Apto
+para acero duro, rieles, chapas de acero, acero estructural, acero para herramientas,
+acero inoxidable aleado, aluminio, acero estructural para contenedores, acero
+inoxidable no aleado, y titanio.
+Fabricado conforme a la norma EN 12413 y el sistema de calidad de seguridad SQ.";Herramientas Manuales;
+118;2025-07-14 15:40:29.583996+00;Disco Flap de Zircornio 115mm;El disco flap de zirconio está diseñado para ofrecer máxima eficiencia y durabilidad en trabajos exigentes de desbaste y acabado. Equipado con granos de zirconio alúmina de alta calidad.;Herramientas Manuales;
+119;2025-07-14 15:40:29.583996+00;Muela Diamantada de 125mm;"Adecuado para una amplia gama de aplicaciones, tanto en seco como en
+húmedo.
+Fabricado con materiales de alta calidad para mayor durabilidad y una vida
+útil prolongada.
+Diámetro: 125 mm.
+Equipado con pastillas diamantadas.";Herramientas Manuales;
+120;2025-07-14 15:40:29.583996+00;Escalera de Aluminio Plegable 4x4;Escalera plegable articulada de cuatro tramos con cuatro escalones por tramo. Construida completamente en aluminio, lo que la hace fácilmente transportable. Peso de la escalera: 12,7 kg. Dimensiones cerrada: 1270 x 370 x 280 mm. Capacidad de carga de hasta 150 kg. No es dieléctrica.;Herramientas Manuales;
+121;2025-07-14 15:40:29.583996+00;Porta Puntas de 1/4 Magnético ;"El porta puntas de 1/4"" fabricado en acero CRV de alta resistencia proporciona un
+alto torque para un mayor poder de giro.
+Incluye un imán para sostener las puntas de forma sencilla.
+Adecuado para uso con destornilladores eléctricos, manuales y taladros eléctricos.";Herramientas Manuales;
+122;2025-07-14 15:40:29.583996+00;Set de Porta Puntas de 1/4 Magnético ;"El porta puntas, fabricado en acero CRV de alta resistencia, proporciona un alto
+torque para un mayor poder de giro.
+Incluye un imán para sujetar las puntas fácilmente.
+Longitud de cada porta puntas: 60 mm.";Herramientas Manuales;
+123;2025-07-14 15:40:29.583996+00;Porta Puntas + 8 Puntas PL y PH;"El porta puntas de 1/4"" fabricado en acero CRV de alta resistencia ofrece un alto
+torque para un mayor poder de giro.
+Incorpora un imán para sostener las puntas fácilmente.
+Adecuado para su uso con destornilladores eléctricos, manuales y taladros eléctricos.
+El set incluye 8 puntas PL y PH.";Herramientas Manuales;
+124;2025-07-14 15:40:29.583996+00;Set de Adaptadores Magnéticos ;"Adaptadores magnéticos de impacto disponibles en las siguientes medidas: 1/4""x65,
+5/16""x65, 3/8""x65, 7/16""x65, y 1/2""x65 mm.
+Cuentan con un acabado negro fosfatado y detalles en líneas plateadas.
+Adecuados para su uso con destornilladores eléctricos, manuales y taladros
+eléctricos.";Herramientas Manuales;
+125;2025-07-14 15:40:29.583996+00;Set de 10 Puntas PH2 x 50mm ;"El set Incluye 10 puntas de destornillador de impacto PH2 de 50 mm en una caja.
+Estas puntas profesionales de calidad S2 están especialmente diseñadas para
+destornilladores de impacto, con puntas forjadas para una mayor resistencia al
+impacto y una vida útil prolongada. Además, son tratadas térmicamente para
+mejorar la durabilidad y minimizar la rotura, y vienen imantadas para un manejo más
+sencillo.";Herramientas Manuales;
+126;2025-07-14 15:40:29.583996+00;Set de 10 Puntas PL6 x 50mm;"El set incluye 10 puntas de destomillador de impacto PL6 de 50 mm, almacenadas
+en una caja. Estas puntas, de calidad profesional S2, están especialmente
+diseñadas para destomilladores de impacto. Cuentan con puntas forjadas que
+ofrecen una mayor resistencia al impacto y prolongan la vida útil. Además, son
+tratadas térmicamente para una mayor durabilidad, reducen la rotura y están
+imantadas para un uso más eficiente.";Herramientas Manuales;
+127;2025-07-14 15:40:29.583996+00;Set de 10 Puntas PH2-PL6 x 65mm;"El set incluye 10 puntas de destornillador dobles PL6 y PH2 de 65 mm, presentadas
+en una caja. Estas puntas de calidad profesional S2, diseñadas para
+destornilladores de impacto, tienen puntas forjadas para resistir impactos y
+prolongar su durabilidad. Además, son tratadas térmicamente para aumentar la
+durabilidad, reducir la rotura y están imantadas para mayor eficiencia.";Herramientas Manuales;
+128;2025-07-14 15:40:29.583996+00;Set de Puntas PL PH ALLEN Y T 30 pzs;"El set está fabricado en resistente acero de aleación S2, ofreciendo excelente
+durabilidad.
+Incluye una caja de herramientas de almacenamiento portátil con especificaciones
+claramente impresas.
+Las piezas cuentan con un recubrimiento de fosfato de manganeso que protege
+contra el óxido y la corrosión.";Herramientas Manuales;
+129;2025-07-14 15:40:29.583996+00;"Set de Puntas y Tubos de 1/4"" 25 pzs";"Las puntas de acero S2 de alta resistencia y los tubos CRV garantizan un alto
+torque para un mayor poder de giro.
+El set incluye diferentes tipos y tamaños de puntas para diversos usos.
+El destornillador con vástago hexagonal de 1/4"" es compatible con destornilladores
+eléctricos, manuales y taladros eléctricos.
+Todas las puntas son endurecidas para máxima durabilidad.";Herramientas Manuales;
+130;2025-07-14 15:40:29.583996+00;Set de Puntas y Acoples 1/4 48 pzs ;"Las puntas de acero S2 de alta resistencia y los tubos CRV proporcionan un alto
+torque para un mayor poder de giro.
+El set incluye diferentes tipos y tamaños de puntas prácticas para diversos usos.
+El destornillador con vástago hexagonal de 1/4"" es adecuado para
+destornilladores eléctricos, manuales y taladros eléctricos.
+Todas las puntas están endurecidas para aumentar la resistencia.";Herramientas Manuales;
+131;2025-07-14 15:40:29.583996+00;Set de Tubos de 1/4 y Puntas 27 pzs;El set de puntas, conectores y mangos crique está diseñado para satisfacer las necesidades de diversos usuarios, siendo ideal para reparaciones de computadoras, teléfonos móviles, relojes y más. Fabricado en cromo vanadio de alta calidad, garantiza un rendimiento óptimo y duradero. Las puntas están endurecidas para mayor resistencia.;Herramientas Manuales;
+132;2025-07-14 15:40:29.583996+00;Set de Tubos y Puntas de 1/4 64 pzs;Este set de puntas, conectores y mangos crique está diseñado para satisfacer las necesidades de diversos usuarios, ideal para la reparación de computadoras, teléfonos móviles, relojes y más. Fabricado en cromo vanadio de alta calidad, asegura un rendimiento duradero y eficiente. Además, las puntas están endurecidas para mayor resistencia.;Herramientas Manuales;
+133;2025-07-14 15:40:29.583996+00;"Set de Puntas y Tubos de 1/4"" 56 pzs";"El set de 56 piezas, que incluye puntas, conectores y mangos crique, está diseñado
+para satisfacer las necesidades de diversos usuarios y es ideal para la reparación
+de computadoras, teléfonos móviles, relojes y otros dispositivos.
+Fabricado en cromo vanadio de alta calidad, garantiza un rendimiento duradero y
+fiable.
+Las puntas están endurecidas para proporcionar una alta resistencia.";Herramientas Manuales;
+134;2025-07-14 15:40:29.583996+00;Set de Tubos y Crique de 1/2 12 pzs;"El juego incluye tubos hexagonales de acero 35K en tamaños de 10, 11,
+12, 13, 14, 15, 17, 19, 21 y 22 mm, montados en soportes colectores de
+1/2"".
+Cada tubo está claramente etiquetado para facilitar la organización.
+Además, viene con una barra de extensión de 125 mm de CRV, ideal para
+trabajar en áreas estrechas o de difícil acceso.";Herramientas Manuales;
+135;2025-07-14 15:40:29.583996+00;Set de Tubos de 1/4 ? 3/8 40 pzs;"Los tubos de CRV de alta resistencia ofrecen un alto torque para un mayor
+poder de giro, combinados con un acabado cromado espejo que garantiza
+resistencia al óxido y la corrosión.
+Las puntas hexagonales Allen están mecanizadas con precisión para
+asegurar un tamaño exacto y cuentan con extremos biselados para una
+inserción fácil y suave.";Herramientas Manuales;
+136;2025-07-14 15:40:29.583996+00;Set de Tubos de 1/2 24 pzs;Los tubos de CRV de alta resistencia ofrecen un alto torque y un acabado cromado espejo que protege contra el óxido y la corrosión. Las puntas hexagonales Allen, mecanizadas con precisión, garantizan un ajuste exacto y cuentan con extremos biselados para una inserción suave y sencilla.;Herramientas Manuales;
+137;2025-07-14 15:40:29.583996+00;Destornilladores Relojeros;"Juego de 12 destornilladores Phillips y de punta plana, ideal para reparar
+computadoras, teléfonos móviles, relojes y más.
+Varillas de cromo vanadio de alta calidad que garantizan un rendimiento duradero.
+Puntas endurecidas para una alta resistencia.";Herramientas Manuales;
+138;2025-07-14 15:40:29.583996+00;Set de Herramientas p/Celulares;"La colección incluye destomilladores, pinzas, espátulas y más, diseñados
+para satisfacer las necesidades de diversos usuarios. Ideal para reparar
+computadoras, teléfonos móviles, relojes, entre otros.
+Puntas endurecidas de alta resistencia.
+El diseño profesional del mango Ronix equilibra velocidad y torque para
+distintas aplicaciones.";Herramientas Manuales;
+139;2025-07-14 15:40:29.583996+00;Set de Herramientas p/Bicicletas ;"Fabricado con materiales de alta calidad y agarre de goma suave.
+Plegable y fácil de transportar.
+Incluye todas las herramientas necesarias para reparar bicicletas.
+Herramientas en diferentes tamaños, adecuadas para uso doméstico e
+industrial.";Herramientas Manuales;
+140;2025-07-14 15:40:29.583996+00;Estuche Portaherramientas;"Portaherramientas con 3 compartimentos: 1 interior y 2 exteriores, ideal
+para el hogar, taller o lugar de trabajo.
+Reforzado para mayor durabilidad y comodidad.
+Presillas de sujeción integradas para un acceso rápido y organización
+eficiente de las herramientas.";Herramientas Manuales;
+141;2025-07-14 15:40:29.583996+00;Cinturón Portaherramientas;"Cinturón porta herramientas con 24 compartimentos: 10 interiores y 14 exteriores,
+ideal para el hogar, taller o lugar de trabajo.
+Diseño robusto con presillas de sujeción integradas para un acceso rápido y
+organización eficiente.
+Resistente para almacenar herramientas y accesorios de forma segura, evitando
+daños o caídas.";Herramientas Manuales;
+142;2025-07-14 15:40:29.583996+00;Set de Sondas mm y pulg;Incluye 20 hojas de acero al carbono de alta calidad, ideales para verificar holguras en puntos de encendido, válvulas, taqués, bujías, pistones, anillos de pistón y más. Calibre de espesores con carcasa metálica y 20 hojas cónicas plateadas de diferentes grosores. Cada hoja cuenta con medidas métricas y en pulgadas grabadas para mayor precisión.;Herramientas Manuales;
+143;2025-07-14 15:40:29.583996+00;Kit de Seguridad p/Autos;"El kit de emergencia para automóvil incluye 14 herramientas esenciales y
+elementos de seguridad, diseñados para ofrecer asistencia en carretera.
+Compacto y versátil, garantiza estar preparado para emergencias
+automotrices y reparaciones menores.
+La baliza no incluye baterías.";Herramientas Manuales;
