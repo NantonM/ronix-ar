@@ -2,6 +2,8 @@
 import { NextResponse } from 'next/server';
 import sql from '@/lib/db'; // Importamos nuestro cliente de Neon
 
+export const runtime = 'edge'
+
 export async function GET(request) {
   try {
     console.log("[API GET /api/locations] Solicitud recibida.");

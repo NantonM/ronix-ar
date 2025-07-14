@@ -14,6 +14,8 @@ import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
 import 'swiper/css/effect-fade';
 
+export const runtime = 'edge'
+
 // Asumimos que esta función está en un archivo de servicio de datos, ej: src/lib/dataService.js
 // import { getProductById } from '@/lib/dataService'; 
 async function fetchProductById(id) {
