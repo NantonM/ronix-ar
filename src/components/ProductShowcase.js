@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -10,38 +10,75 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './ProductShowcase.module.css';
 
-const subcategoryData  = [
-  {
-    id: 1,
-    title: 'Destornilladores Profesionales',
-    description: 'Precisión y durabilidad en cada giro',
-    image: '/images/home_products/destornillador.webp',
-    ctaText: 'Ver Colección',
-    ctaLink: '/productos?subcategory=Destornilladores'
-  },
-  {
-    id: 2,
-    title: 'Juego de Llaves',
-    description: 'Calidad profesional para trabajos exigentes',
-    image: '/images/home_products/llaves.webp',
-    ctaText: 'Ver Productos',
-    ctaLink: '/productos?subcategory=Llaves'
-  },
-  {
-    id: 3,
-    title: 'Herramientas de Corte',
-    description: 'Corte limpio y preciso en cada uso',
-    image: '/images/home_products/sierra.webp',
-    ctaText: 'Explorar',
-    ctaLink: '/productos?subcategory=Herramientas de Corte'
-  },
-];
+// Componente para una tarjeta de producto individual dentro del carrusel
+const ShowcaseCard = ({ product }) => {
+  const imageUrl = (product.product_images && product.product_images.length > 0)
+    ? product.product_images[0].image_url
+    : '/images/placeholder-product.png'; // Fallback
 
-const ProductShowcase = () => {
+  return (
+    <div className={styles.productCard}>
+      <div className={styles.imageContainer}>
+        <Image
+          src={imageUrl}
+          alt={product.name}
+          width={400}
+          height={300}
+          className={styles.productImage}
+        />
+      </div>
+      <div className={styles.productContent}>
+        <h3 className={styles.productTitle}>{product.name}</h3>
+        {product.subcategory && <p className={styles.productSubcategory}>{product.subcategory}</p>}
+        <Link href={`/productos/${product.id}`} className={styles.ctaButton}>
+          Ver Detalles
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+
+// Componente principal que obtiene y muestra los productos
+export default function ProductShowcase() {
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadFeaturedProducts() {
+      try {
+        const res = await fetch('/api/products/featured');
+        if (!res.ok) throw new Error("Error al cargar productos destacados");
+        const data = await res.json();
+        setFeaturedProducts(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadFeaturedProducts();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section className={styles.showcase}>
+        <div className={styles.container}>
+          <h2 className={styles.title}>Productos Destacados</h2>
+          <div className="text-center py-5"><div className="spinner-border"></div></div>
+        </div>
+      </section>
+    );
+  }
+
+  if (featuredProducts.length === 0) {
+    return null; // O mostrar un mensaje de que no hay productos destacados
+  }
+
   return (
     <section className={styles.showcase}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Explora Nuestras Subcategorías</h2>
+        <h2 className={styles.title}>Productos Destacados</h2>
         <div className={styles.sliderContainer}>
           <Swiper
             modules={[Autoplay, Navigation, Pagination]}
@@ -54,28 +91,12 @@ const ProductShowcase = () => {
             breakpoints={{
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
+              1200: { slidesPerView: 4 } // Añadido para mostrar 4 en pantallas más grandes
             }}
           >
-            {subcategoryData.map((subcategory) => (
-              <SwiperSlide key={subcategory.id} className={styles.slide}>
-                <div className={styles.productCard}>
-                  <div className={styles.imageContainer}>
-                    <Image
-                      src={subcategory.image}
-                      alt={subcategory.title}
-                      width={400}
-                      height={300}
-                      className={styles.productImage}
-                    />
-                  </div>
-                  <div className={styles.productContent}>
-                    <h3 className={styles.productTitle}>{subcategory.title}</h3>
-                    <p className={styles.productDescription}>{subcategory.description}</p>
-                    <Link href={subcategory.ctaLink} className={styles.ctaButton}>
-                      {subcategory.ctaText}
-                    </Link>
-                  </div>
-                </div>
+            {featuredProducts.map((product) => (
+              <SwiperSlide key={product.id} className={styles.slide}>
+                <ShowcaseCard product={product} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -84,6 +105,3 @@ const ProductShowcase = () => {
     </section>
   );
 };
-
-
-export default ProductShowcase;

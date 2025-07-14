@@ -11,14 +11,10 @@ export default function Header() {
   const [headerSearchTerm, setHeaderSearchTerm] = useState('');
   const router = useRouter();
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const handleMobileNav = (path) => {
-    if (isMobileMenuOpen) {
-      toggleMobileMenu();
-    }
+    if (isMobileMenuOpen) toggleMobileMenu();
     router.push(path);
   };
 
@@ -33,22 +29,14 @@ export default function Header() {
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isMobileMenuOpen]);
 
   return (
     <header className={`${styles.componenHeaderWebsite} navbar navbar-expand-lg navbar-light bg-light fixed-top py-0`}>
       <div className="container">
         <Link href="/" className="navbar-brand py-0" onClick={() => isMobileMenuOpen && toggleMobileMenu()}>
-          <Image
-            src="/images/ronix-logo.svg"
-            alt="Logo de Ronix Tools"
-            width={80}
-            height={30}
-            priority
-          />
+          <Image src="/images/ronix-logo.svg" alt="Logo de Ronix Tools" width={80} height={30} priority />
         </Link>
 
         <button
@@ -62,12 +50,14 @@ export default function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div 
-          className={`collapse navbar-collapse ${isMobileMenuOpen ? styles.menuOpen : ''}`} 
-          id="mainNavbarContent"
-        >
-          {/* CAMBIO: Quitamos 'me-auto' para que el CSS controle el layout */}
-          <ul className="navbar-nav mb-2 mb-lg-0">
+        <div className={`collapse navbar-collapse ${isMobileMenuOpen ? styles.menuOpen : ''}`} id="mainNavbarContent">
+          
+          {/* 1. Logo Ronix centrado, solo visible en el menú móvil */}
+          <div className={styles.mobileMenuLogo}>
+            <Image src="/images/ronix-logo.svg" alt="Logo Ronix" width={120} height={45} />
+          </div>
+
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link href="/productos" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Productos</Link>
             </li>
@@ -83,25 +73,25 @@ export default function Header() {
           </ul>
 
           <div className={`d-flex flex-column flex-lg-row align-items-lg-center ${styles.navActions}`}>
-            <form onSubmit={handleSearchSubmit} className="d-flex me-lg-3 my-2 my-lg-0">
+            <form onSubmit={handleSearchSubmit} className={`d-flex me-lg-3 ${styles.searchForm}`}>
               <input
-                className="form-control" // Quitamos -sm para que sea más grande en móvil
+                className="form-control"
                 type="search"
                 placeholder="Buscar..."
                 aria-label="Search"
                 value={headerSearchTerm}
                 onChange={(e) => setHeaderSearchTerm(e.target.value)}
               />
-              <button className={`btn ${styles.searchBtn}`} type="submit" aria-label="Buscar">🔍</button>
             </form>
             
-            <div className="d-flex align-items-center mt-2 mt-lg-0">
+            {/* 2. Contenedor para el CTA y el logo German Tech */}
+            <div className={styles.ctaBlock}>
               <div className={styles.ctaButton}>
-              <Link href="/revendedores" className={`btn btn-danger ${styles.ctaButton}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>
-                ¡Quiero ser revendedor Ronix!
-              </Link>
+                <Link href="/revendedores" className="btn btn-danger" onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>
+                  ¡Quiero ser revendedor Ronix!
+                </Link>
               </div>
-              <div className="ms-2">
+              <div className={styles.germanTechLogo}>
                 <Image
                   src="/images/german-tech.webp"
                   alt="Icono de Tecnología Alemana"

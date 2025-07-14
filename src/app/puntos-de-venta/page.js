@@ -124,7 +124,9 @@ export default function PuntosDeVentaPage() {
   };
 
   return (
-    <div className={`container py-4`}>
+    // ---- CAMBIO PRINCIPAL AQUÍ ----
+    // Quitamos las clases de padding de Bootstrap y usamos nuestra clase del módulo
+    <div className={`container ${styles.pageContainer}`}>
       <div className="text-center mb-4">
         <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
         <p className="lead">Encuentra nuestras herramientas y distribuidores autorizados.</p>
