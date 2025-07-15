@@ -8,7 +8,7 @@ export default function WhatsappButton() {
   // --- ¡IMPORTANTE! Reemplaza este número con el tuyo ---
   // Formato: código de país + número, sin el '+' ni espacios.
   // Para Argentina, si tu número es (11) 1234-5678, el número completo es 5491112345678.
-  const whatsappNumber = "5491112345678"; 
+  const whatsappNumber = "5491168261600";
 
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
