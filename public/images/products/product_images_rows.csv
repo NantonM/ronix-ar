@@ -104,3 +104,37 @@ id;created_at;product_id;image_url;alt_text;sort_order;is_primary
 299;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_1.webp;;1;
 300;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_2.webp;;2;
 301;2025-07-14 15:40:29.583996+00;143;/images/products/Set_de_Herramientas_p_Celulares_3.webp;;3;
+302;2025-07-14 15:40:29.583996+00;144;/images/products/Navaja_Multifuncion_15_en_1_0.webp;Navaja Multifunción 15 en 1;0;TRUE
+303;2025-07-14 15:40:29.583996+00;144;/images/products/Navaja_Multifuncion_15_en_1_1.webp;;1;
+304;2025-07-14 15:40:29.583996+00;144;/images/products/Navaja_Multifuncion_15_en_1_2.webp;;2;
+305;2025-07-14 15:40:29.583996+00;145;/images/products/Pinza_Multifuncion_12_en_1_0.webp;Pinza Multifunción 12 en 1 ;0;TRUE
+306;2025-07-14 15:40:29.583996+00;145;/images/products/Pinza_Multifuncion_12_en_1_1.webp;;1;
+307;2025-07-14 15:40:29.583996+00;145;/images/products/Pinza_Multifuncion_12_en_1_2.webp;;2;
+308;2025-07-14 15:40:29.583996+00;145;/images/products/Pinza_Multifuncion_12_en_1_3.webp;;3;
+309;2025-07-14 15:40:29.583996+00;146;/images/products/Pala_Ancha_de_Mano_0.webp;Pala Ancha de Mano;0;TRUE
+310;2025-07-14 15:40:29.583996+00;146;/images/products/Pala_Ancha_de_Mano_1webp;;1;
+311;2025-07-14 15:40:29.583996+00;146;/images/products/Pala_Ancha_de_Mano_2.webp;;2;
+312;2025-07-14 15:40:29.583996+00;147;/images/products/Pala_Angosta_de_Mano_0.webp;Pala Angosta de Mano;0;TRUE
+313;2025-07-14 15:40:29.583996+00;147;/images/products/Pala_Angosta_de_Mano_1.webp;;1;
+314;2025-07-14 15:40:29.583996+00;147;/images/products/Pala_Angosta_de_Mano_2.webp;;2;
+315;2025-07-14 15:40:29.583996+00;148;/images/products/Hacha_de_Mano_de_600gr_0.webp;Hacha de Mano de 600gr;0;TRUE
+316;2025-07-14 15:40:29.583996+00;148;/images/products/Hacha_de_Mano_de_600gr_1.webp;;1;
+317;2025-07-14 15:40:29.583996+00;148;/images/products/Hacha_de_Mano_de_600gr_2.webp;;2;
+318;2025-07-14 15:40:29.583996+00;149;/images/products/Linterna_Led_Magnetica_180_0.webp;Linterna Led Magnética 180° ;0;TRUE
+319;2025-07-14 15:40:29.583996+00;149;/images/products/Linterna_Led_Magnetica_180_1.webp;;1;
+320;2025-07-14 15:40:29.583996+00;149;/images/products/Linterna_Led_Magnetica_180_2.webp;;2;
+321;2025-07-14 15:40:29.583996+00;150;/images/products/Linterna_Led_Tipo_Farol_0.webp;"Linterna Led Tipo ""Farol""";0;TRUE
+322;2025-07-14 15:40:29.583996+00;150;/images/products/Linterna_Led_Tipo_Farol_1.webp;;1;
+323;2025-07-14 15:40:29.583996+00;151;/images/products/Linterna_Led_Tipo_Pistola_0.webp;Linterna Led Tipo Pistola;0;TRUE
+324;2025-07-14 15:40:29.583996+00;152;/images/products/Linterna_Led_Tipo_Vincha_0.webp;Linterna Led Tipo Vincha;0;TRUE
+325;2025-07-14 15:40:29.583996+00;152;/images/products/Linterna_Led_Tipo_Vincha_1.webp;;1;
+326;2025-07-14 15:40:29.583996+00;152;/images/products/Linterna_Led_Tipo_Vincha_2.webp;;2;
+327;2025-07-14 15:40:29.583996+00;153;/images/products/Tijera_de_Poda_de_Mano_0.webp;Tijera de Poda de Mano;0;TRUE
+328;2025-07-14 15:40:29.583996+00;153;/images/products/Tijera_de_Poda_de_Mano_1.webp;;1;
+329;2025-07-14 15:40:29.583996+00;154;/images/products/Tijera_de_Poda_Tipo_Yunke_0.webp;"Tijera de Poda Tipo ""Yunke""";0;TRUE
+330;2025-07-14 15:40:29.583996+00;154;/images/products/Tijera_de_Poda_Tipo_Yunke_1.webp;;1;
+331;2025-07-14 15:40:29.583996+00;154;/images/products/Tijera_de_Poda_Tipo_Yunke_2.webp;;2;
+332;2025-07-14 15:40:29.583996+00;155;/images/products/Tijera_de_Poda_Telescopica_94cm_0.webp;Tijera de Poda Telescópica 94cm;0;TRUE
+333;2025-07-14 15:40:29.583996+00;155;/images/products/Tijera_de_Poda_Telescopica_94cm_1.webp;;1;
+334;2025-07-14 15:40:29.583996+00;155;/images/products/Tijera_de_Poda_Telescopica_94cm_2.webp;;2;
+335;2025-07-14 15:40:29.583996+00;156;/images/products/Tanza_Para_Bordeadora_2mm_0.png;Tanza para Bordeadora 2mm;0;TRUE
