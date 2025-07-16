@@ -5,7 +5,6 @@ if (!process.env.POSTGRES_URL) {
   throw new Error('La variable de entorno POSTGRES_URL no está definida.');
 }
 
-const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
-
-// Exportamos la función 'query' del pool para usarla como nuestro cliente SQL
-export default pool.query.bind(pool);
+// Creamos y exportamos el pool de conexiones.
+// La librería está diseñada para gestionar este pool de forma eficiente en entornos serverless.
+export const db = new Pool({ connectionString: process.env.POSTGRES_URL });

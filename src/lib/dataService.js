@@ -1,57 +1,43 @@
 // src/lib/dataService.js
-import sql from './db'; // Importamos nuestro cliente de conexión a Neon
+import { db } from './db'; // <-- Importamos el objeto 'db' que contiene el pool
 
 export async function getAllProducts(categoryFilter = null, subcategoryFilter = null) {
   console.log(`[dataService] Obteniendo productos. Filtros: Category=${categoryFilter || 'N/A'}, Subcategory=${subcategoryFilter || 'N/A'}`);
   
   try {
-    // Construimos la consulta base
-    let baseQuery = `
+    const baseQuery = `
       SELECT 
-        p.id,
-        p.name,
-        p.description,
-        p.category,
-        p.subcategory,
+        p.id, p.name, p.description, p.category, p.subcategory,
         (SELECT json_agg(pv) FROM product_variants pv WHERE pv.product_id = p.id) as product_variants,
         (SELECT json_agg(pi) FROM product_images pi WHERE pi.product_id = p.id) as product_images
       FROM 
         products p
     `;
-
-    const whereConditions = [];
-    const queryParams = [];
-    let paramIndex = 1;
-
+    
+    // NOTA: Esta forma de construir la query es para PostgreSQL, puede no ser compatible con todos los drivers
+    // Usaremos un método más estándar.
+    let conditions = [];
+    let queryParams = [];
     if (categoryFilter && categoryFilter !== 'all') {
-      whereConditions.push(`p.category = $${paramIndex++}`);
-      queryParams.push(categoryFilter);
+        conditions.push(`p.category = $${queryParams.length + 1}`);
+        queryParams.push(categoryFilter);
     }
     if (subcategoryFilter && subcategoryFilter !== 'all') {
-      whereConditions.push(`p.subcategory = $${paramIndex++}`);
-      queryParams.push(subcategoryFilter);
+        conditions.push(`p.subcategory = $${queryParams.length + 1}`);
+        queryParams.push(subcategoryFilter);
     }
 
-    if (whereConditions.length > 0) {
-      baseQuery += ` WHERE ${whereConditions.join(' AND ')}`;
+    let finalQuery = baseQuery;
+    if (conditions.length > 0) {
+        finalQuery += ` WHERE ${conditions.join(' AND ')}`;
     }
-
-    baseQuery += ` ORDER BY p.name ASC`;
-
-    console.log(`[dataService] Ejecutando query: ${baseQuery} con params: ${queryParams}`);
-
-    // Ejecutamos la consulta
-    const result = await sql(baseQuery, queryParams);
-
+    finalQuery += ` ORDER BY p.name ASC`;
+    
     // --- CAMBIO PRINCIPAL AQUÍ ---
-    // El array de productos está en la propiedad 'rows' del objeto de resultado.
+    // Usamos el método .query() del pool importado
+    const result = await db.query(finalQuery, queryParams);
     const products = result.rows;
     
-    if (!products) {
-        console.warn("[dataService] La consulta a Neon no devolvió una propiedad 'rows'. Devolviendo array vacío.");
-        return [];
-    }
-
     console.log(`[dataService] Productos obtenidos de Neon: ${products.length}`);
     return products.map(p => ({
       ...p,
@@ -80,11 +66,10 @@ export async function getProductById(productId) {
       WHERE 
         p.id = $1;
     `;
-    const result = await sql(query, [productId]);
+    // --- CAMBIO PRINCIPAL AQUÍ ---
+    const result = await db.query(query, [productId]);
     
-    if (result.rowCount === 0) {
-      return null;
-    }
+    if (result.rowCount === 0) return null;
 
     const product = result.rows[0];
     console.log(`[dataService] Producto obtenido: ${product.name}`);
