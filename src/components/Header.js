@@ -81,7 +81,6 @@ export default function Header() {
                 onChange={(e) => setHeaderSearchTerm(e.target.value)}
               />
               {/* Re-añadimos el botón de búsqueda que se había perdido */}
-              <button className={`btn ${styles.searchBtn}`} type="submit" aria-label="Buscar">🔍</button>
             </form>
             
             <div className={`d-flex align-items-center mt-2 mt-lg-0 ${styles.ctaBlock}`}>
