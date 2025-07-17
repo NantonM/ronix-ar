@@ -86,7 +86,7 @@ export default function Header() {
             <div className={`d-flex align-items-center mt-2 mt-lg-0 ${styles.ctaBlock}`}>
               <div className={styles.ctaButton}>
                 <Link href="/revendedores" className={`btn btn-danger ${styles.ctaButton}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>
-                  ¡Quiero ser revendedor Ronix!
+                  ¡Quiero ser un punto Ronix!
                 </Link>
               </div>
               <div className={styles.germanTechLogo}>

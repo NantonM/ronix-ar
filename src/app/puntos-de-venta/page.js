@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link'; // Asegurarse de que Link esté importado
 import MapDisplay from '@/components/MapDisplay';
-import styles from './puntosDeVenta.module.css'; // Asegúrate de que este archivo se esté importando
+import styles from './puntosDeVenta.module.css';
 
 export default function PuntosDeVentaPage() {
   const [allLocations, setAllLocations] = useState([]);
@@ -13,16 +14,17 @@ export default function PuntosDeVentaPage() {
   const [mapZoom, setMapZoom] = useState(4);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  
-  // Estado para la ubicación activa (la que se seleccionó)
   const [activeLocation, setActiveLocation] = useState(null);
 
   useEffect(() => {
     async function loadLocations() {
-      // ... (tu lógica para cargar ubicaciones desde /api/locations) ...
+      setIsLoading(true);
+      setError(null);
       try {
         const response = await fetch('/api/locations');
-        if (!response.ok) throw new Error('No se pudieron cargar las ubicaciones.');
+        if (!response.ok) {
+          throw new Error('No se pudieron cargar las ubicaciones.');
+        }
         const data = await response.json();
         setAllLocations(data);
         setFilteredLocations(data);
@@ -40,7 +42,7 @@ export default function PuntosDeVentaPage() {
   const handleProvinceChange = (event) => {
     const province = event.target.value;
     setSelectedProvince(province);
-    setActiveLocation(null); // Limpiar la selección al cambiar de provincia
+    setActiveLocation(null);
 
     if (province === "all") {
       setFilteredLocations(allLocations);
@@ -59,15 +61,17 @@ export default function PuntosDeVentaPage() {
   const handleLocationItemClick = (location) => {
     setMapCenter({ lat: location.lat, lng: location.lng });
     setMapZoom(15);
-    // Actualizamos el estado para saber qué ubicación está activa
-    setActiveLocation(location); 
-    // Log para depurar: verifica en la consola del navegador si esto se ejecuta
-    console.log("Ubicación activa seteada:", location); 
+    setActiveLocation(location);
   };
 
   const renderContent = () => {
-    if (isLoading) { /* ... JSX de carga ... */ }
-    if (error) { /* ... JSX de error ... */ }
+    if (isLoading) {
+      return <div className="text-center py-5"><div className="spinner-border text-primary" role="status"><span className="visually-hidden">Cargando...</span></div></div>;
+    }
+
+    if (error) {
+      return <div className="alert alert-danger">Error: {error}</div>;
+    }
 
     return (
       <div className="row">
@@ -84,18 +88,23 @@ export default function PuntosDeVentaPage() {
                   ))}
                 </select>
               </div>
+
+              {/* --- INICIO DEL BOTÓN AÑADIDO --- */}
+              <div className="d-grid mb-4">
+                <Link href="/revendedores" className="btn btn-danger">
+                  ¡Quiero ser un Punto Ronix!
+                </Link>
+              </div>
+              {/* --- FIN DEL BOTÓN AÑADIDO --- */}
+
               <div className={styles.locationListScrollable}>
                 {filteredLocations.length > 0 ? (
                   <ul className="list-group list-group-flush">
                     {filteredLocations.map(loc => {
-                      // Determinamos si este ítem es el que está activo
                       const isActive = activeLocation && activeLocation.id === loc.id;
-                      
                       return (
                         <li 
                           key={loc.id} 
-                          // --- CAMBIO CLAVE AQUÍ ---
-                          // Aplicamos la clase de módulo condicionalmente
                           className={`${styles.locationItem} list-group-item list-group-item-action ${isActive ? styles.activeLocationItem : ''}`}
                           onClick={() => handleLocationItemClick(loc)}
                         >
@@ -124,9 +133,7 @@ export default function PuntosDeVentaPage() {
   };
 
   return (
-    // ---- CAMBIO PRINCIPAL AQUÍ ----
-    // Quitamos las clases de padding de Bootstrap y usamos nuestra clase del módulo
-    <div className={`container ${styles.pageContainer}`}>
+    <div className={`container pt-5 pb-4`}>
       <div className="text-center mb-4">
         <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
         <p className="lead">Encuentra nuestras herramientas y distribuidores autorizados.</p>
