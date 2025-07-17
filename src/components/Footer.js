@@ -51,7 +51,6 @@ export default function Footer() {
               </h6>
               <p><Link href="/productos" className={styles.footerLink}>Productos</Link></p>
               <p><Link href="/puntos-de-venta" className={styles.footerLink}>Puntos de Venta</Link></p>
-              <p><Link href="/post-venta" className={styles.footerLink}>Post Venta</Link></p>
               <p><Link href="/about-us" className={styles.footerLink}>Nosotros</Link></p>
             </div>
           </div>
