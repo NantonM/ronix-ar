@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link'; // Asegurarse de que Link esté importado
+import Link from 'next/link';
 import MapDisplay from '@/components/MapDisplay';
 import styles from './puntosDeVenta.module.css';
 
@@ -78,6 +78,14 @@ export default function PuntosDeVentaPage() {
         <div className="col-lg-4 col-md-5 mb-4 mb-md-0">
           <div className="sticky-top" style={{top: '80px'}}>
             <div className={styles.filtersContent}>
+
+              {/* --- BOTÓN MOVIDO AQUÍ ARRIBA --- */}
+              <div className="d-grid mb-4">
+                <Link href="/revendedores" className="btn btn-danger">
+                  ¡Quiero ser un Punto Ronix!
+                </Link>
+              </div>
+
               <h5 className="mb-3 fw-bold">Ubicaciones</h5>
               <div className="mb-4">
                 <label htmlFor="province-filter" className="form-label">Filtrar por Provincia:</label>
@@ -88,15 +96,7 @@ export default function PuntosDeVentaPage() {
                   ))}
                 </select>
               </div>
-
-              {/* --- INICIO DEL BOTÓN AÑADIDO --- */}
-              <div className="d-grid mb-4">
-                <Link href="/revendedores" className="btn btn-danger">
-                  ¡Quiero ser un Punto Ronix!
-                </Link>
-              </div>
-              {/* --- FIN DEL BOTÓN AÑADIDO --- */}
-
+              
               <div className={styles.locationListScrollable}>
                 {filteredLocations.length > 0 ? (
                   <ul className="list-group list-group-flush">
