@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const metadata = {
   title: 'Ronix Argentina',
   description: 'Herramientas Ronix en Argentina',
+  icons: {
+    icon: '/favicon.ico', // Le decimos explícitamente dónde está el favicon
+  },
 };
 
 export default function RootLayout({ children }) {
