@@ -59,7 +59,7 @@ export default function Header() {
               <Link href="/productos" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Productos</Link>
             </li>
             <li className="nav-item">
-              <Link href="/nosotros" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>nosotros</Link>
+              <Link href="/nosotros" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Nosotros</Link>
             </li>
             <li className="nav-item">
               <Link href="/puntos-de-venta" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Puntos de Venta</Link>
