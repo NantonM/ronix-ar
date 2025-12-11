@@ -7,7 +7,7 @@ const testimonials = [
     id: 1,
     name: 'Carlos M.',
     role: 'Técnico Industrial',
-    // Usamos comillas tipográficas “ y ” que no dan error, o podrías usar &quot;
+    // Usamos comillas tipográficas “ y ” que no dan error, o podrías usar &quotdc;
     content: '“La calidad de las herramientas Ronix es excepcional. Las uso a diario en mi taller y nunca me han fallado. La relación calidad-precio es inmejorable.”',
     rating: 5,
     image: '/images/testmonial-1.jpg'
