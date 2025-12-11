@@ -59,7 +59,6 @@ export default function Testimonials() {
                     alt={testimonial.name}
                     width={48}
                     height={48}
-                    className={styles.avatarImage}
                   />
                 </div>
                 <div>
