@@ -51,17 +51,13 @@ export default function Testimonials() {
                   </span>
                 ))}
               </div>
-              <p className={styles.content}>{testimonial.content}</p> {/* <-- Aquí se usa el 'content' corregido */}
-              <div className={styles.author}>
-                <div className={styles.avatar}>
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <div>
+              <p className={styles.content}>{testimonial.content}</p>
+<div className={styles.author}>
+  <div>
+    <h4 className={styles.name}>{testimonial.name}</h4>
+    <p className={styles.role}>{testimonial.role}</p>
+  </div>
+</div>
                   <h4 className={styles.name}>{testimonial.name}</h4>
                   <p className={styles.role}>{testimonial.role}</p>
                 </div>
