@@ -9,24 +9,21 @@ const testimonials = [
     role: 'Técnico Industrial',
     // Usamos comillas tipográficas “ y ” que no dan error, o podrías usar &quotdc;
     content: '“La calidad de las herramientas Ronix es excepcional. Las uso a diario en mi taller y nunca me han fallado. La relación calidad-precio es inmejorable.”',
-    rating: 5,
-    image: '/images/testmonial-1.jpg'
+    rating: 5
   },
   {
     id: 2,
     name: 'María L.',
     role: 'Jefa de Mantenimiento',
     content: '“Desde que implementamos herramientas Ronix en nuestro equipo, la eficiencia ha aumentado notablemente. Los técnicos están muy satisfechos con el rendimiento.”',
-    rating: 5,
-    image: '/images/testimonial-3.jpg'
+    rating: 5
   },
   {
     id: 3,
     name: 'Jorge R.',
     role: 'Contratista',
     content: '“La durabilidad de estas herramientas es impresionante. Después de meses de uso intensivo, siguen funcionando como el primer día. Muy recomendables.”',
-    rating: 4,
-    image: '/images/testimonial-2.jpeg'
+    rating: 4
   }
 ];
 
