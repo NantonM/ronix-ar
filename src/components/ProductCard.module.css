@@ -9,10 +9,10 @@
   /* ----- ALTURA FIJA Y CONTROL DE DESBORDAMIENTO ----- */
   width: 100%; /* Asegurar que ocupe el ancho de la columna */
 
-  height: 400px !important; /* ¡AJUSTA ESTE VALOR! Prueba con !important temporalmente para forzarlo */
-  min-height: 400px !important; /* Para asegurar que no sea más pequeña */
-  max-height: 400px !important; /* Para asegurar que no sea más grande */
-  overflow: hidden; /* Muy importante si el contenido interno intenta desbordar */
+  /* Use a minimum height to avoid cutting long product names */
+  min-height: 400px; /* Evita recortar contenido cuando el nombre es largo */
+  /* No forzar una altura máxima ni usar overflow hidden: dejar que el contenido crezca */
+  overflow: visible;
   /* ----- ----- */
 }
 
@@ -98,7 +98,11 @@
   color: #0d6efd; 
   font-weight: 500;
   font-size: 0.85rem;
-  padding: 0.375rem 0.75rem;
+  padding: 0.6rem 1rem; /* Aumentado para mejores touch targets */
+  min-height: 44px; /* Altura mínima recomendada para dispositivos táctiles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s ease-in-out;
   width: 100%; /* Que el span ocupe el ancho del botón de Bootstrap */
 }

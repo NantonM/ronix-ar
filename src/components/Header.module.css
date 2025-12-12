@@ -100,7 +100,7 @@
     margin-bottom: 1.5rem !important; /* Espacio entre links */
   }
   .menuOpen .nav-link {
-    font-size: 2rem !important;      /* Letra MÁS GRANDE */
+    font-size: 1.5rem;      /* Tamaño reducido para mejor legibilidad en móvil */
     font-weight: 600 !important;
     color: #212529 !important;
     border-bottom: none !important;
