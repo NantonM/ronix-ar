@@ -5,22 +5,19 @@ const testimonials = [
   {
     id: 1,
     name: 'Carlos M.',
-    role: 'Técnico Industrial',
-    content: '“La calidad de las herramientas Ronix es excepcional. Las uso a diario en mi taller y nunca me han fallado. La relación calidad-precio es inmejorable.”',
+    content: '“La calidad es excelente, relación calidad/precio es muy buena. 100% recomendable.”',
     rating: 5
   },
   {
     id: 2,
     name: 'María L.',
-    role: 'Jefa de Mantenimiento',
-    content: '“Desde que implementamos herramientas Ronix en nuestro equipo, la eficiencia ha aumentado notablemente. Los técnicos están muy satisfechos con el rendimiento.”',
+    content: '“El agarre de las llaves y pinzas es muy bueno, una grata sorpresa.”',
     rating: 5
   },
   {
     id: 3,
     name: 'Jorge R.',
-    role: 'Contratista',
-    content: '“La durabilidad de estas herramientas es impresionante. Después de meses de uso intensivo, siguen funcionando como el primer día. Muy recomendables.”',
+    content: '“Es justo lo que esperaba, excelente calidad”',
     rating: 4
   }
 ];
