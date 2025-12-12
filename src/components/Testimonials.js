@@ -10,13 +10,13 @@ const testimonials = [
   },
   {
     id: 2,
-    name: 'María L.',
+    name: 'Pablo L.',
     content: '“El agarre de las llaves y pinzas es muy bueno, una grata sorpresa.”',
     rating: 5
   },
   {
     id: 3,
-    name: 'Jorge R.',
+    name: 'Lucas R.',
     content: '“Es justo lo que esperaba, excelente calidad”',
     rating: 4
   }
