@@ -11,7 +11,7 @@
   background-image: url('/images/banner-nosotros.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Efecto Parallax */
+  background-attachment: scroll; /* Efecto Parallax */
 }
 
 /* Mantenemos la capa oscura general por si hay espacios entre los elementos */
@@ -32,7 +32,8 @@
 
 /* --- CAMBIOS PARA EL TÍTULO --- */
 .titleWrapper {
-  background-color: #1a1d24; /* Color sólido */
+  background-color: rgba(26, 29, 36, 0.95); /* Color sólido */
+  backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 12px;
  

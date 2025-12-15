@@ -1,24 +1,27 @@
 /* src/components/ProductCard.module.css */
+/* ==========================================
+   MOBILE FIRST - Diseño base para móviles
+   ========================================== */
+
 .productCard {
-  border: 1px solid #e9ecef;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  border-radius: 8px; /* Más sutil en móvil */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex; 
   flex-direction: column;
   background-color: #fff;
-  
-  /* ----- ALTURA FIJA Y CONTROL DE DESBORDAMIENTO ----- */
-  width: 100%; /* Asegurar que ocupe el ancho de la columna */
-
-  /* Use a minimum height to avoid cutting long product names */
-  min-height: 400px; /* Evita recortar contenido cuando el nombre es largo */
-  /* No forzar una altura máxima ni usar overflow hidden: dejar que el contenido crezca */
-  overflow: visible;
-  /* ----- ----- */
+  width: 100%;
+  min-height: 340px; /* Más compacto en móvil */
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.productCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+/* En móviles NO aplicamos hover (solo en desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .productCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(200, 16, 46, 0.15);
+  }
 }
 
 .cardLink {
@@ -26,88 +29,236 @@
   color: inherit;
   display: flex; 
   flex-direction: column;
-  height: 100%; /* El Link debe permitir que el card interno ocupe el 100% de esta altura fija */
+  height: 100%;
+  /* Área táctil más grande en móvil */
+  -webkit-tap-highlight-color: rgba(200, 16, 46, 0.1);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  flex-shrink: 0; /* Evita que el contenedor de la imagen se encoja si hay mucho texto */
-  height: 180px; /* ALTURA FIJA para el contenedor de la imagen. AJUSTA ESTO. */
-  min-height: 180px; /* Para asegurar */
-  background-color: #ffffff; 
+  flex-shrink: 0;
+  height: 180px; /* Más compacto en móvil */
+  min-height: 180px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   overflow: hidden;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 2px solid #f1f3f5;
+}
+
+/* Efecto zoom SOLO en desktop con mouse */
+.imageWrapper img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .productCard:hover .imageWrapper img {
+    transform: scale(1.08);
+  }
 }
 
 .cardBody {
-  padding: 0.8rem; 
-  flex-grow: 1; /* Ocupa el espacio restante */
+  padding: 1rem; /* Menos padding en móvil */
+  flex-grow: 1;
   display: flex;
   flex-direction: column; 
-  text-align: center; 
+  text-align: center;
   overflow: hidden;
-  min-width: 0; /* Para que el contenido del card-body no desborde si es mucho */
+  min-width: 0;
 }
 
 .productCategory {
-  font-size: 0.75rem;
+  font-size: 0.65rem; /* Más pequeño en móvil */
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #6c757d; 
-  margin-bottom: 0.3rem;
+  color: #C8102E;
+  margin-bottom: 0.4rem;
   display: block;
-  flex-shrink: 0; /* Evita que se encoja */
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(200, 16, 46, 0.05) 0%, rgba(200, 16, 46, 0.02) 100%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .productName {
-  font-size: 0.95rem; 
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-  line-height: 1.3;
-  color: #212529;
-  /* Truncamiento a 2 líneas */
+  font-size: 0.9rem; /* Ajustado para móvil */
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  color: #1a1a1a;
   display: -webkit-box;
   -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;  
   overflow: hidden;
   text-overflow: ellipsis;
-  /* Damos una altura explícita o min-height para asegurar espacio, 
-     pero el flex-grow del cardBody debería manejarlo */
-  height: calc(1.3em * 2); /* Altura exacta para 2 líneas */
-  max-height: calc(1.3em * 2);
-  flex-shrink: 0; /* Evita que se encoja */
+  height: calc(1.4em * 2);
+  max-height: calc(1.4em * 2);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+/* Cambio de color SOLO con hover en desktop */
+@media (hover: hover) and (pointer: fine) {
+  .productCard:hover .productName {
+    color: #C8102E;
+  }
 }
 
 .productCode {
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.75rem; /* Más pequeño en móvil */
+  margin-bottom: 0.4rem;
   color: #6c757d;
-  flex-shrink: 0; /* Evita que se encoja */
+  flex-shrink: 0;
+  font-weight: 500;
 }
 
-/* El div que contiene el botón "Ver Detalles" */
-.detailsButtonContainer { /* Nueva clase para el div que envuelve el botón */
-  margin-top: auto; /* Esto empuja el botón al final del .cardBody flex */
-  padding-top: 0.5rem; /* Un poco de espacio antes del botón */
+.detailsButtonContainer {
+  margin-top: auto;
+  padding-top: 0.6rem;
   flex-shrink: 0;
 }
 
 .detailsButton {
-  background-color: transparent;
-  border: 1px solid #0d6efd; 
-  color: #0d6efd; 
-  font-weight: 500;
-  font-size: 0.85rem;
-  padding: 0.6rem 1rem; /* Aumentado para mejores touch targets */
-  min-height: 44px; /* Altura mínima recomendada para dispositivos táctiles */
+  background: linear-gradient(135deg, #C8102E 0%, #a00d25 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem; /* Ajustado para móvil */
+  padding: 0.7rem 1.2rem;
+  min-height: 44px; /* Touch target mínimo recomendado */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease-in-out;
-  width: 100%; /* Que el span ocupe el ancho del botón de Bootstrap */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25);
+  position: relative;
+  overflow: hidden;
+  /* Feedback táctil en móvil */
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
 }
-.detailsButton:hover {
-  background-color: #0d6efd;
-  color: #fff;
-  border-color: #0d6efd;
+
+/* Active state para touch devices */
+.detailsButton:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
+}
+
+/* Efecto de brillo SOLO en desktop */
+@media (hover: hover) and (pointer: fine) {
+  .detailsButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .detailsButton:hover::before {
+    left: 100%;
+  }
+
+  .detailsButton:hover {
+    background: linear-gradient(135deg, #a00d25 0%, #C8102E 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(200, 16, 46, 0.35);
+  }
+}
+
+/* ==========================================
+   TABLET - 768px y más
+   ========================================== */
+@media (min-width: 768px) {
+  .productCard {
+    border-radius: 10px;
+    min-height: 380px;
+  }
+
+  .imageWrapper {
+    height: 200px;
+    min-height: 200px;
+  }
+
+  .cardBody {
+    padding: 1.15rem;
+  }
+
+  .productCategory {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .productName {
+    font-size: 0.95rem;
+  }
+
+  .productCode {
+    font-size: 0.8rem;
+  }
+
+  .detailsButton {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ==========================================
+   DESKTOP - 992px y más
+   ========================================== */
+@media (min-width: 992px) {
+  .productCard {
+    border-radius: 12px;
+    min-height: 400px;
+  }
+
+  .imageWrapper {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .cardBody {
+    padding: 1.25rem;
+  }
+
+  .productCategory {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .productName {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .productCode {
+    margin-bottom: 0.5rem;
+  }
+
+  .detailsButtonContainer {
+    padding-top: 0.75rem;
+  }
+
+  .detailsButton {
+    font-size: 0.875rem;
+  }
+}
+
+/* ==========================================
+   LARGE DESKTOP - 1200px y más
+   ========================================== */
+@media (min-width: 1200px) {
+  .imageWrapper {
+    height: 240px;
+    min-height: 240px;
+  }
 }
