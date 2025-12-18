@@ -30,9 +30,9 @@
 /* Solo al interactuar aparece la tarjeta */
 .card:hover {
   background: #ffffff;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow:
-    0 38px 85px rgba(0,0,0,0.18),
+    0 38px 55px rgba(0,0,0,0.18),
     0 0 0 1px rgba(227, 0, 26, 0.116),
     0 0 36px rgba(248, 152, 163, 0.158);
 }

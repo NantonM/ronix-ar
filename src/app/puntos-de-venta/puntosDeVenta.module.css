@@ -52,3 +52,12 @@
   font-weight: 600;
   margin-bottom: 1rem;
 }
+.wrapper {
+  background: linear-gradient(
+    90deg,
+    #e3e6ea 0%,
+    #e4e7eb 88%,
+    #eef1f4 95%,
+    #ffffff 100%
+  );
+}

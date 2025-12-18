@@ -156,11 +156,13 @@ export default function PuntosDeVentaPage() {
   }
 
   return (
+  <div className={styles.wrapper}>
     <div className="container pt-5 pb-4">
       <div className="text-center mb-4">
         <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
         <p className="lead">Encuentra nuestros distribuidores autorizados.</p>
       </div>
+</div>
 
       <div className="row">
         {/* ---------- LEFT COLUMN ---------- */}
