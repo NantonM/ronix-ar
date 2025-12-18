@@ -58,7 +58,7 @@
 .signature {
   margin-top: 2.5rem;
   padding-top: 3rem;
-  border-top: 1px solid rgba(0, 0, 0, 0); /* línea separadora */
+  border-top: 1px solid rgba(255, 255, 255, 0); /* línea separadora */
   font-size: 1.25rem;
   color: #991818;
   
@@ -88,26 +88,6 @@
   font-size: 2.1rem;
   line-height: 1;
 }
-/* Iluminación tipo neon SOLO cuando la card está activa */
-.card:hover .signature {
-  text-shadow:
-    0 0 10px rgba(114, 112, 112, 0.45),
-    0 0 6px rgba(194, 177, 177, 0.301);
-}
-
-.card:hover .signature strong {
-  text-shadow:
-    0 0 6px rgba(255, 255, 255, 0.6),
-    0 0 14px rgb(150, 143, 143),
-    0 0 22px rgb(143, 134, 134);
-}
-
-.card:hover .signature span::before {
-  text-shadow:
-    0 0 6px rgb(255, 255, 255),
-    0 0 50px rgb(255, 255, 255);
-}
-
 
 
 
