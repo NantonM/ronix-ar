@@ -30,7 +30,7 @@
 /* Solo al interactuar aparece la tarjeta */
 .card:hover {
   background: #ffffff;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow:
     0 0 0 1px rgba(238, 238, 238, 0.15),
     0 22px 40px rgba(0, 0, 0, 0.14);
