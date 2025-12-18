@@ -56,9 +56,8 @@ export default function PuntosDeVentaPage() {
         setAllLocations(data);
         setFilteredLocations(data);
 
-        /* Provincias sin duplicados */
         const provinceMap = new Map();
-        data.forEach(loc => {
+        data.forEach((loc) => {
           const key = normalizeText(loc.province);
           if (!provinceMap.has(key)) {
             provinceMap.set(key, loc.province.trim());
@@ -91,14 +90,13 @@ export default function PuntosDeVentaPage() {
     }
 
     const filtered = allLocations.filter(
-      l => normalizeText(l.province) === normalizeText(province)
+      (l) => normalizeText(l.province) === normalizeText(province)
     );
 
     setFilteredLocations(filtered);
 
-    /* Localidades sin duplicados */
     const cityMap = new Map();
-    filtered.forEach(loc => {
+    filtered.forEach((loc) => {
       const key = normalizeText(loc.city);
       if (!cityMap.has(key)) {
         cityMap.set(key, loc.city.trim());
@@ -120,14 +118,15 @@ export default function PuntosDeVentaPage() {
     if (city === "all") {
       setFilteredLocations(
         allLocations.filter(
-          l => normalizeText(l.province) === normalizeText(selectedProvince)
+          (l) =>
+            normalizeText(l.province) === normalizeText(selectedProvince)
         )
       );
       return;
     }
 
     const filtered = allLocations.filter(
-      l =>
+      (l) =>
         normalizeText(l.province) === normalizeText(selectedProvince) &&
         normalizeText(l.city) === normalizeText(city)
     );
@@ -156,119 +155,110 @@ export default function PuntosDeVentaPage() {
   }
 
   return (
-  <div className={styles.wrapper}>
-    <div className="container pt-5 pb-4">
-      <div className="text-center mb-4">
-        <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
-        <p className="lead">Encuentra nuestros distribuidores autorizados.</p>
-      </div>
-</div>
+    <div className={styles.wrapper}>
+      <div className="container pt-5 pb-5">
+        <div className="text-center mb-5">
+          <h1 className="display-5 fw-bold">Nuestros Puntos de Venta</h1>
+          <p className="lead">Encuentra nuestros distribuidores autorizados.</p>
+        </div>
 
-      <div className="row">
-        {/* ---------- LEFT COLUMN ---------- */}
-        <div className="col-lg-4 col-md-5 mb-4">
-
-          <div className="d-grid mb-4">
-            <Link href="/revendedores" className="btn btn-danger">
-              ¡Quiero ser un Punto Ronix!
-            </Link>
-          </div>
-
-          {/* ---------- MOBILE ---------- */}
-          {isMobile ? (
-            <details className={styles.mobileAccordion}>
-              <summary>Buscar puntos de venta</summary>
-
-              <div className="mb-3">
-                <label className="form-label">Provincia</label>
-                <select
-                  className="form-select"
-                  value={selectedProvince}
-                  onChange={handleProvinceChange}
-                >
-                  <option value="all">Todas</option>
-                  {provinces.map(p => (
-                    <option key={p} value={p}>{p}</option>
-                  ))}
-                </select>
+        {/* 🔴 BOX PRINCIPAL */}
+        <div className={styles.mainBox}>
+          <div className="row">
+            {/* ---------- LEFT ---------- */}
+            <div className="col-lg-4 col-md-5 mb-4 mb-md-0">
+              <div className="d-grid mb-4">
+                <Link href="/revendedores" className="btn btn-danger">
+                  ¡Quiero ser un Punto Ronix!
+                </Link>
               </div>
 
-              {cities.length > 0 && (
-                <div className="mb-3">
-                  <label className="form-label">Localidad</label>
+              {isMobile ? (
+                <details className={styles.mobileAccordion}>
+                  <summary>Buscar puntos de venta</summary>
+
                   <select
-                    className="form-select"
-                    value={selectedCity}
-                    onChange={handleCityChange}
+                    className="form-select mb-3"
+                    value={selectedProvince}
+                    onChange={handleProvinceChange}
                   >
-                    <option value="all">Todas</option>
-                    {cities.map(c => (
-                      <option key={c} value={c}>{c}</option>
+                    <option value="all">Todas las Provincias</option>
+                    {provinces.map((p) => (
+                      <option key={p} value={p}>
+                        {p}
+                      </option>
                     ))}
                   </select>
+
+                  <ul className="list-group">
+                    {filteredLocations.map((loc) => (
+                      <li
+                        key={loc.id}
+                        className="list-group-item"
+                        onClick={() => handleLocationItemClick(loc)}
+                      >
+                        <strong>{loc.name}</strong>
+                        <div className="small">
+                          {loc.address}, {loc.city}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <div className={styles.locationListScrollable}>
+                  <label className="form-label fw-bold">
+                    Filtrar por Provincia
+                  </label>
+                  <select
+                    className="form-select mb-3"
+                    value={selectedProvince}
+                    onChange={handleProvinceChange}
+                  >
+                    <option value="all">Todas las Provincias</option>
+                    {provinces.map((p) => (
+                      <option key={p} value={p}>
+                        {p}
+                      </option>
+                    ))}
+                  </select>
+
+                  <ul className="list-group list-group-flush">
+                    {filteredLocations.map((loc) => {
+                      const isActive = activeLocation?.id === loc.id;
+                      return (
+                        <li
+                          key={loc.id}
+                          className={`${styles.locationItem} list-group-item list-group-item-action ${
+                            isActive ? styles.activeLocationItem : ""
+                          }`}
+                          onClick={() => handleLocationItemClick(loc)}
+                        >
+                          <strong>{loc.name}</strong>
+                          <small className="d-block">
+                            {loc.address}, {loc.city}
+                          </small>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               )}
-
-              <ul className="list-group">
-                {filteredLocations.map(loc => (
-                  <li
-                    key={loc.id}
-                    className="list-group-item"
-                    onClick={() => handleLocationItemClick(loc)}
-                  >
-                    <strong>{loc.name}</strong>
-                    <div className="small">{loc.address}, {loc.city}</div>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          ) : (
-
-          /* ---------- DESKTOP ---------- */
-            <div className={styles.locationListScrollable}>
-              <label className="form-label fw-bold">Filtrar por Provincia</label>
-              <select
-                className="form-select mb-3"
-                value={selectedProvince}
-                onChange={handleProvinceChange}
-              >
-                <option value="all">Todas las Provincias</option>
-                {provinces.map(p => (
-                  <option key={p} value={p}>{p}</option>
-                ))}
-              </select>
-
-              <ul className="list-group list-group-flush">
-                {filteredLocations.map(loc => {
-                  const isActive = activeLocation?.id === loc.id;
-                  return (
-                    <li
-                      key={loc.id}
-                      className={`${styles.locationItem} list-group-item list-group-item-action ${isActive ? styles.activeLocationItem : ""}`}
-                      onClick={() => handleLocationItemClick(loc)}
-                    >
-                      <strong className={styles.locationName}>{loc.name}</strong>
-                      <p className={`${styles.locationAddressMb0} mb-0`}>
-                        <small>{loc.address}, {loc.city}</small>
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
             </div>
-          )}
-        </div>
 
-        {/* ---------- MAP ---------- */}
-        <div className="col-lg-8 col-md-7">
-          <div className={styles.mapWrapper}>
-            <MapDisplay
-              initialCenter={mapCenter}
-              zoomLevel={mapZoom}
-              locations={filteredLocations}
-            />
+            {/* ---------- MAP ---------- */}
+            <div className="col-lg-8 col-md-7">
+              <div className={styles.mapWrapper}>
+                <MapDisplay
+                  initialCenter={mapCenter}
+                  zoomLevel={mapZoom}
+                  locations={filteredLocations}
+                />
+              </div>
+            </div>
           </div>
         </div>
+        {/* 🔴 FIN BOX */}
       </div>
     </div>
   );

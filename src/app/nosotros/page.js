@@ -11,8 +11,6 @@ export default function NosotrosPage() {
           <div className="col-md-6">
             <h1 className={styles.title}>Acerca de Ronix</h1>
 
-
-
             <p className={styles.text}>
               Somos una empresa apasionada por ofrecer herramientas de alta calidad
               para profesionales y aficionados del bricolaje.
