@@ -1,61 +1,49 @@
 // src/app/productos/page.js
-import Image from 'next/image';
-import ProductListClient from '@/components/ProductListClient';
-import ProductListClientWrapper from '@/components/ProductListClient'; // <-- CAMBIO DE NOMBRE
-import { getAllProducts } from '@/lib/dataService'; // <-- IMPORTAMOS DIRECTAMENTE
-// import styles from './productos.module.css';
-
-// Ya no necesitamos la función getProducts() que hacía fetch aquí.
-// Esta página ahora es un Server Component que obtiene datos directamente.
+import React from 'react';
+import ProductListClientWrapper from '@/components/ProductListClient';
+import { getAllProducts } from '@/lib/dataService';
+import styles from './productos.module.css';
 
 export default async function ProductosPage() {
-  console.log("[ProductosPage] Rendering ProductosPage (Server Component)");
   let allProducts = [];
   let errorOcurrido = null;
 
   try {
-    // Podrías pasar un filtro de categoría si lo tuvieras, ej: 'Herramientas Manuales'
-    allProducts = await getAllProducts(); 
+    allProducts = await getAllProducts();
   } catch (error) {
-    console.error("[ProductosPage] Error al obtener productos desde dataService:", error);
     errorOcurrido = error.message || "No se pudieron cargar los productos.";
-    allProducts = []; // Aseguramos que sea un array vacío en caso de error
+    allProducts = [];
   }
-  
-  console.log(`[ProductosPage] Received ${allProducts?.length || 0} products from dataService`);
 
-  // Si hubo un error y quieres mostrar un mensaje de error en toda la página:
   if (errorOcurrido && allProducts.length === 0) {
     return (
-        <div className="container text-center py-5">
-            <h1 className="display-4">Error al Cargar Productos</h1>
-            <p className="lead">{errorOcurrido}</p>
-        </div>
+      <div className="container text-center py-5">
+        <h1 className="display-4">Error al Cargar Productos</h1>
+        <p className="lead">{errorOcurrido}</p>
+      </div>
     );
   }
 
   return (
-
-    
-    <div className="container-fluid py-4">
+    <div className={styles.productsWrapper}>
       <div className="mb-4">
-        <Image
+        <img
           src="/images/productos.webp"
           alt="Banner de Productos Ronix"
           className="img-fluid rounded shadow-sm"
-          width={1920} // ¡IMPORTANTE! Reemplaza con el ANCHO real de tu imagen
-          height={300}  // ¡IMPORTANTE! Reemplaza con el ALTO real de tu imagen
-          style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
+          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
         />
       </div>
+
       <div className="text-center mb-4">
         <h1 className="display-5 fw-bold">Nuestros Productos</h1>
         <p className="lead">Explora nuestro catálogo de herramientas</p>
       </div>
-      
-      {/* ProductListClient recibe los productos directamente */}
-      <ProductListClientWrapper allProducts={allProducts} /> 
-      {/* El mensaje de "no hay productos" ahora lo manejará principalmente ProductListClient si allProducts llega vacío */}
+
+      <ProductListClientWrapper allProducts={allProducts} />
     </div>
   );
 }
+<div className="product-card">
+  {/* contenido de la tarjeta */}
+</div>

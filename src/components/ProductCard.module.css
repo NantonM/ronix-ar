@@ -1,67 +1,97 @@
-/* src/components/ProductCard.module.css */
+/* ProductCard.module.css */
 
+/* Tarjeta principal */
 .productCard {
-  border: none; /* Eliminamos el borde básico */
-  border-radius: 12px; /* Bordes más redondeados */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex; 
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #f3f5f8; /* gris camuflado */
   width: 100%;
   min-height: 400px;
-  overflow: hidden; /* Importante para el efecto zoom de la imagen */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra inicial sutil */
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: none; /* SIN sombra en estado normal */
 }
 
 .productCard:hover {
-  transform: translateY(-8px); /* Levanta más la tarjeta */
-  box-shadow: 0 12px 24px rgba(200, 16, 46, 0.15); /* Sombra con tinte rojo Ronix */
+  background-color: #ffffff; /* resalta al hover */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12); /* sombra solo en hover */
 }
 
-.cardLink {
-  text-decoration: none;
-  color: inherit;
-  display: flex; 
-  flex-direction: column;
-  height: 100%;
-}
-
+/* Imagen dentro de la tarjeta */
 .imageWrapper {
   position: relative;
   width: 100%;
-  flex-shrink: 0;
-  height: 220px; /* Aumentamos un poco la altura */
-  min-height: 220px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Fondo degradado sutil */
+  height: 250px;
   overflow: hidden;
-  border-bottom: 2px solid #f1f3f5;
+  border-radius: 12px;
 }
 
-/* Efecto zoom en la imagen */
+/* Mantener imagen contenida */
 .imageWrapper img {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
-.productCard:hover .imageWrapper img {
-  transform: scale(1.08); /* Zoom suave al hacer hover */
-}
-
+/* Cuerpo de la tarjeta */
 .cardBody {
-  padding: 1.25rem; /* Más espacioso */
-  flex-grow: 1;
   display: flex;
-  flex-direction: column; 
-  text-align: center;
-  overflow: hidden;
-  min-width: 0;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
 }
 
+/* Nombre del producto */
+.productName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+/* Código del producto */
+.productCode {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Categoría del producto */
+.productCategory {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* Contenedor del botón */
+.detailsButtonContainer {
+  margin-top: auto; /* empuja el botón al final */
+}
+
+/* Botón "Ver Detalles" */
+.detailsButton {
+  background-color: #a31919;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.detailsButton:hover {
+  background-color: #BF0000;
+}
+s
 .productCategory {
   font-size: 0.7rem;
   font-weight: 700; /* Más bold */
   letter-spacing: 0.5px; /* Espaciado entre letras */
   text-transform: uppercase;
-  color: #C8102E; /* Rojo Ronix para la categoría */
+  color: #a31919; /* Rojo Ronix para la categoría */
   margin-bottom: 0.5rem;
   display: block;
   flex-shrink: 0;
@@ -92,7 +122,7 @@
 }
 
 .productCard:hover .productName {
-  color: #C8102E; /* El nombre cambia a rojo Ronix en hover */
+  color: #000000; /* El nombre cambia a rojo Ronix en hover */
 }
 
 .productCode {
@@ -110,7 +140,7 @@
 }
 
 .detailsButton {
-  background: linear-gradient(135deg, #C8102E 0%, #a00d25 100%); /* Degradado rojo Ronix */
+  background: linear-gradient(135deg, #bdbdbd 0%, # 100%); /* Degradado rojo Ronix */
   border: none;
   color: #fff;
   font-weight: 600;
@@ -125,7 +155,7 @@
   border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25);
+  box-shadow: 0 4px 12px rgba(107, 106, 106, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -147,12 +177,52 @@
 }
 
 .detailsButton:hover {
-  background: linear-gradient(135deg, #a00d25 0%, #C8102E 100%); /* Invertimos el degradado */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.35);
+  background: linear-gradient(135deg, #a31919 0%, #a31919 100%); /* Invertimos el degradado */
+  transform: translateY(-0px);
+  box-shadow: 0 6px 16px rgba(32, 32, 32, 0.35);
 }
 
 .detailsButton:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
 }
+.productCard {
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f5f8; /* gris camuflado */
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.productCard:hover {
+  background-color: #ffffff; /* resalta al hover */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+/* Evita subrayados y outlines de links y textos */
+.cardLink {
+  text-decoration: none; /* quita subrayado */
+  outline: none;         /* quita borde al foco */
+  color: inherit;        /* hereda el color de la tarjeta */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Evita subrayado en la categoría */
+.productCategory {
+  text-decoration: none; /* quita subrayado azul */
+}
+
+/* Evita subrayado en el botón */
+.detailsButton {
+  text-decoration: none;
+  outline: none;
+}
+

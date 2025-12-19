@@ -109,17 +109,17 @@
 }
 
 .paginationWrapper :global(.pagination .page-item .page-link:hover) {
-  background-color: #C8102E;
-  border-color: #C8102E;
+  background-color: #000000;
+  border-color: #000000;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(200, 16, 46, 0.25);
+  box-shadow: 0 4px 8px rgba(20, 20, 20, 0.25);
 }
 
 .paginationWrapper :global(.pagination .page-item.active .page-link) {
-  background-color: #C8102E;
-  border-color: #C8102E;
-  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+  background-color: #a31919;
+  border-color: #a31919;
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.3);
 }
 
 .paginationWrapper :global(.pagination .page-item.disabled .page-link) {
