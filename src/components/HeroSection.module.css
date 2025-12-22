@@ -171,3 +171,35 @@
   font-size: 0.95rem;
   opacity: 0.85;
 }
+.hero {
+  margin-top: -88px; /* sube el fondo debajo del header */
+  padding-top: calc(4rem + 88px); /* mantiene el contenido visible */
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url('/hero-bg.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: #fff;
+}
+@media (max-width: 991.98px) {
+  .hero {
+    margin-top: -64px;
+    padding-top: calc(4rem + 64px);
+  }
+}
+
