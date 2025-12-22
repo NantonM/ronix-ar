@@ -1,3 +1,6 @@
+/* ============================= */
+/* VARIABLES DE COLOR            */
+/* ============================= */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,13 +13,21 @@
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* ============================= */
+/* RESETEO GLOBAL                */
+/* ============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -24,17 +35,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
+/* ============================= */
+/* ENLACES                       */
+/* ============================= */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* ============================= */
+/* HEADER                        */
+/* ============================= */
+header {
+  position: sticky; /* o fixed si querés que siempre quede arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  margin: 0;
+  padding: 0;
+  background: var(--background); /* opcional, para que no se vea transparente */
+}
+
+/* ============================= */
+/* HERO / PRIMERA SECCIÓN        */
+/* ============================= */
+section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Evitar márgenes de los elementos internos de la primera sección */
+section:first-child > * {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ============================= */
+/* IMÁGENES                       */
+/* ============================= */
+img {
+  display: block; /* evita espacios debajo de la imagen */
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================= */
+/* MODO OSCURO EN HTML            */
+/* ============================= */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

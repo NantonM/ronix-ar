@@ -1,64 +1,265 @@
-/* src/components/HeroSlider.module.css */
-.sliderContainer {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-bottom: 2rem;
-  }
-  
+/* ============================= */
+/* VARIABLES DE COLOR            */
+/* ============================= */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 
-  
-  .slide {
-    position: relative; /* Necesario para que Image con layout="fill" funcione */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ============================= */
+/* RESETEO GLOBAL                */
+/* ============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================= */
+/* HEADER GENERAL                */
+/* ============================= */
+.componenHeaderWebsite {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+
+  height: 88px;
+  padding: 0 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: rgb(224, 224, 224);
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    height 0.3s ease;
+}
+
+.componenHeaderWebsite.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  height: 80px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: -40px; /* mover logo más a la izquierda */
+}
+
+/* Navbar Desktop */
+@media (min-width: 992px) {
+  #mainNavbarContent {
+    justify-content: space-between;
+  }
+
+  .mobileMenuLogo {
+    display: none;
+  }
+}
+
+/* Links del menú */
+.navLink {
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #1f1f1f !important;
+  padding: 0.55rem 1.1rem !important;
+  border-radius: 10px;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: 6px;
+  width: 0;
+  height: 2px;
+  background: #a31919;
+  transition: width 0.25s ease;
+}
+
+.navLink:hover {
+  color: #a31919 !important;
+  background: rgba(163, 25, 25, 0.08);
+  transform: translateY(-1px);
+}
+
+.navLink:hover::after {
+  width: calc(100% - 24px);
+}
+
+/* Bloque de acciones */
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-right: 4rem;
+}
+
+.searchForm {
+  width: 240px;
+}
+
+.ctaBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ctaBtn {
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+  background: #a31919;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: #9c0404;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 12px rgba(10, 10, 10, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+  .componenHeaderWebsite {
+    height: 64px;
+    padding: 0 1.25rem;
+  }
+
+  .logo {
+    margin-left: -10px;
+  }
+
+  .menuOpen {
+    position: fixed !important;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 2.5rem !important;
+  }
+
+  .menuOpen .nav-link {
+    font-size: 1.4rem;
+  }
+
+  .menuOpen .navActions {
+    margin-top: 2rem;
     width: 100%;
-    height: 650px; /* ALTURA DEL SLIDER - ¡AJUSTA ESTE VALOR A TU GUSTO! (ej. 500px, 60vh, etc.) */
-    background-color: #f0f0f0; /* Color de fondo mientras carga la imagen */
+    max-width: 320px;
+    align-items: center;
   }
-  
-  /* Estilos para la paginación y navegación de Swiper (opcional, para personalizar) */
-  /* Swiper añade clases como .swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet */
-  /* Puedes sobreescribirlas aquí o en globals.css usando :global() */
-  /* Ejemplo:
-  .mySwiper :global(.swiper-button-next),
-  .mySwiper :global(.swiper-button-prev) {
-    color: #fff; // Cambia el color de las flechas
-    background-color: rgba(0,0,0,0.3);
-    padding: 10px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+
+  .menuOpen .searchForm {
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
-  .mySwiper :global(.swiper-button-next::after),
-  .mySwiper :global(.swiper-button-prev::after) {
-    font-size: 1.2rem; // Tamaño de la flecha interna
+
+  .menuOpen .ctaBlock {
+    flex-direction: column;
   }
-  
-  .mySwiper :global(.swiper-pagination-bullet) {
-    background-color: #fff;
-    opacity: 0.7;
+}
+
+/* ============================= */
+/* HERO / SLIDER                 */
+/* ============================= */
+.sliderContainer {
+  width: 100vw;
+  margin: 0; /* eliminar márgenes */
+  padding: 0;
+  position: relative;
+}
+
+.sliderContainer:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 650px; /* ajusta según necesidad */
+  background-color: #f0f0f0;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideCaption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.slideCaption h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+}
+
+.slideCaption p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ============================= */
+/* MODO OSCURO                   */
+/* ============================= */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
   }
-  
-  .mySwiper :global(.swiper-pagination-bullet-active) {
-    background-color: #ED1C24; // Color rojo Ronix para el bullet activo
-    opacity: 1;
-  }
-  */
-  
-  /* Estilos para el caption superpuesto (opcional) */
-  .slideCaption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    z-index: 10;
-    color: white;
-    background-color: rgba(0,0,0,0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-  .slideCaption h2 {
-    margin: 0 0 5px 0;
-    font-size: 1.8rem;
-  }
-  .slideCaption p {
-    margin: 0;
-    font-size: 1rem;
-  }
+}
