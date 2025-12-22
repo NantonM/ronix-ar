@@ -9,94 +9,111 @@ import styles from './Header.module.css';
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [headerSearchTerm, setHeaderSearchTerm] = useState('');
+  const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const handleMobileNav = (path) => {
-    if (isMobileMenuOpen) toggleMobileMenu();
-    router.push(path);
-  };
-
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const searchTerm = headerSearchTerm.trim();
-    if (searchTerm) {
-      handleMobileNav(`/productos?search=${encodeURIComponent(searchTerm)}`);
+    if (headerSearchTerm.trim()) {
+      router.push(`/productos?search=${encodeURIComponent(headerSearchTerm)}`);
       setHeaderSearchTerm('');
+      setIsMobileMenuOpen(false);
     }
   };
 
+  /* Detecta scroll */
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
-    return () => { document.body.style.overflow = 'unset'; };
-  }, [isMobileMenuOpen]);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className={`${styles.componenHeaderWebsite} navbar navbar-expand-lg navbar-light bg-light fixed-top py-0`}>
-      <div className="container">
-        <Link href="/" className="navbar-brand py-0" onClick={() => isMobileMenuOpen && toggleMobileMenu()}>
-          <Image src="/images/ronix-logo.svg" alt="Logo de Ronix Tools" width={80} height={30} priority />
-        </Link>
+    <header
+      className={`${styles.componenHeaderWebsite} ${
+        scrolled ? styles.scrolled : ''
+      }`}
+    >
+      <div className="container navbar navbar-expand-lg">
 
+{/* LOGO */}
+<Link href="/" className={`navbar-brand ${styles.logo}`}>
+  <Image
+    src="/images/ronix-logo.svg"
+    alt="Ronix Tools"
+    width={120}
+    height={45}
+    priority
+  />
+</Link>
+
+
+        {/* TOGGLER */}
         <button
-          className={`navbar-toggler ${styles.navbarToggler}`} 
+          className={`navbar-toggler ${styles.navbarToggler}`}
           type="button"
           onClick={toggleMobileMenu}
-          aria-controls="mainNavbarContent"
           aria-expanded={isMobileMenuOpen}
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div 
-          className={`collapse navbar-collapse ${isMobileMenuOpen ? styles.menuOpen : ''}`} 
-          id="mainNavbarContent"
+        {/* NAV */}
+        <div
+          className={`collapse navbar-collapse ${
+            isMobileMenuOpen ? styles.menuOpen : ''
+          }`}
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link href="/productos" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Productos</Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/nosotros" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Nosotros</Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/puntos-de-venta" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Puntos de Venta</Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/contacto" className={`nav-link ${styles.navLink}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>Contacto</Link>
-            </li>
+            {[
+              ['Productos', '/productos'],
+              ['Nosotros', '/nosotros'],
+              ['Puntos de Venta', '/puntos-de-venta'],
+              ['Contacto', '/contacto'],
+            ].map(([label, href]) => (
+              <li className="nav-item" key={href}>
+                <Link
+                  href={href}
+                  className={`nav-link ${styles.navLink}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
 
-          <div className={`d-flex flex-column flex-lg-row align-items-lg-center ${styles.navActions}`}>
-            {/* El formulario tiene la clase styles.searchForm */}
-            <form onSubmit={handleSearchSubmit} className={`d-flex me-lg-3 ${styles.searchForm}`}>
+          {/* ACCIONES */}
+          <div className={styles.navActions}>
+            <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
               <input
                 className="form-control"
                 type="search"
                 placeholder="Buscar..."
-                aria-label="Search"
                 value={headerSearchTerm}
                 onChange={(e) => setHeaderSearchTerm(e.target.value)}
               />
-              {/* Re-añadimos el botón de búsqueda que se había perdido */}
             </form>
-            
-            <div className={`d-flex align-items-center mt-2 mt-lg-0 ${styles.ctaBlock}`}>
-              <div className={styles.ctaButton}>
-                <Link href="/revendedores" className={`btn btn-danger ${styles.ctaButton}`} onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}>
-                  ¡Quiero ser un Punto Ronix!
-                </Link>
-              </div>
-              <div className={styles.germanTechLogo}>
-                <Image
-                  src="/images/german-tech.webp"
-                  alt="Icono de Tecnología Alemana"
-                  width={100}
-                  height={24}
-                />
-              </div>
+
+            <div className={styles.ctaBlock}>
+              <Link
+                href="/revendedores"
+                className={styles.ctaBtn}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Quiero ser un Punto Ronix
+              </Link>
+
+              <Image
+                src="/images/german-tech.webp"
+                alt="German Technology"
+                width={100}
+                height={24}
+              />
             </div>
           </div>
         </div>

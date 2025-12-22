@@ -44,6 +44,3 @@ export default async function ProductosPage() {
     </div>
   );
 }
-<div className="product-card">
-  {/* contenido de la tarjeta */}
-</div>

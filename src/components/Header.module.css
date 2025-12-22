@@ -1,143 +1,194 @@
-/* src/components/Header.module.css */
+/* ================================================= */
+/* === HEADER GENERAL (ESCRITORIO) === */
+/* ================================================= */
 
-/* --- Estilos de ESCRITORIO --- */
 .componenHeaderWebsite {
-  background-color: #ffffff;
-  height: 56px;
+  position: sticky;
+  top: 0;
   z-index: 1030;
+
+  height: 88px;
+  padding: 0 2.5rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: rgb(224, 224, 224);
   border-bottom: 1px solid #e9ecef;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    height 0.3s ease;
 }
+
+/* Estado al hacer scroll */
+.componenHeaderWebsite.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  height: 80px;
+}
+
+/* ================================================= */
+/* === LOGO === */
+/* ================================================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  /* 👈 MOVER LOGO MÁS A LA IZQUIERDA */
+  margin-left: -40px;
+}
+
+/* ================================================= */
+/* === NAVBAR / CONTENIDO === */
+/* ================================================= */
 
 @media (min-width: 992px) {
   #mainNavbarContent {
     justify-content: space-between;
   }
+
   .mobileMenuLogo {
-      display: none; /* Ocultamos el logo del menú en escritorio */
+    display: none;
   }
 }
 
-
-/* --- ESTILO PARA AGRANDAR LA BARRA DE BÚSQUEDA --- */
-.searchForm {
-  width: 200px; /* Ajusta este valor si quieres más o menos ancho */
-}
-/* --- FIN DEL ESTILO --- */
+/* ================================================= */
+/* === LINKS DEL MENÚ === */
+/* ================================================= */
 
 .navLink {
-  color: #3d3d3d !important;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0.5rem 1rem !important;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s ease-in-out;
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #1f1f1f !important;
+
+  padding: 0.55rem 1.1rem !important;
+  border-radius: 10px;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: 6px;
+  width: 0;
+  height: 2px;
+  background: #a31919;
+  transition: width 0.25s ease;
 }
 
 .navLink:hover {
-  color: #bf0000 !important;
-  border-bottom-color: #bf0000;
+  color: #a31919 !important;
+  background: rgba(163, 25, 25, 0.08);
+  transform: translateY(-1px);
 }
 
-/* El div que contiene el botón CTA y el logo German Tech en ESCRITORIO */
+.navLink:hover::after {
+  width: calc(100% - 24px);
+}
+
+/* ================================================= */
+/* === BLOQUE ACCIONES === */
+/* ================================================= */
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-right: 4rem;
+}
+
+.searchForm {
+  width: 240px;
+}
+
 .ctaBlock {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
-.germanTechLogo {
-  margin-left: 0.5rem;
+.ctaBtn {
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+
+  background: #a31919;
+  color: #fff;
+
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
 }
 
+.ctaBtn:hover {
+  background: #9c0404;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 12px rgba(10, 10, 10, 0.25);
+}
 
 /* ================================================= */
-/* === Estilos EXCLUSIVOS para Vista MÓVIL === */
+/* === MOBILE === */
 /* ================================================= */
+
 @media (max-width: 991.98px) {
-  
-  .navbarToggler { border: none; }
-  .navbarToggler:focus { box-shadow: none; }
-  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-image: none; position: relative; height: 22px;
-  }
-  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::before,
-  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    content: ''; position: absolute; left: 0; top: 50%; width: 100%;
-    height: 2px; background-color: currentColor; transition: transform 0.3s ease-in-out;
-  }
-  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
-  .navbarToggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
 
-  /* Estilo del menú desplegable */
+  .componenHeaderWebsite {
+    height: 64px;
+    padding: 0 1.25rem;
+  }
+
+  /* 👇 LOGO MOBILE */
+  .logo {
+    margin-left: -10px;
+  }
+
   .menuOpen {
-    position: fixed !important; top: 56px; left: 0; right: 0; bottom: 0;
-    background-color: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important;
-    display: flex !important; flex-direction: column !important;
+    position: fixed !important;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    justify-content: flex-start !important; /* Alinea todo arriba */
-    padding: 2rem !important;
-    padding-top: 3rem !important; /* Espacio superior */
-    animation: fadeInMenu 0.3s ease-in-out;
+    padding: 2.5rem !important;
   }
 
-  @keyframes fadeInMenu { from { opacity: 0; } to { opacity: 1; } }
-
-  /* --- CAMBIOS PARA TU SOLICITUD --- */
-
-  /* 1. Logo de Ronix centrado y arriba */
-  .mobileMenuLogo {
-    display: block;
-    margin-bottom: 2.5rem; /* Espacio entre el logo y los links */
-  }
-
-  /* 2. Enlaces de navegación */
-  .menuOpen .navbar-nav {
-    text-align: center; margin: 0 !important; padding: 0; width: 100%;
-  }
-  .menuOpen .nav-item {
-    margin-bottom: 1.5rem !important; /* Espacio entre links */
-  }
   .menuOpen .nav-link {
-    font-size: 1.5rem;      /* Tamaño reducido para mejor legibilidad en móvil */
-    font-weight: 600 !important;
-    color: #212529 !important;
-    border-bottom: none !important;
+    font-size: 1.4rem;
   }
-  .menuOpen .nav-link:hover { color: #e30613 !important; }
-  
-  /* 3. Sección de acciones más junta y centrada */
+
   .menuOpen .navActions {
-    margin-top: 2rem; /* Reduce el espacio para que esté más cerca */
-    border-top: 1px solid #ddd;
-    padding-top: 2rem;
+    margin-top: 2rem;
     width: 100%;
     max-width: 320px;
-    align-items: center !important;
+    align-items: center;
   }
 
   .menuOpen .searchForm {
     width: 100%;
     margin-bottom: 1.5rem;
   }
-  
-  /* 4. Bloque CTA centrado, con el logo German Tech debajo */
+
   .menuOpen .ctaBlock {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .menuOpen .ctaButton {
-    display: inline-block; /* Permite que el botón no ocupe todo el ancho */
-    margin-bottom: 1rem; /* Espacio entre el botón y el logo de abajo */
-  }
-  .menuOpen .ctaButton a.btn {
-    font-size: 1.1rem !important;
-    padding: 0.6rem 1.8rem !important; /* Botón un poco más grande */
-  }
-  .menuOpen .germanTechLogo {
-    margin-left: 0 !important; /* Resetea el margen de escritorio */
   }
 }

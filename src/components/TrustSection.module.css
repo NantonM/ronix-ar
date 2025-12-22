@@ -15,20 +15,21 @@
 }
 
 /* Mantenemos la capa oscura general por si hay espacios entre los elementos */
-.trustSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.trustSection {
+  position: relative;
+  padding: 6rem 1rem;
+  color: #1a1a1a; /* ya no es fondo oscuro */
+  overflow: hidden;
+
+  /* FONDO DEGRADADO GRIS → BLANCO */
+  background: linear-gradient(
+    90deg,
+    #000000 30%,   /* gris claro izquierda */
+    #250000 80%,  /* gris intermedio */
+    #270000 100% /* blanco derecha */
+  );
 }
 
-.trustSection .container {
-  position: relative;
-  z-index: 2;
-}
 
 /* --- CAMBIOS PARA EL TÍTULO --- */
 .titleWrapper {
