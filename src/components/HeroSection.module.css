@@ -19,8 +19,6 @@
   color: #fff;
 }
 
-
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -39,7 +37,7 @@
 
 .badge {
   display: inline-block;
-  background: #e10600;
+  background: #a31919;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -69,7 +67,7 @@
 }
 
 .primary {
-  background: #e10600;
+  background: #a31919;
   color: #fff;
   padding: 0.9rem 1.6rem;
   border-radius: 10px;
@@ -79,7 +77,7 @@
 }
 
 .primary:hover {
-  background: #b90500;
+  background: #7f1313;
 }
 
 .secondary {
@@ -137,6 +135,7 @@
     justify-content: center;
   }
 }
+
 .points {
   margin: 2rem 0;
   display: grid;
@@ -144,17 +143,6 @@
   max-width: 420px;
 }
 
-.points h4 {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.points p {
-  margin: 0.2rem 0 0;
-  font-size: 0.95rem;
-  opacity: 0.85;
-}
 /* CAJAS DE DESTACADOS */
 .pointBox {
   padding: 1.2rem 1.4rem;
@@ -167,9 +155,9 @@
 
 .pointBox:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(225, 6, 0, 0.6);
+  border-color: rgba(163, 25, 25, 0.6);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(225, 6, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(163, 25, 25, 0.15);
 }
 
 .pointBox h4 {
