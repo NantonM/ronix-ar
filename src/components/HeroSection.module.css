@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
 
   /* 👇 altura total menos header */
-  min-height: calc(100vh - 88px);
+  min-height: calc(120vh - 88px);
 
   display: flex;
   align-items: center;
