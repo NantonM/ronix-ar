@@ -10,3 +10,48 @@
   padding: 2rem 1rem;
   min-height: 100vh;
 }
+.productButtonWrapper {
+  margin-top: 2rem;       /* separa del listado/paginación */
+  text-align: center;     /* centra el botón horizontalmente */
+}
+
+.productButton {
+  display: inline-block;       /* permite centrado y padding */
+  background-color: #a31919;   /* color principal Ronix */
+  color: #fff;
+  padding: 0.9rem 2rem;        /* tamaño del botón */
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.25s ease;
+}
+
+.productButton:hover {
+  background-color: #7f1313;  /* cambio de color al pasar el mouse */
+  color: #fff;
+}
+.paginationWrapper {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  margin-top: 2rem;        /* separa del listado de productos */
+  gap: 0.5rem;             /* espacio entre botones de página */
+}
+
+.paginationWrapper a,
+.paginationWrapper button {
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+  transition: background 0.25s ease;
+}
+
+.paginationWrapper a:hover,
+.paginationWrapper button:hover {
+  background: #f5f5f5;
+}
+
+

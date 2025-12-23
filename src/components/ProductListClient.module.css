@@ -92,11 +92,13 @@
 }
 
 /* =========================
-   PAGINACIÓN (CSS Modules OK)
+   PAGINACIÓN (centrada)
    ========================= */
-
 .paginationWrapper :global(.pagination) {
+  display: flex;
+  justify-content: center;
   gap: 0.5rem;
+  margin: 0 auto;
 }
 
 .paginationWrapper :global(.pagination .page-item .page-link) {
@@ -128,6 +130,7 @@
   color: #adb5bd;
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 991px) {
   .filtersColumn {
@@ -147,3 +150,94 @@
     padding-right: 0.5rem;
   }
 }
+.paginationWrapper {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  margin-top: 4rem;
+}
+/* =========================
+   PAGINACIÓN MOBILE (SAFE)
+   ========================= */
+@media (max-width: 768px) {
+
+  .paginationWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .paginationWrapper :global(.pagination) {
+    display: flex;
+    flex-direction: row; /* NO columna */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .paginationWrapper :global(.page-item) {
+    flex: 0 0 auto;
+  }
+
+  .paginationWrapper :global(.page-link) {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+}
+
+/* =========================
+   PAGINACIÓN MOBILE (FIX REAL)
+   ========================= */
+
+.mobilePagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: #a31919;
+  border: 1px solid #e9ecef;
+}
+
+/* BOTONES BOOTSTRAP */
+.mobilePagination :global(.page-link) {
+  color: #1f1f1f !important;
+  background-color: #a31919 !important;
+  border: 2px solid #a31919 !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  box-shadow: none !important;
+}
+
+/* HOVER */
+.mobilePagination :global(.page-link:hover) {
+  background-color: #a31919 !important;
+  border-color: #a31919 !important;
+  color: #a31919 !important;
+}
+
+/* ACTIVE */
+.mobilePagination :global(.page-link:active) {
+  background-color: #a31919 !important;
+  border-color: #a31919 !important;
+  color: #ffffff !important;
+}
+
+/* DISABLED */
+.mobilePagination :global(.page-link:disabled) {
+  background-color: #a31919 !important;
+  border-color: #a31919 !important;
+  color: #adb5bd !important;
+}
+
+/* TEXTO CENTRAL */
+.mobilePagination span {
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+}
+

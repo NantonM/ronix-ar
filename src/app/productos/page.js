@@ -26,6 +26,7 @@ export default async function ProductosPage() {
 
   return (
     <div className={styles.productsWrapper}>
+      
       <div className="mb-4">
         <img
           src="/images/productos.webp"
@@ -40,7 +41,22 @@ export default async function ProductosPage() {
         <p className="lead">Explora nuestro catálogo de herramientas</p>
       </div>
 
+      {/* Listado + paginación */}
       <ProductListClientWrapper allProducts={allProducts} />
+
+      {/* Botón debajo de TODO */}
+      <div className={styles.productButtonWrapper}>
+        <a
+          href="/catalogo-ronix.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.productButton}
+        >
+          Descargar catálogo
+        </a>
+      </div>
+
     </div>
   );
 }
+

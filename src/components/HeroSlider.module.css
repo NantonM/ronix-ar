@@ -263,3 +263,32 @@ a {
     color-scheme: dark;
   }
 }
+/* ============================= */
+/* HERO / SLIDER - MOBILE FIXES  */
+/* ============================= */
+@media (max-width: 991.98px) {
+
+  .slide {
+    height: calc(100svh - 64px);
+    min-height: 420px;
+  }
+
+  .slideCaption {
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 360px;
+    text-align: center;
+    padding: 14px 18px;
+  }
+
+  .slideCaption h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .slideCaption p {
+    font-size: 0.95rem;
+  }
+}

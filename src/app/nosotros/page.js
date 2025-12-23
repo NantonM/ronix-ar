@@ -1,3 +1,4 @@
+// src/app/nosotros/NosotrosPage.js
 import Image from "next/image";
 import styles from "./nosotros.module.css";
 
@@ -29,12 +30,29 @@ export default function NosotrosPage() {
               Explorá nuestro catálogo y descubrí la herramienta perfecta para tus proyectos.
             </p>
 
-           <div className={styles.signature}>
-  <strong>Ronix Argentina</strong>
-  <span>Representantes oficiales</span>
-  <span>Calidad profesional</span>
-</div>
+            {/* FIRMA */}
+            <div className={styles.signature}>
+              <strong>Ronix Argentina</strong>
+              <span>Representantes oficiales</span>
+              <span>Calidad profesional</span>
+            </div>
 
+            {/* ICONO DE INSTAGRAM */}
+            <div className={styles.socialLinks}>
+              <a
+                href="https://www.instagram.com/ronixtoolsargentina/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/logo instagram.png"  // Tu logo en PNG con fondo transparente
+                  alt="Instagram"
+                  width={90}
+                  height={90}
+                  className={styles.instagramIcon}
+                />
+              </a>
+            </div>
           </div>
 
           {/* IMAGEN */}

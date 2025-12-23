@@ -3,7 +3,7 @@
 /* ================================================= */
 
 .componenHeaderWebsite {
-  position: fixed; /* FIXED en vez de sticky */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -32,27 +32,11 @@
 .logo {
   display: flex;
   align-items: center;
-
-  /* 👈 MOVER LOGO MÁS A LA IZQUIERDA */
   margin-left: -40px;
 }
 
 /* ================================================= */
-/* === NAVBAR / CONTENIDO === */
-/* ================================================= */
-
-@media (min-width: 992px) {
-  #mainNavbarContent {
-    justify-content: space-between;
-  }
-
-  .mobileMenuLogo {
-    display: none;
-  }
-}
-
-/* ================================================= */
-/* === LINKS DEL MENÚ === */
+/* === LINKS === */
 /* ================================================= */
 
 .navLink {
@@ -93,7 +77,7 @@
 }
 
 /* ================================================= */
-/* === BLOQUE ACCIONES === */
+/* === ACCIONES === */
 /* ================================================= */
 
 .navActions {
@@ -116,15 +100,12 @@
 .ctaBtn {
   padding: 0.7rem 2rem;
   border-radius: 10px;
-
   background: #a31919;
   color: #fff;
-
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;
   text-decoration: none;
-
   transition: all 0.3s ease;
 }
 
@@ -135,21 +116,23 @@
 }
 
 /* ================================================= */
-/* === MOBILE === */
+/* === MOBILE OPTIMIZADO === */
 /* ================================================= */
 
 @media (max-width: 991.98px) {
 
+  /* HEADER MÁS BAJO */
   .componenHeaderWebsite {
     height: 64px;
-    padding: 0 1.25rem;
+    padding: 0 1rem;
   }
 
-  /* 👇 LOGO MOBILE */
+  /* LOGO */
   .logo {
-    margin-left: -10px;
+    margin-left: 0;
   }
 
+  /* MENÚ MOBILE FULLSCREEN */
   .menuOpen {
     position: fixed !important;
     top: 64px;
@@ -157,32 +140,52 @@
     right: 0;
     bottom: 0;
 
-    background-color: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
 
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    padding: 2.5rem !important;
+
+    padding: 2rem 1.5rem !important;
+    overflow-y: auto;
   }
 
+  /* LINKS GRANDES Y CÓMODOS */
   .menuOpen .nav-link {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    padding: 0.8rem 0 !important;
   }
 
+  /* ACCIONES */
   .menuOpen .navActions {
     margin-top: 2rem;
     width: 100%;
     max-width: 320px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
+  /* BUSCADOR FULL WIDTH */
   .menuOpen .searchForm {
     width: 100%;
-    margin-bottom: 1.5rem;
   }
 
-  .menuOpen .ctaBlock {
-    flex-direction: column;
+  .menuOpen .searchForm input {
+    text-align: center;
+  }
+
+  /* CTA MÁS GRANDE */
+  .menuOpen .ctaBtn {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  /* OCULTAR IMAGEN GERMAN TECH EN MOBILE */
+  .menuOpen .ctaBlock img {
+    display: none;
   }
 }

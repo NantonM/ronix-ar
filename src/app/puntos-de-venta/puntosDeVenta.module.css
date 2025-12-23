@@ -59,13 +59,11 @@
 
 /* MAPA */
 .mapWrapper {
-  border-radius: 14px;
-  overflow: hidden;
-  min-height: 500px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  min-height: 0;   /* o quitarlo */
+  height: 100%;    /* que ocupe todo el contenedor */
+  margin: 0;
+  padding: 0;
 }
-
 /* MOBILE */
 .mobileAccordion summary {
   cursor: pointer;

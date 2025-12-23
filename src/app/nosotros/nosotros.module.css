@@ -97,3 +97,51 @@
   border-radius: 14px;
   overflow: hidden;
 }
+/* LINKS SOCIALES */
+.socialLinks {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end; /* <-- Esto mueve todo a la derecha */
+  gap: 1rem;
+}
+
+.socialLinks a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.1);
+}
+
+.instagramIcon {
+  display: block;
+  border-radius: 50%; /* opcional, si querés logo redondo */
+}
+@media (max-width: 768px) {
+
+  .card {
+    background: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    transform: none;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .signature strong {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
+}

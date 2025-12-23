@@ -1,27 +1,27 @@
-/* ProductCard.module.css */
+/* ================================================= */
+/* === PRODUCT CARD – BASE (DESKTOP / GENERAL) === */
+/* ================================================= */
 
-/* Tarjeta principal */
 .productCard {
   border: none;
   border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  background-color: #f3f5f8; /* gris camuflado */
+  background-color: #f3f5f8;
   width: 100%;
   min-height: 400px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: none; /* SIN sombra en estado normal */
+  transition: all 0.3s ease;
 }
 
 .productCard:hover {
-  background-color: #ffffff; /* resalta al hover */
+  background-color: #ffffff;
   transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12); /* sombra solo en hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Imagen dentro de la tarjeta */
+/* Imagen */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -30,15 +30,13 @@
   border-radius: 12px;
 }
 
-/* Mantener imagen contenida */
 .imageWrapper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
 }
 
-/* Cuerpo de la tarjeta */
+/* Cuerpo */
 .cardBody {
   display: flex;
   flex-direction: column;
@@ -46,183 +44,119 @@
   padding: 1rem;
 }
 
-/* Nombre del producto */
-.productName {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0.5rem 0;
-}
-
-/* Código del producto */
-.productCode {
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-/* Categoría del producto */
-.productCategory {
-  font-size: 0.75rem;
-  color: #999;
-}
-
-/* Contenedor del botón */
-.detailsButtonContainer {
-  margin-top: auto; /* empuja el botón al final */
-}
-
-/* Botón "Ver Detalles" */
-.detailsButton {
-  background-color: #a31919;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem;
-  font-size: 0.85rem;
-  transition: background-color 0.2s ease;
-}
-
-.detailsButton:hover {
-  background-color: #a31919;
-}
-s
+/* Categoría */
 .productCategory {
   font-size: 0.7rem;
-  font-weight: 700; /* Más bold */
-  letter-spacing: 0.5px; /* Espaciado entre letras */
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #a31919; /* Rojo Ronix para la categoría */
+  color: #a31919;
   margin-bottom: 0.5rem;
-  display: block;
-  flex-shrink: 0;
-  background: linear-gradient(135deg, rgba(200, 16, 46, 0.05) 0%, rgba(200, 16, 46, 0.02) 100%);
+  background: rgba(163, 25, 25, 0.06);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
-  display: inline-block;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  text-decoration: none;
 }
 
+/* Nombre */
 .productName {
-  font-size: 1rem; /* Ligeramente más grande */
-  font-weight: 700; /* Más peso */
+  font-size: 1rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   line-height: 1.4;
-  color: #1a1a1a; /* Negro más intenso */
+  color: #1a1a1a;
   display: -webkit-box;
-  -webkit-line-clamp: 2; 
-  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  height: calc(1.4em * 2);
-  max-height: calc(1.4em * 2);
-  flex-shrink: 0;
-  transition: color 0.3s ease;
 }
 
-.productCard:hover .productName {
-  color: #000000; /* El nombre cambia a rojo Ronix en hover */
-}
-
+/* Código */
 .productCode {
   font-size: 0.8rem;
-  margin-bottom: 0.5rem;
   color: #6c757d;
-  flex-shrink: 0;
-  font-weight: 500;
+  margin-bottom: 0.75rem;
 }
 
+/* Botón */
 .detailsButtonContainer {
   margin-top: auto;
-  padding-top: 0.75rem;
-  flex-shrink: 0;
 }
 
 .detailsButton {
-  background: linear-gradient(135deg, #bdbdbd 0%, # 100%); /* Degradado rojo Ronix */
+  background: #a31919;
   border: none;
   color: #fff;
   font-weight: 600;
-  font-size: 0.875rem;
-  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  padding: 0.75rem;
   min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(107, 106, 106, 0.25);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efecto de brillo animado */
-.detailsButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.detailsButton:hover::before {
-  left: 100%;
+  transition: background 0.25s ease;
+  text-decoration: none;
 }
 
 .detailsButton:hover {
-  background: linear-gradient(135deg, #a31919 0%, #a31919 100%); /* Invertimos el degradado */
-  transform: translateY(-0px);
-  box-shadow: 0 6px 16px rgba(32, 32, 32, 0.35);
+  background: #7f1313;
 }
 
-.detailsButton:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
-}
-.productCard {
-  border: none;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  background-color: #f3f5f8; /* gris camuflado */
-  width: 100%;
-  min-height: 400px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-}
-
-.productCard:hover {
-  background-color: #ffffff; /* resalta al hover */
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-}
-/* Evita subrayados y outlines de links y textos */
+/* Link wrapper */
 .cardLink {
-  text-decoration: none; /* quita subrayado */
-  outline: none;         /* quita borde al foco */
-  color: inherit;        /* hereda el color de la tarjeta */
+  text-decoration: none;
+  color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-/* Evita subrayado en la categoría */
-.productCategory {
-  text-decoration: none; /* quita subrayado azul */
-}
+/* ================================================= */
+/* === MOBILE OPTIMIZATION (NO TOCA DESKTOP) === */
+/* ================================================= */
 
-/* Evita subrayado en el botón */
-.detailsButton {
-  text-decoration: none;
-  outline: none;
-}
+@media (max-width: 768px) {
 
+  .productCard {
+    min-height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transform: none;
+  }
+
+  .productCard:hover {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .imageWrapper {
+    height: 180px;
+  }
+
+  .cardBody {
+    padding: 0.75rem;
+  }
+
+  .productCategory {
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .productName {
+    font-size: 0.95rem;
+  }
+
+  .productCode {
+    font-size: 0.75rem;
+  }
+
+  .detailsButton {
+    font-size: 0.8rem;
+    padding: 0.65rem;
+    letter-spacing: 0.4px;
+  }
+}

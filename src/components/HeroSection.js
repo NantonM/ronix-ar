@@ -21,31 +21,23 @@ export default function HeroSection() {
           </p>
 
           <div className={styles.points}>
-  <div className={styles.pointBox}>
-    <h4>Precisión alemana</h4>
-    <p>Estándares de calidad y exactitud</p>
-  </div>
+            <div className={styles.pointBox}>
+              <h4>Precisión alemana</h4>
+              <p>Estándares de calidad y exactitud</p>
+            </div>
 
-  <div className={styles.pointBox}>
-    <h4>Garantía internacional</h4>
-    <p>Respaldo a nivel mundial</p>
-  </div>
-</div>
+            <div className={styles.pointBox}>
+              <h4>Garantía internacional</h4>
+              <p>Respaldo a nivel mundial</p>
+            </div>
+          </div>
 
-          <div className={styles.buttons}>
-  <a
-    href="/catalogo-ronix.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className={styles.primary}
-  >
-    Descargar catálogo
-  </a>
-
+<div className={styles.buttons}>
   <Link href="/revendedores" className={styles.primary}>
     Quiero ser un Punto Ronix
   </Link>
 </div>
+
 
         </div>
 
@@ -53,3 +45,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
