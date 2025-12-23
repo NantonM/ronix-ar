@@ -93,7 +93,7 @@
 }
 
 .pointBox:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(194, 27, 27, 0.08);
   border-color: rgba(163, 25, 25, 0.6);
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(163, 25, 25, 0.15);

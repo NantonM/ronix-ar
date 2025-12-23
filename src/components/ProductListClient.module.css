@@ -94,6 +94,15 @@
 /* =========================
    PAGINACIÓN (centrada)
    ========================= */
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
 .paginationWrapper :global(.pagination) {
   display: flex;
   justify-content: center;
@@ -150,15 +159,9 @@
     padding-right: 0.5rem;
   }
 }
-.paginationWrapper {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  margin-top: 4rem;
-}
+
 /* =========================
-   PAGINACIÓN MOBILE (SAFE)
+   PAGINACIÓN MOBILE
    ========================= */
 @media (max-width: 768px) {
 
@@ -170,7 +173,7 @@
 
   .paginationWrapper :global(.pagination) {
     display: flex;
-    flex-direction: row; /* NO columna */
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.4rem;
@@ -188,7 +191,7 @@
 }
 
 /* =========================
-   PAGINACIÓN MOBILE (FIX REAL)
+   PAGINACIÓN MOBILE ALTERNATIVA
    ========================= */
 
 .mobilePagination {
@@ -202,7 +205,6 @@
   border: 1px solid #e9ecef;
 }
 
-/* BOTONES BOOTSTRAP */
 .mobilePagination :global(.page-link) {
   color: #1f1f1f !important;
   background-color: #a31919 !important;
@@ -213,31 +215,26 @@
   box-shadow: none !important;
 }
 
-/* HOVER */
 .mobilePagination :global(.page-link:hover) {
-  background-color: #a31919 !important;
-  border-color: #a31919 !important;
-  color: #a31919 !important;
+  background-color: #8a1515 !important;
+  border-color: #8a1515 !important;
+  color: #ffffff !important;
 }
 
-/* ACTIVE */
 .mobilePagination :global(.page-link:active) {
   background-color: #a31919 !important;
   border-color: #a31919 !important;
   color: #ffffff !important;
 }
 
-/* DISABLED */
 .mobilePagination :global(.page-link:disabled) {
-  background-color: #a31919 !important;
-  border-color: #a31919 !important;
+  background-color: #f8f9fa !important;
+  border-color: #dee2e6 !important;
   color: #adb5bd !important;
 }
 
-/* TEXTO CENTRAL */
 .mobilePagination span {
   font-weight: 600;
   color: #ffffff;
   white-space: nowrap;
 }
-

@@ -1,5 +1,6 @@
 // src/app/productos/page.js
 import React from 'react';
+import Image from 'next/image';
 import ProductListClientWrapper from '@/components/ProductListClient';
 import { getAllProducts } from '@/lib/dataService';
 import styles from './productos.module.css';
@@ -25,38 +26,44 @@ export default async function ProductosPage() {
   }
 
   return (
-    <div className={styles.productsWrapper}>
+    <div className={styles.productsBackground}>
       
-      <div className="mb-4">
-        <img
+      {/* Banner a todo ancho - FUERA del wrapper centrado */}
+      <div className={styles.bannerWrapper}>
+        <Image
           src="/images/productos.webp"
           alt="Banner de Productos Ronix"
-          className="img-fluid rounded shadow-sm"
+          width={1920}
+          height={400}
           style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          priority
         />
       </div>
 
-      <div className="text-center mb-4">
-        <h1 className="display-5 fw-bold">Nuestros Productos</h1>
-        <p className="lead">Explora nuestro catálogo de herramientas</p>
+      {/* Contenido centrado */}
+      <div className={styles.productsWrapper}>
+
+        {/* Encabezado */}
+        <div className="text-center mb-4">
+          <h1 className="display-5 fw-bold">Nuestros Productos</h1>
+          <p className="lead">Explora nuestro catálogo de herramientas</p>
+        </div>
+
+        {/* Listado de productos */}
+        <ProductListClientWrapper allProducts={allProducts} />
+
+        {/* Botón Descargar Catálogo */}
+        <div className={styles.productButtonWrapper}>
+          <a
+            href="/catalogo.pdf"
+            download
+            className={styles.productButton}
+          >
+            Descargar Catálogo
+          </a>
+        </div>
+
       </div>
-
-      {/* Listado + paginación */}
-      <ProductListClientWrapper allProducts={allProducts} />
-
-      {/* Botón debajo de TODO */}
-      <div className={styles.productButtonWrapper}>
-        <a
-          href="/catalogo-ronix.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.productButton}
-        >
-          Descargar catálogo
-        </a>
-      </div>
-
     </div>
   );
 }
-
