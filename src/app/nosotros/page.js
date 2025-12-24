@@ -45,7 +45,7 @@ export default function NosotrosPage() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/images/logo-instagram.png"  // Tu logo en PNG con fondo transparente
+                  src="/images/logo-instagram.PNG"  // Tu logo en PNG con fondo transparente
                   alt="Instagram"
                   width={90}
                   height={90}
