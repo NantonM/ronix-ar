@@ -1,6 +1,5 @@
 // src/app/productos/page.js
 import React from 'react';
-import Image from 'next/image';
 import ProductListClientWrapper from '@/components/ProductListClient';
 import { getAllProducts } from '@/lib/dataService';
 import styles from './productos.module.css';
@@ -28,18 +27,7 @@ export default async function ProductosPage() {
   return (
     <div className={styles.productsBackground}>
       
-      {/* Banner a todo ancho - FUERA del wrapper centrado */}
-      <div className={styles.bannerWrapper}>
-        <Image
-          src="/images/productos.webp"
-          alt="Banner de Productos Ronix"
-          width={1920}
-          height={400}
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-          priority
-        />
-      </div>
-
+      
       {/* Contenido centrado */}
       <div className={styles.productsWrapper}>
 
