@@ -1,56 +1,103 @@
-// src/components/Footer.js
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./Footer.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './FeaturedProducts.module.css';
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+const products = [
+  {
+    id: 1,
+    title: 'Destornillador Profesional',
+    category: 'Herramientas Manuales',
+    image: '/images/products/destornillador.jpg',
+    featured: true,
+    description: 'Diseñado para uso profesional con máxima durabilidad y comodidad',
+    specs: ['Punta magnética', 'Empuñadura antideslizante', 'Acero al cromo vanadio']
+  },
+  {
+    id: 2,
+    title: 'Juego de Llaves',
+    category: 'Herramientas Manuales',
+    image: '/images/products/llaves.jpg',
+    featured: false,
+    description: 'Set completo para todo tipo de trabajos de ajuste',
+    specs: ['Diferentes medidas', 'Material resistente', 'Acabado pulido']
+  },
+  {
+    id: 3,
+    title: 'Alicates de Precisión',
+    category: 'Herramientas de Corte',
+    image: '/images/products/alicates.jpg',
+    featured: true,
+    description: 'Precisión y durabilidad para trabajos detallados',
+    specs: ['Punta fina', 'Mango ergonómico', 'Acero templado']
+  },
+  {
+    id: 4,
+    title: 'Juego de Destornilladores',
+    category: 'Herramientas Manuales',
+    image: '/images/products/destornilladores.jpg',
+    featured: false,
+    description: 'Set completo para todas sus necesidades de ajuste',
+    specs: ['Diferentes puntas', 'Empuñadura cómoda', 'Resistente al desgaste']
+  }
+];
 
+export default function FeaturedProducts() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-
-          {/* Marca */}
-          <div>
-            <Image
-              src="/images/ronix-logo.svg"
-              alt="Ronix"
-              width={130}
-              height={48}
-            />
-            <p className={styles.description}>
-              Ronix es una marca internacional de herramientas fundada en 2004,
-              reconocida por su innovación, calidad y diseño profesional.
-            </p>
-          </div>
-
-          {/* Empresa */}
-          <div>
-            <h4 className={styles.title}>Empresa</h4>
-            <ul className={styles.links}>
-              <li><Link href="/productos">Productos</Link></li>
-              <li><Link href="/puntos-de-venta">Puntos de venta</Link></li>
-              <li><Link href="/about-us">Nosotros</Link></li>
-            </ul>
-          </div>
-
-          {/* Contacto */}
-          <div>
-            <h4 className={styles.title}>Contacto</h4>
-            <ul className={styles.contact}>
-              <li>
-                <FontAwesomeIcon icon={faEnvelope} />
-                <a href="mailto:ronix@ixnova.com.ar">ronix@ixnova.com.ar</a>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faPhone} />
-                <a href="tel:+5491168261600">+54 9 11 6826 1600</a>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faMapMarkerAlt} />
-                Castelar, Buenos Aires
-              </li>
+    <section className={styles.section}>
+      <div className="container">
+        <h2 className={styles.sectionTitle}>Nuestros Productos</h2>
+        <p className={styles.sectionSubtitle}>Calidad profesional para los mejores resultados</p>
+        
+        <div className={styles.productsGrid}>
+          {products.map((product) => (
+            <article 
+              key={product.id} 
+              className={`${styles.productCard} ${product.featured ? styles.featured : ''}`}
+              data-aos="fade-up"
+              data-aos-delay={product.id * 100}
+            >
+              <div className={styles.imageContainer}>
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={300}
+                  height={200}
+                  className={styles.productImage}
+                  priority={product.featured}
+                />
+                {product.featured && (
+                  <span className={styles.featuredBadge}>Destacado</span>
+                )}
+              </div>
+              
+              <div className={styles.productContent}>
+                <span className={styles.category}>{product.category}</span>
+                <h3 className={styles.title}>{product.title}</h3>
+                <p className={styles.description}>{product.description}</p>
+                
+                <ul className={styles.specs}>
+                  {product.specs.map((spec, index) => (
+                    <li key={index} className={styles.specItem}>
+                      <span className={styles.checkIcon}>✓</span>
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link 
+                  href={`/productos/${product.id}`} 
+                  className={styles.ctaButton}
+                  aria-label={`Ver detalles de ${product.title}`}
+                >
+                  Ver detalles
+                  <span className={styles.ctaIcon}>→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
