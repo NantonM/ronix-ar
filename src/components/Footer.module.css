@@ -1,136 +1,205 @@
-/* src/components/Footer.module.css */
+/* Footer.module.css */
+
 .footer {
-  background-color: #f8f9fa; /* EJEMPLO: Un gris muy claro, revisa el de ronixargentina.com.ar */
-  color: #495057;           /* EJEMPLO: Un gris oscuro para el texto */
-  font-size: 0.9rem;
-  border-top: 1px solid #dee2e6; /* EJEMPLO: Un borde superior sutil */
+  background-color: #1f2937;
+  color: #e5e7eb;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 .footerColumn {
-  /* Opcional: si quieres que el contenido de la columna (logo y video) esté centrado */
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los items horizontalmente */
-  text-align: center;  /* Centra el texto si lo hubiera */
 }
+
+/* Columnas centradas */
+.footerColumnCentered {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo */
+.footer a img {
+  margin-bottom: 2rem;
+}
+
+/* Títulos de sección */
 .footerTitle {
-  color: #212529; /* EJEMPLO: Texto casi negro para títulos */
-  margin-bottom: 1rem;
-  font-weight: 600; /* O 700 (bold) */
-  font-size: 1rem; /* Un poco más grande para los títulos */
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem !important;
+  border-bottom: 3px solid #a31919;
+  padding-bottom: 1rem;
+  display: inline-block;
 }
 
+/* Texto general */
 .footerText {
-  color: #6c757d; /* EJEMPLO: Texto gris secundario */
-  font-size: 0.875rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 2;
+  color: #d1d5db;
+  margin-bottom: 1.25rem;
 }
 
-.footerTextMuted, .videoPlaceholder p {
-  color: #adb5bd; /* EJEMPLO: Texto aún más suave */
-  font-style: italic;
-  font-size: 0.8rem;
-}
-
-.footerLink {
-  color: #495057 !important; /* Color principal del texto para enlaces */
-  text-decoration: none;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.footerLink:hover {
-  color: #0d6efd !important; /* EJEMPLO: Azul primario de Bootstrap para hover */
-  text-decoration: underline !important;
-}
-
-/* Para enlaces que no deben ser display:block, como email y teléfono */
-.footerLinkNoBlock {
-  color: #495057 !important;
-  text-decoration: none;
-}
-.footerLinkNoBlock:hover {
-  color: #0d6efd !important;
-  text-decoration: underline !important;
-}
-
-.representationImagePlaceholder {
-  margin-top: 0.5rem;
-  /* background-color: #e9ecef; */ /* Fondo para el placeholder de la imagen */
-  /* padding: 0.5rem; */
-  /* border: 1px dashed #ced4da; */
-}
-
-.socialLink:hover {
-  color: #fff;
-}
-.socialLink {
-  display: inline-flex; /* Cambiado a inline-flex */
-  justify-content: center; /* Centra el icono horizontalmente */
-  align-items: center;   /* Centra el icono verticalmente */
-  width: 40px;  /* Ancho fijo para el recuadro, ajusta según necesites */
-  height: 40px; /* Alto fijo para el recuadro, ajusta según necesites */
-  border: 1px solid #ced4da; /* O el color que estés usando de ronixargentina.com.ar */
-  border-radius: 6px;   /* O el borde que prefieras */
-  color: #495057;       /* Color inicial del icono */
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  /* Quitamos el padding aquí si width/height y flexbox van a manejar el tamaño y centrado */
-}
-
-.socialLink svg { /* Esto apunta directamente al SVG dentro del FontAwesomeIcon */
-  font-size: 1.5rem; /* Ajusta el tamaño del icono SVG aquí. Ej: 20px, 1.2em */
-                     /* Si haces esto, puedes quitar el 'size="lg"' del JSX */
-}
-
-/* Mantén tus estilos de hover específicos si te gustan */
-.whatsappLink:hover {
-  background-color: #25D366;
-  border-color: #25D366;
-  color: white;
-}
-.instagramLink:hover {
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  border-color: transparent;
-  color: white;
-}
-
-.contactIcon {
-  font-size: 0.2rem; /* Ejemplo: Equivale a 14px si tu fuente base es 16px. ¡Experimenta con este valor! */
-                      /* Puedes usar px, em, o rem. Ej: 12px, 0.8em, etc. */
-  margin-right: 0.5rem; /* Un pequeño espacio a la derecha del icono (similar a me-2 de Bootstrap) */
-  vertical-align: middle; /* Intenta diferentes valores si no se alinea bien con el texto:
-                             baseline, text-bottom, sub, etc. 'middle' suele funcionar. */
-}
-
-.copyrightSection {
-  background-color: #e9ecef; /* EJEMPLO: Un gris un poco más oscuro para el copyright */
-  color: #6c757d;
-  font-size: 0.8rem;
-  /* border-top: 1px solid #dee2e6; */ /* Ya lo tiene el .footer general */
-}
-
-.poweredBy {
-  font-size: 0.75rem;
-  color: #adb5bd;
-  margin-top: 0.25rem;
-  display: block;
-}
-
+/* Video container */
 .videoContainer {
-  margin-top: 1rem; /* Espacio debajo del logo */
-  border-radius: 0.375rem; /* Bordes redondeados */
-  overflow: hidden;      /* Para que el video respete los bordes */
-  background-color: #000; /* Fondo mientras carga */
-  line-height: 0;         /* Para evitar espacios extra */
-
-  /* --- CAMBIO PRINCIPAL AQUÍ --- */
-  width: 250px; /* ¡ANCHO FIJO! Ajusta este valor a tu gusto (ej. 150px, 200px) */
-  /* Ya no usamos max-width, sino un width directo */
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  max-width: 380px;
 }
 
 .footerVideo {
-  width: 100%;  /* El video ocupará el 100% de su contenedor (.videoContainer) */
-  height: auto; /* La altura se ajustará para mantener la proporción del video */
-  display: block; 
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Enlaces */
+.footerLink {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: color 0.2s ease;
+  display: inline-block;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.footerLink:hover {
+  color: #a31919;
+  text-decoration: none;
+}
+
+.footerLinkNoBlock {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLinkNoBlock:hover {
+  color: #a31919;
+  text-decoration: underline;
+}
+
+/* Párrafos de enlaces */
+.footerColumn p {
+  margin-bottom: 1.25rem;
+}
+
+/* Imagen de representación */
+.representationImagePlaceholder {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #374151;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Redes sociales */
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.75rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsappLink {
+  background-color: #25d366;
+}
+
+.whatsappLink:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+.instagramLink {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagramLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 39, 67, 0.3);
+}
+
+/* Copyright */
+.copyrightSection {
+  background-color: #111827;
+  border-top: 1px solid #374151;
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+}
+
+.poweredBy {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .footer {
+    padding-top: 3rem;
+  }
+
+  .videoContainer {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .footerColumn {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footerTitle {
+    display: block;
+    width: 100%;
+    font-size: 0.9375rem;
+  }
+
+  .footerColumn {
+    text-align: center;
+  }
+  
+  .footerText,
+  .footerLink {
+    font-size: 0.9375rem;
+  }
+
+  .videoContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .representationImagePlaceholder {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+  }
+  
+  .socialLink {
+    width: 42px;
+    height: 42px;
+    font-size: 1.25rem;
+  }
 }

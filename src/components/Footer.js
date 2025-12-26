@@ -1,41 +1,44 @@
 // src/components/Footer.js
 import Link from 'next/link';
-import Image from 'next/image'; // Para el logo y el placeholder de la carta
+import Image from 'next/image';
 import styles from './Footer.module.css';
-// Para iconos, podrías usar react-fontawesome o SVGs directamente más adelante
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`${styles.footer} pt-5 pb-3`}>
-      <div className="container text-center text-md-start">
-        <div className="row gy-4"> {/* gy-4 para espaciado vertical entre columnas en móvil */}
-
-          {/* --- Primer Div: Logo y Video Placeholder --- */}
-          <div className="col-md-6 col-lg-3 mb-4">
+    <footer className={styles.footer}>
+      <div className="container-fluid px-5">
+        <div className="row gy-4 align-items-start">
+          
+          {/* Logo y Video */}
+          <div className="col-lg-3 col-md-6 offset-lg-1">
             <div className={styles.footerColumn}>
-              <Link href="/" className="mb-3 d-inline-block">
+              <Link href="/">
                 <Image
-                  src="/images/ronix-logo.svg" // Tu logo
+                  src="/images/ronix-logo.svg"
                   alt="Ronix Logo"
-                  width={112} // Ajusta según tu logo
-                  height={42} // Ajusta según tu logo
+                  width={180}
+                  height={68}
                 />
               </Link>
-              <p className={styles.footerText}>Ronix es una marca de herramientas alemana fundada en 2004 con el objetivo de producir herramientas de alta calidad en diferentes categorías.</p>
+
+              <p className={styles.footerText}>
+                Ronix es una marca de herramientas alemana fundada en 2004 con el objetivo de producir herramientas de alta calidad en diferentes categorías.
+              </p>
+
               <div className={styles.videoContainer}>
                 <video
                   className={styles.footerVideo}
-                  src="/videos/video-ronix.mp4" // Ruta relativa a la carpeta 'public'
-                  autoPlay // Para que empiece solo
-                  loop     // Para que se repita
-                  muted    // NECESARIO para que autoPlay funcione en la mayoría de los navegadores
-                  playsInline // Importante para que no se ponga en pantalla completa en iOS
-                  aria-label="Video promocional de Ronix" // Para accesibilidad
+                  src="/videos/video-ronix.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label="Video promocional de Ronix"
                 >
                   Tu navegador no soporta el tag de video.
                 </video>
@@ -43,61 +46,72 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* --- Segundo Div: Enlaces Productos y Más --- */}
-          <div className="col-md-6 col-lg-3 mb-4">
-            <div className={styles.footerColumn}>
-              <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
-                Empresa
-              </h6>
-              <p><Link href="/productos" className={styles.footerLink}>Productos</Link></p>
-              <p><Link href="/puntos-de-venta" className={styles.footerLink}>Puntos de Venta</Link></p>
-              <p><Link href="/about-us" className={styles.footerLink}>Nosotros</Link></p>
+          {/* Enlaces */}
+          <div className="col-lg-3 col-md-6">
+            <div className={styles.footerColumnCentered}>
+              <h6 className={styles.footerTitle}>Empresa</h6>
+              
+              <Link href="/productos" className={styles.footerLink}>
+                Productos
+              </Link>
+              
+              <Link href="/puntos-de-venta" className={styles.footerLink}>
+                Puntos de Venta
+              </Link>
+              
+              <Link href="/about-us" className={styles.footerLink}>
+                Nosotros
+              </Link>
             </div>
           </div>
 
-          {/* --- Tercer Div: Carta de Representación --- */}
-          <div className="col-md-6 col-lg-3 mb-4">
-            <div className={styles.footerColumn}>
-              <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
-              Carta de Representación
-              </h6>
-              <div className={styles.representationImagePlaceholder}>
-                <Image
-                  src="/images/carta-de-representacion.svg" // Placeholder
-                  alt="Placeholder Carta de Representación"
-                  width={200}
-                  height={100}
-                  style={{maxWidth: '100%', height: 'auto', marginTop: '0.5rem'}}
-                />
-              </div>
-            </div>
-          </div>
+          {/* Contacto y Redes */}
+          <div className="col-lg-3 col-md-12 offset-lg-1">
+            <div className={styles.footerColumnCentered}>
+              <h6 className={styles.footerTitle}>Contacto</h6>
 
-          {/* --- Cuarto Div: Contacto y Redes Sociales --- */}
-          <div className="col-md-6 col-lg-3 mb-4">
-            <div className={styles.footerColumn}>
-              <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
-                CONTACTO
+              <p className={styles.footerText}>
+                📧{' '}
+                <a href="mailto:ronix@ixnova.com.ar" className={styles.footerLinkNoBlock}>
+                  ronix@ixnova.com.ar
+                </a>
+              </p>
+
+              <p className={styles.footerText}>
+                📞{' '}
+                <a href="tel:+5491168261600" className={styles.footerLinkNoBlock}>
+                  +54 9 11 6826 1600
+                </a>
+              </p>
+
+              <p className={styles.footerText}>
+                📍 Salvador Curutchet 1747<br />
+                Castelar, Buenos Aires, Argentina
+              </p>
+
+              <h6 className={styles.footerTitle} style={{ marginTop: '2.5rem' }}>
+                Redes Sociales
               </h6>
-              <p className={styles.footerText}>
-                📧 <a href="mailto:ronix@ixnova.com.ar" className={styles.footerLinkNoBlock}>ronix@ixnova.com.ar</a>
-              </p>
-              <p className={styles.footerText}>
-                📞 <a href="tel:+5491168261600" className={styles.footerLinkNoBlock}>+54 9 11 6826 1600</a>
-              </p>
-              <p className={styles.footerText}>
-                📍 Salvador Curutchet 1747 - Castelar - Buenos Aires - Argentina
-              </p>
-              <h6 className={`text-uppercase fw-bold mb-4 ${styles.footerTitle}`}>
-                REDES SOCIALES
-              </h6>
-              <div className="mt-3">
-              <a href="https://wa.me/5491168261600" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.whatsappLink} me-3`}>
-                <FontAwesomeIcon icon={faWhatsapp} /> {/* Quitado size="lg" si usas el CSS de arriba para .socialLink svg */}
-              </a>
-              <a href="https://www.instagram.com/ronixtoolsargentina/" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.instagramLink}`}>
-                <FontAwesomeIcon icon={faInstagram} /> {/* Quitado size="lg" */}
-              </a>
+
+              <div>
+                <a
+                  href="https://wa.me/5491168261600"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.socialLink} ${styles.whatsappLink}`}
+                  style={{ marginRight: '1.25rem' }}
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/ronixtoolsargentina/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.socialLink} ${styles.instagramLink}`}
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
               </div>
             </div>
           </div>
@@ -105,8 +119,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright y "Powered by" (basado en lo que mi herramienta encontró en ronixargentina.com.ar) */}
-      <div className={`text-center p-3 mt-4 ${styles.copyrightSection}`}>
+      {/* Copyright */}
+      <div className={styles.copyrightSection}>
         © {currentYear} IXNova. All rights reserved.
         <br />
         <span className={styles.poweredBy}>Powered by Somos Rayo.</span>
